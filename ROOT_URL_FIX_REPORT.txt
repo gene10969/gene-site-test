@@ -1,0 +1,35 @@
+gene-site root URL fix validation report
+Target root URL: https://gene-seitai.com/
+
+Residual index.html references excluding redirect condition: 0
+
+HTML head summary:
+access.html: canonical=<link rel="canonical" href="https://gene-seitai.com/access.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/access.html">
+atopic.html: canonical=<link rel="canonical" href="https://gene-seitai.com/atopic.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/atopic.html">
+autonomic.html: canonical=<link rel="canonical" href="https://gene-seitai.com/autonomic.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/autonomic.html">
+case1.html: canonical=<link rel="canonical" href="https://gene-seitai.com/case1.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/case1.html">
+case2.html: canonical=<link rel="canonical" href="https://gene-seitai.com/case2.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/case2.html">
+case3.html: canonical=<link rel="canonical" href="https://gene-seitai.com/case3.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/case3.html">
+chronic-constipation.html: canonical=<link rel="canonical" href="https://gene-seitai.com/chronic-constipation.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/chronic-constipation.html">
+coldness.html: canonical=<link rel="canonical" href="https://gene-seitai.com/coldness.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/coldness.html">
+dizziness.html: canonical=<link rel="canonical" href="https://gene-seitai.com/dizziness.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/dizziness.html">
+faq.html: canonical=<link rel="canonical" href="https://gene-seitai.com/faq.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/faq.html">
+fatigue.html: canonical=<link rel="canonical" href="https://gene-seitai.com/fatigue.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/fatigue.html">
+headache.html: canonical=<link rel="canonical" href="https://gene-seitai.com/headache.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/headache.html">
+ibs.html: canonical=<link rel="canonical" href="https://gene-seitai.com/ibs.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/ibs.html">
+index.html: canonical=<link rel="canonical" href="https://gene-seitai.com/"> | og:url=<meta property="og:url" content="https://gene-seitai.com/">
+insomnia.html: canonical=<link rel="canonical" href="https://gene-seitai.com/insomnia.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/insomnia.html">
+menu.html: canonical=<link rel="canonical" href="https://gene-seitai.com/menu.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/menu.html">
+orthostatic-dysregulation.html: canonical=<link rel="canonical" href="https://gene-seitai.com/orthostatic-dysregulation.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/orthostatic-dysregulation.html">
+palpitations.html: canonical=<link rel="canonical" href="https://gene-seitai.com/palpitations.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/palpitations.html">
+panic.html: canonical=<link rel="canonical" href="https://gene-seitai.com/panic.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/panic.html">
+plantar-fasciitis.html: canonical=<link rel="canonical" href="https://gene-seitai.com/plantar-fasciitis.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/plantar-fasciitis.html">
+pms.html: canonical=<link rel="canonical" href="https://gene-seitai.com/pms.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/pms.html">
+profile.html: canonical=<link rel="canonical" href="https://gene-seitai.com/profile.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/profile.html">
+shortness-of-breath.html: canonical=<link rel="canonical" href="https://gene-seitai.com/shortness-of-breath.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/shortness-of-breath.html">
+tenosynovitis.html: canonical=<link rel="canonical" href="https://gene-seitai.com/tenosynovitis.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/tenosynovitis.html">
+test-page.html: canonical=<link rel="canonical" href="https://gene-seitai.com/faq.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/faq.html"> | robots=<meta name="robots" content="noindex, nofollow">
+throat-discomfort.html: canonical=<link rel="canonical" href="https://gene-seitai.com/throat-discomfort.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/throat-discomfort.html">
+tinnitus.html: canonical=<link rel="canonical" href="https://gene-seitai.com/tinnitus.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/tinnitus.html">
+tmj.html: canonical=<link rel="canonical" href="https://gene-seitai.com/tmj.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/tmj.html">
+voice.html: canonical=<link rel="canonical" href="https://gene-seitai.com/voice.html"> | og:url=<meta property="og:url" content="https://gene-seitai.com/voice.html">

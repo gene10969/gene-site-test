@@ -1,0 +1,148 @@
+/* =========================================================
+   voice.html 専用補正CSS
+   症状ページ用CSSの影響で voice ページだけ崩れる場合の復旧用。
+   assets/style.css は共通CSSとして維持し、voice固有の指定だけをここで上書きする。
+========================================================= */
+
+.voice-page,
+.voice-page body{
+  overflow-x:hidden;
+}
+
+.voice-page .voice-wrap{
+  width:100%;
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 20px;
+  box-sizing:border-box;
+  position:relative;
+  z-index:1;
+}
+
+.voice-page .voice-intro-section{
+  width:100%;
+  max-width:1100px;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  box-sizing:border-box;
+}
+
+.voice-page .case{
+  width:100% !important;
+  max-width:1100px !important;
+  margin:0 auto 100px !important;
+  padding:0 20px !important;
+  box-sizing:border-box !important;
+  position:relative !important;
+  left:auto !important;
+  right:auto !important;
+  transform:none !important;
+  text-align:left;
+}
+
+.voice-page .case h2,
+.voice-page .case h3,
+.voice-page .case-note{
+  text-align:center;
+}
+
+.voice-page .case h2{
+  margin:0 0 34px !important;
+  color:#d8b46a;
+  letter-spacing:.12em;
+  font-weight:500;
+}
+
+.voice-page .case h3{
+  margin:42px 0 18px !important;
+  color:#d8b46a;
+  letter-spacing:.08em;
+  font-weight:500;
+}
+
+.voice-page .case-swiper{
+  width:100% !important;
+  max-width:760px !important;
+  margin:0 auto 36px !important;
+  padding:0 0 30px !important;
+  overflow:hidden !important;
+  box-sizing:border-box !important;
+  position:relative !important;
+  left:auto !important;
+  right:auto !important;
+  transform:none !important;
+}
+
+.voice-page .case-swiper .swiper-wrapper{
+  align-items:flex-start !important;
+}
+
+.voice-page .case-swiper .swiper-slide{
+  width:auto !important;
+  max-width:220px !important;
+  flex-shrink:0 !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  text-align:center !important;
+  box-sizing:border-box !important;
+}
+
+.voice-page .case-swiper .swiper-slide img{
+  width:auto !important;
+  max-width:220px !important;
+  height:auto !important;
+  max-height:260px !important;
+  object-fit:contain !important;
+  display:block !important;
+  border-radius:8px;
+}
+
+.voice-page .case-swiper .swiper-slide span{
+  display:block !important;
+  margin-top:10px !important;
+  font-size:.9rem !important;
+  line-height:1.6 !important;
+  color:#d8b46a !important;
+  letter-spacing:.04em;
+}
+
+.voice-page .case-note{
+  max-width:760px;
+  margin:24px auto 0 !important;
+  font-size:.9rem;
+  line-height:1.8;
+  opacity:.82;
+}
+
+.voice-page .voice-cta{
+  max-width:760px !important;
+  margin:80px auto 120px !important;
+  box-sizing:border-box;
+}
+
+@media (max-width:768px){
+  .voice-page .voice-wrap{
+    padding:0 16px;
+  }
+
+  .voice-page .case{
+    padding:0 !important;
+    margin-bottom:76px !important;
+  }
+
+  .voice-page .case-swiper{
+    max-width:100% !important;
+    padding-bottom:28px !important;
+  }
+
+  .voice-page .case-swiper .swiper-slide{
+    max-width:42vw !important;
+  }
+
+  .voice-page .case-swiper .swiper-slide img{
+    max-width:42vw !important;
+    max-height:220px !important;
+  }
+}

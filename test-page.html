@@ -1,0 +1,384 @@
+<style>
+.gene-lifestyle-figure {
+  position: relative;
+  max-width: 980px;
+  margin: 28px auto;
+  padding: 34px 24px 38px;
+  box-sizing: border-box;
+  overflow: visible;
+  border-radius: 24px;
+  border: 1px solid rgba(217, 193, 126, 0.34);
+  background:
+    radial-gradient(circle at 50% 18%, rgba(217, 193, 126, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(20, 18, 13, 0.97), rgba(5, 5, 5, 0.98));
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "HGS明朝E", serif;
+}
+
+.gene-lifestyle-figure * {
+  box-sizing: border-box;
+}
+
+.gene-lifestyle-title {
+  margin: 0 0 16px;
+  color: #f4ead0;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  line-height: 1.65;
+  letter-spacing: 0.1em;
+  text-align: center;
+  font-weight: 400;
+}
+
+.gene-lifestyle-title span {
+  color: #d9c17e;
+}
+
+.gene-lifestyle-lead {
+  max-width: 760px;
+  margin: 0 auto 34px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.98rem;
+  line-height: 2.05;
+  letter-spacing: 0.045em;
+  text-align: center;
+}
+
+.gene-house-diagram {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 106px 28px 28px;
+  border-left: 1px solid rgba(217, 193, 126, 0.22);
+  border-right: 1px solid rgba(217, 193, 126, 0.22);
+  overflow: visible;
+}
+
+.gene-house-roof {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: min(94%, 800px);
+  height: 150px;
+  transform: translateX(-50%);
+  clip-path: polygon(50% 0%, 100% 74%, 96% 82%, 50% 20%, 4% 82%, 0% 74%);
+  background:
+    linear-gradient(135deg, rgba(255, 239, 170, 0.48), rgba(217, 193, 126, 0.12) 36%, rgba(8, 8, 8, 0.96) 64%);
+  border: 1px solid rgba(217, 193, 126, 0.58);
+  filter: drop-shadow(0 0 18px rgba(217, 193, 126, 0.16));
+}
+
+.gene-house-head {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto 22px;
+  text-align: center;
+}
+
+.gene-house-head strong {
+  display: block;
+  color: #f4ead0;
+  font-size: clamp(1.45rem, 4vw, 2.05rem);
+  letter-spacing: 0.18em;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.gene-house-head span {
+  display: block;
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+}
+
+.gene-treatment-bar {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 0 auto;
+  padding: 18px 20px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(217, 193, 126, 0.52);
+  background:
+    linear-gradient(180deg, rgba(217, 193, 126, 0.15), rgba(217, 193, 126, 0.045)),
+    rgba(8, 8, 8, 0.9);
+  text-align: center;
+}
+
+.gene-treatment-bar strong {
+  display: block;
+  color: #d9c17e;
+  font-size: 1.45rem;
+  letter-spacing: 0.22em;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.gene-treatment-bar span {
+  display: block;
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.92rem;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+}
+
+.gene-house-arrow {
+  width: 100%;
+  margin: 14px 0 16px;
+  color: #d9c17e;
+  font-size: 1.4rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.gene-habit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.gene-habit-card {
+  position: relative;
+  min-width: 0;
+  min-height: 214px;
+  padding: 22px 10px 18px;
+  border-radius: 16px 16px 8px 8px;
+  border: 1px solid rgba(217, 193, 126, 0.42);
+  background:
+    radial-gradient(circle at 50% 18%, rgba(217, 193, 126, 0.09), transparent 42%),
+    linear-gradient(180deg, rgba(217, 193, 126, 0.09), rgba(255, 255, 255, 0.018)),
+    rgba(8, 8, 8, 0.78);
+  text-align: center;
+}
+
+.gene-habit-card::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -16px;
+  width: 1px;
+  height: 16px;
+  background: rgba(217, 193, 126, 0.34);
+  transform: translateX(-50%);
+}
+
+.gene-habit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 66px;
+  height: 66px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  border: 1px solid rgba(217, 193, 126, 0.48);
+  color: #d9c17e;
+  background: rgba(217, 193, 126, 0.06);
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.gene-habit-card strong {
+  display: block;
+  color: #f3e6bf;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  font-weight: 400;
+  line-height: 1.6;
+  white-space: normal;
+}
+
+.gene-habit-card span {
+  display: block;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.82rem;
+  line-height: 1.85;
+  letter-spacing: 0.03em;
+  white-space: normal;
+}
+
+.gene-foundation-bar {
+  width: 100%;
+  margin: 16px auto 0;
+  padding: 20px 18px;
+  border-radius: 8px 8px 18px 18px;
+  border: 1px solid rgba(217, 193, 126, 0.52);
+  background:
+    linear-gradient(180deg, rgba(217, 193, 126, 0.20), rgba(217, 193, 126, 0.07)),
+    rgba(8, 8, 8, 0.94);
+  text-align: center;
+}
+
+.gene-foundation-bar strong {
+  display: block;
+  color: #d9c17e;
+  font-size: 1.45rem;
+  letter-spacing: 0.16em;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.gene-foundation-bar span {
+  display: block;
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.92rem;
+  line-height: 1.8;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 700px) {
+  .gene-lifestyle-figure {
+    padding: 26px 16px 30px;
+    border-radius: 22px;
+  }
+
+  .gene-lifestyle-title,
+  .gene-lifestyle-lead {
+    text-align: left;
+  }
+
+  .gene-lifestyle-lead {
+    line-height: 1.95;
+  }
+
+  .gene-house-diagram {
+    padding: 86px 10px 18px;
+  }
+
+  .gene-house-roof {
+    width: 100%;
+    height: 122px;
+  }
+
+  .gene-house-head {
+    margin-bottom: 18px;
+  }
+
+  .gene-house-head strong {
+    font-size: 1.28rem;
+    letter-spacing: 0.12em;
+  }
+
+  .gene-house-head span {
+    font-size: 0.74rem;
+    letter-spacing: 0.04em;
+  }
+
+  .gene-treatment-bar {
+    padding: 15px 12px;
+  }
+
+  .gene-treatment-bar strong,
+  .gene-foundation-bar strong {
+    font-size: 1.18rem;
+    letter-spacing: 0.12em;
+  }
+
+  .gene-habit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .gene-habit-card {
+    min-height: 176px;
+    padding: 18px 8px 15px;
+  }
+
+  .gene-habit-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 12px;
+    font-size: 1.55rem;
+  }
+
+  .gene-habit-card strong {
+    font-size: 0.98rem;
+    letter-spacing: 0.06em;
+  }
+
+  .gene-habit-card span {
+    font-size: 0.78rem;
+    line-height: 1.75;
+    letter-spacing: 0.02em;
+  }
+}
+
+@media (max-width: 390px) {
+  .gene-habit-card {
+    min-height: 168px;
+    padding: 16px 7px 14px;
+  }
+
+  .gene-habit-card strong {
+    font-size: 0.92rem;
+    letter-spacing: 0.04em;
+  }
+
+  .gene-habit-card span {
+    font-size: 0.74rem;
+  }
+}
+</style>
+
+<section class="gene-lifestyle-figure" aria-labelledby="gene-lifestyle-title">
+  <h2 class="gene-lifestyle-title" id="gene-lifestyle-title">
+    整体は、<span>身体を整えるきっかけ</span>です
+  </h2>
+
+  <p class="gene-lifestyle-lead">
+    健康な身体は、施術だけで作られるものではありません。
+    睡眠・食事・運動・ストレス管理など、日々の生活習慣が土台になります。
+    geneでは、その土台を大切にしながら、身体が本来の働きを発揮しやすい状態を目指して整体を行います。
+  </p>
+
+  <div class="gene-house-diagram">
+    <div class="gene-house-roof" aria-hidden="true"></div>
+
+    <div class="gene-house-head">
+      <strong>健康な身体</strong>
+      <span>本来の働きを発揮しやすい状態</span>
+    </div>
+
+    <div class="gene-treatment-bar">
+      <strong>整体</strong>
+      <span>身体を整えるきっかけ・補助</span>
+    </div>
+
+    <div class="gene-house-arrow" aria-hidden="true">▲</div>
+
+    <div class="gene-habit-grid">
+      <div class="gene-habit-card">
+        <div class="gene-habit-icon">☾</div>
+        <strong>睡眠</strong>
+        <span>身体を休め、自律神経を整える土台</span>
+      </div>
+
+      <div class="gene-habit-card">
+        <div class="gene-habit-icon">🍽</div>
+        <strong>食事</strong>
+        <span>身体をつくり、回復を支える源</span>
+      </div>
+
+      <div class="gene-habit-card">
+        <div class="gene-habit-icon">🏃</div>
+        <strong>運動</strong>
+        <span>血流や代謝を促し、しなやかな身体へ</span>
+      </div>
+
+      <div class="gene-habit-card">
+        <div class="gene-habit-icon">♡</div>
+        <strong>ストレス管理</strong>
+        <span>心身の緊張をゆるめる大切な習慣</span>
+      </div>
+    </div>
+
+    <div class="gene-foundation-bar">
+      <strong>生活習慣</strong>
+      <span>毎日の積み重ねが、健康の土台になります</span>
+    </div>
+  </div>
+</section>

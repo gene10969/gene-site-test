@@ -1,0 +1,17 @@
+gene 新規症状ページリンク追加 修正レポート
+
+対象追加ページ:
+- anxiety-disorder.html（不安障害）
+- nausea.html（吐き気）
+- stomach-discomfort.html（胃の不快感）
+
+実施内容:
+- 最新版の全症状ページHTMLを反映
+- index.html の症状リンク一覧へ3ページを追加
+- menu.html の「このようなお悩みの方へ」「症状について」へ3ページを追加
+- スマホ下部メニュー内「症状から探す」へ3ページを追加
+- access.html / faq.html / voice.html / case1.html / case2.html / case3.html のスマホ症状パネルへ3ページを追加
+- sitemap.xml に3ページを追加
+
+同梱ファイル数: 31
+※ profile.html / test-page.html は編集対象から除外

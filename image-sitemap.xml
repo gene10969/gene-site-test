@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+ xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+<!-- 症例1 -->
+<url>
+  <loc>https://gene-seitai.com/case1.html</loc>
+
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case1/osaka_seitai_atopy_case1_face_before.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case1/osaka_seitai_atopy_case1_face_3months.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case1/osaka_seitai_atopy_case1_face_6months.webp</image:loc>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case1/osaka_seitai_atopy_case1_neck_before.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case1/osaka_seitai_atopy_case1_neck_3months.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case1/osaka_seitai_atopy_case1_neck_6months.webp</image:loc>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case1/osaka_seitai_atopy_case1_body_front_before.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case1/osaka_seitai_atopy_case1_body_front_3months.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case1/osaka_seitai_atopy_case1_body_front_6months.webp</image:loc>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case1/osaka_seitai_atopy_case1_ankle_before.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case1/osaka_seitai_atopy_case1_ankle_3months.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case1/osaka_seitai_atopy_case1_ankle_6months.webp</image:loc>
+  </image:image>
+</url>
+
+<!-- 症例2 -->
+<url>
+  <loc>https://gene-seitai.com/case2.html</loc>
+
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case2/osaka_seitai_atopy_case2_forearm_before.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case2/osaka_seitai_atopy_case2_forearm_3months.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case2/osaka_seitai_atopy_case2_forearm_6months.webp</image:loc>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case2/osaka_seitai_atopy_case2_body_front_before.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case2/osaka_seitai_atopy_case2_body_front_3months.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case2/osaka_seitai_atopy_case2_body_front_6months.webp</image:loc>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case2/osaka_seitai_atopy_case2_body_back_before.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case2/osaka_seitai_atopy_case2_body_back_3months.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case2/osaka_seitai_atopy_case2_body_back_6months.webp</image:loc>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case2/osaka_seitai_atopy_case2_leg_before.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case2/osaka_seitai_atopy_case2_leg_3months.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case2/osaka_seitai_atopy_case2_leg_6months.webp</image:loc>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case2/osaka_seitai_atopy_case2_ankle_before.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case2/osaka_seitai_atopy_case2_ankle_3months.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case2/osaka_seitai_atopy_case2_ankle_6months.webp</image:loc>
+  </image:image>
+</url>
+
+<!-- 症例3 -->
+<url>
+  <loc>https://gene-seitai.com/case3.html</loc>
+
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case3/osaka_seitai_atopy_case3_forearm_front_before.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case3/osaka_seitai_atopy_case3_forearm_front_3months.webp</image:loc>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case3/osaka_seitai_atopy_case3_forearm_back_before.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case3/osaka_seitai_atopy_case3_forearm_back_3months.webp</image:loc>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case3/osaka_seitai_atopy_case3_ankle_right_before.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case3/osaka_seitai_atopy_case3_ankle_right_3months.webp</image:loc>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case3/osaka_seitai_atopy_case3_ankle_left_before.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://gene-seitai.com/cases/case3/osaka_seitai_atopy_case3_ankle_left_3months.webp</image:loc>
+  </image:image>
+</url>
+
+</urlset>

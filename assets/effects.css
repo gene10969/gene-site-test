@@ -1,0 +1,69 @@
+/* ---------------------------------------------
+   〇 点滅（ローディング）
+--------------------------------------------- */
+#loading-circle {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #d4af37;
+  animation: blink 1.2s infinite;
+  z-index: 9999;
+}
+
+@keyframes blink {
+  0%,100% { opacity: 0.15; }
+  50% { opacity: 1; }
+}
+
+#loading-circle.hide {
+  opacity: 0;
+  transition: 0.6s;
+}
+
+/* ロゴ表示 */
+#loading-logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  opacity: 0;
+  z-index: 9999;
+  transition: 0.8s;
+}
+
+#loading-logo.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#loading-logo.fadeout {
+  opacity: 0;
+  transition: 0.8s;
+}
+
+/* ---------------------------------------------
+   光の粒（全ページ）
+--------------------------------------------- */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(255,215,0,0.15) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px);
+  background-size: 3px 3px, 4px 4px;
+  animation: fall 12s linear infinite;
+  opacity: 0.4;
+}
+
+@keyframes fall {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 0 800px, 0 600px; }
+}

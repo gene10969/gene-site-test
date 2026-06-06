@@ -1,0 +1,145 @@
+/* gene first view unified css
+   全ページ共通のファーストビュー統一CSS
+   既存 style.css は削除せず、後読み込みで安全に上書きします。
+*/
+
+/* PC / tablet baseline */
+:root{
+  --gene-first-view-top-pc: 72px;
+  --gene-first-view-top-mobile: 34px;
+  --gene-first-view-card-gap-mobile: 22px;
+}
+
+/* PC側は大きく崩さず、タイトル周辺の基準だけ整える */
+@media (min-width:769px){
+  #hero-logo,
+  .page-title,
+  .voice-intro-section,
+  .access-container,
+  .faq-container,
+  .menu-container,
+  .page-container,
+  main{
+    scroll-margin-top: var(--gene-first-view-top-pc);
+  }
+}
+
+/* スマホ共通ファーストビュー */
+@media (max-width:768px){
+
+  html,
+  body{
+    margin-top:0 !important;
+    padding-top:0 !important;
+  }
+
+  /* スマホは下部固定バーがあるため、パンくずは非表示 */
+  .breadcrumb,
+  .breadcrumb-fixed{
+    display:none !important;
+  }
+
+  /* 冒頭タイトル系を共通の高さへ */
+  #hero-logo,
+  .page-title,
+  .voice-intro-section,
+  .access-title,
+  .menu-title,
+  .voice-title,
+  .case-title,
+  .page-heading{
+    margin-top:0 !important;
+    padding-top:var(--gene-first-view-top-mobile) !important;
+  }
+
+  /* indexトップ */
+  #hero-logo{
+    margin-bottom:22px !important;
+  }
+
+  #hero-logo .main-title,
+  .main-title{
+    margin-top:0 !important;
+    margin-bottom:16px !important;
+  }
+
+  #hero-logo .sub-catch,
+  .sub-catch{
+    margin-top:12px !important;
+    margin-bottom:24px !important;
+    line-height:1.9 !important;
+  }
+
+  /* 下層ページタイトル */
+  .page-title,
+  .access-title,
+  .menu-title,
+  .voice-title,
+  .case-title,
+  .page-heading{
+    padding-bottom:22px !important;
+    margin-bottom:22px !important;
+  }
+
+  /* voice.html の実際の冒頭要素 */
+  .voice-intro-section{
+    padding-bottom:22px !important;
+    margin-bottom:22px !important;
+  }
+
+  .voice-intro-head h2{
+    font-family:'Playfair Display',"Yu Mincho","Hiragino Mincho ProN","YuMincho","Noto Serif JP",serif !important;
+    font-size:clamp(2.55rem, 9.6vw, 3.15rem) !important;
+    font-weight:700 !important;
+    line-height:1.25 !important;
+    letter-spacing:.035em !important;
+    color:#d9c17e !important;
+    text-align:center !important;
+    margin-top:0 !important;
+    margin-bottom:28px !important;
+  }
+
+  .voice-intro-head p{
+    font-family:'Noto Serif JP',"Yu Mincho","Hiragino Mincho ProN","YuMincho",serif !important;
+    font-size:clamp(1.02rem, 4.1vw, 1.18rem) !important;
+    font-weight:400 !important;
+    line-height:2.05 !important;
+    letter-spacing:.035em !important;
+    color:rgba(255,255,255,.92) !important;
+    text-align:center !important;
+  }
+
+  /* コンテナの余白を共通化 */
+  main,
+  #index-cards,
+  #voice-cards,
+  .page-container,
+  .menu-container,
+  .voice-container,
+  .case-container,
+  .access-container,
+  .faq-container,
+  .profile-container,
+  .news-container{
+    padding-top:0 !important;
+    margin-top:0 !important;
+  }
+
+  /* 最初のカード開始位置 */
+  .menu-hero-card,
+  .top-hero-card,
+  .profile-card,
+  .intro-card,
+  .case,
+  .info-card:first-child,
+  .access-card:first-child,
+  .faq-card:first-child,
+  .voice-card:first-child,
+  .access-section:first-of-type,
+  .access-block:first-of-type,
+  .voice-container > *:first-child,
+  .case-container > *:first-child,
+  #voice-cards > *:first-child{
+    margin-top:var(--gene-first-view-card-gap-mobile) !important;
+  }
+}

@@ -1,0 +1,12 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#bca156"/>
+      <stop offset="1" stop-color="#d8bf73"/>
+    </linearGradient>
+  </defs>
+  <text x="0" y="28" font-family="Playfair Display, serif" font-size="32" fill="url(#g)">gene</text>
+  <path d="M110,8 C120,8 130,32 140,32" fill="none" stroke="url(#g)" stroke-width="2"/>
+  <path d="M110,32 C120,32 130,8 140,8" fill="none" stroke="url(#g)" stroke-width="2"/>
+</svg>

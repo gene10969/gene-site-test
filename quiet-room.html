@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script>
+if (
+  location.hostname !== "localhost" &&
+  location.hostname !== "127.0.0.1"
+) {
+  const script = document.createElement("script");
+  script.async = true;
+  script.src =
+    "https://www.googletagmanager.com/gtag/js?id=G-8KPJ55NQMT";
+  document.head.appendChild(script);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  (function(){
+    const params = new URLSearchParams(location.search);
+    if (params.get("internal") === "true") {
+      localStorage.setItem("internalUser", "true");
+    }
+    if (params.get("internal") === "false") {
+      localStorage.removeItem("internalUser");
+    }
+
+    const isInternal = localStorage.getItem("internalUser") === "true";
+
+    if (!isInternal) {
+      gtag("config", "G-8KPJ55NQMT", {
+        page_title: "隠しページ｜大阪 自律神経専門整体院 gene",
+        page_path: location.pathname
+      });
+
+      gtag("event", "secret_page_view", {
+        event_category: "secret_page",
+        event_label: "quiet_room"
+      });
+    }
+  })();
+}
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>見つけてくださってありがとうございます｜大阪 自律神経専門整体院 gene</title>
+<meta name="description" content="geneのホームページの中にある、偶然見つけた方だけに向けた小さなページです。">
+<meta property="og:title" content="見つけてくださってありがとうございます｜gene">
+<meta property="og:description" content="geneのホームページの中にある、偶然見つけた方だけに向けた小さなページです。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://gene-seitai.com/assets/img/gene-profile.webp">
+
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/css/gene-first-view.css">
+
+<style>
+
+.secret-page{
+  max-width:980px;
+  margin:0 auto;
+  padding:0 20px 88px;
+}
+
+.secret-hero-card{
+  max-width:980px;
+  margin:32px auto 0;
+  padding:0 20px;
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .75s ease, transform .75s ease;
+}
+
+.secret-hero-card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.secret-hero-inner{
+  display:block;
+  width:100%;
+  box-sizing:border-box;
+  background:rgba(10,10,10,.72);
+  border:1px solid rgba(217,193,126,.22);
+  border-radius:22px;
+  padding:28px;
+  box-shadow:0 18px 50px rgba(0,0,0,.22);
+  backdrop-filter:blur(6px);
+}
+
+.secret-hero-copy{
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:0;
+  text-align:left;
+}
+
+.secret-room-title{
+  display:block;
+  width:100%;
+  text-align:center;
+  color:#d9c17e;
+  font-size:clamp(3rem,5vw,4.8rem);
+  line-height:1.2;
+  font-weight:500;
+  letter-spacing:.08em;
+  margin:0 0 42px;
+}
+
+.secret-hero-copy p{
+  width:100%;
+  max-width:none;
+  margin:0 0 18px;
+  padding:0;
+  text-align:left;
+  color:rgba(255,255,255,.9);
+  line-height:2.2;
+  white-space:normal;
+  word-break:normal;
+  overflow-wrap:break-word;
+}
+
+.secret-hero-copy p:last-child{
+  margin-bottom:0;
+}
+
+.secret-card{
+  width:100%;
+  box-sizing:border-box;
+  margin-top:24px;
+  padding:28px;
+  background:rgba(10,10,10,.72);
+  border:1px solid rgba(217,193,126,.22);
+  border-radius:22px;
+  box-shadow:0 18px 50px rgba(0,0,0,.22);
+  backdrop-filter:blur(6px);
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .75s ease, transform .75s ease;
+}
+
+.secret-card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.secret-card h2{
+  margin:0 0 18px;
+  color:#f4ead0;
+  font-size:1.35rem;
+  line-height:1.7;
+  font-weight:500;
+}
+
+.secret-card p{
+  margin:0 0 18px;
+  color:rgba(255,255,255,.9);
+  line-height:2.05;
+  white-space:normal;
+  word-break:normal;
+  overflow-wrap:break-word;
+}
+
+.secret-card p:last-child{
+  margin-bottom:0;
+}
+
+.secret-divider{
+  width:100%;
+  height:1px;
+  margin:8px 0 26px;
+  background:linear-gradient(90deg, transparent, rgba(217,193,126,.45), transparent);
+}
+
+.secret-details{
+  margin-top:20px;
+  border:1px solid rgba(217,193,126,.32);
+  border-radius:18px;
+  background:rgba(255,255,255,.025);
+  overflow:hidden;
+}
+
+.secret-details summary{
+  list-style:none;
+  cursor:pointer;
+  padding:18px 22px;
+  color:#d9c17e;
+  font-size:1rem;
+  line-height:1.7;
+  letter-spacing:.04em;
+  background:rgba(217,193,126,.06);
+}
+
+.secret-details summary::-webkit-details-marker{
+  display:none;
+}
+
+.secret-details summary::after{
+  content:"＋";
+  float:right;
+  color:#d9c17e;
+}
+
+.secret-details[open] summary::after{
+  content:"−";
+}
+
+.secret-details-inner{
+  padding:20px 22px 22px;
+}
+
+.secret-list{
+  display:grid;
+  gap:14px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.secret-list li{
+  color:rgba(255,255,255,.9);
+  line-height:1.85;
+  padding-bottom:14px;
+  border-bottom:1px solid rgba(217,193,126,.12);
+}
+
+.secret-list li:last-child{
+  padding-bottom:0;
+  border-bottom:none;
+}
+
+.secret-work-grid{
+  display:grid;
+  grid-template-columns:140px minmax(0,1fr);
+  gap:14px 18px;
+  margin:0;
+}
+
+.secret-work-grid dt{
+  color:#d9c17e;
+  line-height:1.8;
+}
+
+.secret-work-grid dd{
+  margin:0;
+  color:rgba(255,255,255,.9);
+  line-height:1.8;
+}
+
+.secret-work-grid dd span{
+  display:block;
+  margin-bottom:8px;
+}
+
+.secret-note{
+  color:rgba(255,255,255,.76) !important;
+  font-size:.95rem;
+}
+
+.secret-small{
+  margin-top:20px !important;
+  color:rgba(255,255,255,.8) !important;
+}
+
+.secret-footer-message{
+  text-align:center;
+}
+
+.secret-footer-message p{
+  text-align:center;
+}
+
+.secret-back-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:12px;
+  min-height:46px;
+  padding:12px 24px;
+  border-radius:999px;
+  border:1px solid rgba(217,193,126,.56);
+  background:rgba(20,20,20,.9);
+  color:#d9c17e;
+  text-decoration:none;
+  letter-spacing:.05em;
+  transition:transform .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.secret-back-link:hover{
+  background:rgba(28,26,20,.96);
+  border-color:rgba(234,216,147,.78);
+  transform:translateY(-2px);
+}
+
+.gene-mobile-bottom-nav,
+.gene-mobile-symptom-panel,
+.gene-mobile-symptom-backdrop{
+  display:none;
+}
+
+.sp-only-br,
+.sp-br{
+  display:none;
+}
+
+@media (max-width:768px){
+  .reserve-btn-sub,
+  .hamburger-btn{
+    display:none !important;
+  }
+
+  .breadcrumb,
+  .breadcrumb-fixed{
+    display:none !important;
+  }
+
+  body{
+    padding-bottom:calc(76px + env(safe-area-inset-bottom));
+  }
+
+  #hero-logo{
+    padding-top:34px !important;
+    margin-bottom:22px !important;
+  }
+
+  #to-top-btn{
+    bottom:calc(92px + env(safe-area-inset-bottom)) !important;
+  }
+}
+
+@media (max-width:640px){
+  .secret-hero-card{
+    padding:0 16px;
+    margin-top:24px;
+  }
+
+  .secret-page{
+    padding:0 16px 76px;
+  }
+
+  .secret-hero-inner,
+  .secret-card{
+    border-radius:18px;
+    padding:20px;
+  }
+
+  .secret-room-title{
+    font-size:clamp(2.15rem,12vw,3.2rem);
+    margin-bottom:34px;
+  }
+
+  .secret-hero-copy p,
+  .secret-card p{
+    font-size:1rem;
+    line-height:2.05;
+    letter-spacing:.02em;
+  }
+
+  .secret-work-grid{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+  .secret-work-grid dt{
+    margin-top:12px;
+  }
+
+  .secret-work-grid dt:first-child{
+    margin-top:0;
+  }
+
+  .secret-details summary{
+    padding:16px 18px;
+  }
+
+  .secret-details-inner{
+    padding:18px;
+  }
+
+  .main-title{
+    line-height:1.5;
+  }
+
+  .sub-catch{
+    line-height:1.8;
+  }
+
+  .sp-only-br,
+  .sp-br{
+    display:block;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="particles"></div>
+
+<div id="global-logo-bg" class="fade-start">
+  <img src="assets/img/logo.svg" alt="大阪 自律神経専門整体院 gene ロゴ">
+</div>
+
+<nav class="breadcrumb" style="opacity:0;">
+  <a href="/">ホーム</a> ＞ <span>見つけていただきありがとうございます</span>
+</nav>
+
+<button id="hamburger-btn" class="hamburger-btn">≡</button>
+
+<div id="hamburger-menu" class="hamburger-menu">
+  <button class="menu-close-btn">×</button>
+  <a href="/">ホーム</a>
+  <a href="menu.html">施術内容</a>
+  <a href="access.html">アクセス</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="voice.html">院内・改善写真</a>
+</div>
+
+<div id="hero-logo" class="hidden">
+  <h1 class="main-title">
+  見つけていただき<br class="sp-only-br">
+  ありがとうございます。
+</h1>
+
+<p class="sub-catch">
+  ここはgeneのホームページの中でも、<br class="sp-only-br">
+  少し変わった場所です。
+</p>
+</div>
+
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">
+  LINE<br class="sp-only-br">予約
+</a>
+
+<section class="secret-hero-card">
+  <div class="secret-hero-inner secret-hero-inner-text-only">
+    <div class="secret-hero-copy">
+      <h1 class="secret-room-title">SECRET ROOM</h1>
+<p>
+普段は整体のことばかり書いていますが、
+このページでは少しだけ私自身のことを書いてみようと思います。
+</p>
+
+<p>
+このページは検索にも出ませんし、
+どこにも案内していません。
+</p>
+
+<p>
+ページ最下部の私の写真をタップ、
+もしくはクリックした時にだけ辿りつけます。
+</p>
+
+<p>
+偶然見つけてしまったあなたも、
+良ければ最後までお付き合いください。
+</p>
+    </div>
+  </div>
+</section>
+
+<main class="secret-page">
+  <section class="secret-card">
+    <h2>少しだけ、私のこと</h2>
+    <div class="secret-divider"></div>
+
+    <p>私は大阪生まれ大阪育ちのバリバリ関西人です。</p>
+
+<p>
+咄嗟に面白いことを言ったり、ふざけたりするのはあまり得意ではありませんが、<br class="sp-only-br">
+話を聞くことは好きです。
+</p>
+
+<p>
+趣味は音楽を聴いたり、映画やドラマ、アニメを観たり、<br class="sp-only-br">
+マンガを読んだりと、ごく普通です（笑）
+</p>
+
+<p>
+料理も好きですが、最近はホームページを作ったり、<br class="sp-only-br">
+アプリを作ったりすることにも挑戦しています。
+</p>
+
+<p>
+ちなみにgeneのホームページや症状チェックアプリなども、<br class="sp-only-br">
+全て自分で作っています。
+</p>
+
+<p>
+整体とは関係のないように見えますが、<br class="sp-only-br">
+何かを観察したり、試したり、改善したりすることが昔から好きなんだと思います。
+</p>
+
+<p>
+整体も同じで、一人ひとりの状態を見ながら、<br class="sp-only-br">
+少しずつ整えていく作業が好きです。
+</p>
+
+<p>    
+派手なことは得意ではありませんが、<br class="sp-only-br">
+静かな時間や落ち着いた空間が好きです。
+</p>
+
+<p>
+4歳から18歳まで、<br class="sp-only-br">
+ずっと剣道をしていました。
+</p>
+
+<p>
+その頃は警察官になるのが夢でしたが、どこかで水泳が必要と聞き、<br class="sp-only-br">
+泳ぐのが苦手なので諦めました（笑）
+</p>
+
+<p>
+高校卒業後は柔道整復師の専門学校へ進学し、国家資格を取得しました。
+
+その後、整骨院で経験を積み、<br class="sp-only-br">
+geneを開業して今に至ります。
+</p>
+  </section>
+
+  <section class="secret-card">
+    <h2>長く好きな音楽</h2>
+    <div class="secret-divider"></div>
+
+<p>
+先ほど音楽が好きと書いていましたが、<br class="sp-only-br">
+実は2007年からずっと好きなバンドがあります。
+</p>
+
+<p>ONE OK ROCKです！</p>
+
+<p>そう、OORなんです！</p>
+
+<p>気付けばPRIMAL FOOTMARKも#1から継続しています。</p>
+
+<p>
+学生の頃から聴き続けていて、<br class="sp-only-br">
+今ではライブに一人で参戦しています。
+</p>
+
+<p>
+ライブ会場の空気感や音の迫力はもちろんですが、<br class="sp-only-br">
+挑戦し続ける姿勢や楽曲に込められたメッセージに何度も励まされてきました。
+</p>
+
+    <p class="secret-note">この下は私のライブ参戦歴です。興味のある方だけどうぞ。</p>
+
+    <details class="secret-details" id="oor-live-history">
+      <summary>ONE OK ROCK ライブ参戦歴を見る</summary>
+      <div class="secret-details-inner">
+        <ul class="secret-list">
+          <li>2011年　ONE OK ROCK 2011-2012 "残響リファレンス" TOUR（Zepp Osaka）</li>
+          <li>2012年　"The Beginning" TOUR（Zepp Namba）</li>
+          <li>2013年　ONE OK ROCK 2013 "人生×君=" TOUR（大阪城ホール）</li>
+          <li>2015年　ONE OK ROCK 2015 "35xxxv" JAPAN TOUR（大阪城ホール）</li>
+          <li>2015年　ONE OK ROCK 2015 "35xxxv" JAPAN TOUR 追加公演（幕張メッセ）</li>
+          <li>2017年　ONE OK ROCK 2017 "Ambitions" JAPAN TOUR（大阪城ホール）</li>
+          <li>2018年　ONE OK ROCK 2018 AMBITIONS JAPAN DOME TOUR（京セラドーム大阪）</li>
+          <li>2018年　ONE OK ROCK with Orchestra Japan Tour 2018（大阪城ホール）</li>
+          <li>2019年　ONE OK ROCK 2019-2020 EYE OF THE STORM JAPAN TOUR（大阪城ホール）</li>
+          <li>2020年　BLARE FEST. 2020 WATER STAGE（ポートメッセなごや）</li>
+          <li>2024年　SUPER DRY SPECIAL LIVE Organized by ONE OK ROCK（京セラドーム大阪）</li>
+          <li>2025年　ONE OK ROCK 2025 PRIMAL FOOTMARK SPECIAL LIVE（豊洲PIT）</li>
+          <li>2025年　ONE OK ROCK DETOX JAPAN TOUR（ヤンマースタジアム長居）</li>
+          <li>2026年　docomo presents THE MUSIC STADIUM 2026 organized by ONE OK ROCK（MUFGスタジアム）</li>
+        </ul>
+      </div>
+    </details>
+
+    <p class="secret-small">これからも増やしていく予定です。</p>
+
+<p>ライブ会場で見かけても、普通に楽しんでいると思います（笑）</p>
+
+<p>
+基本的にロックバンドが好きで、<br class="sp-only-br">
+Pay money To my Pain、coldrain、UVERworld、MY FIRST STORYなどもよく聴きます。
+</p>
+
+    <p>ちなみに整体院の名前である「gene」</p>
+
+<p>
+「遺伝子」という意味がありますが、<br class="sp-only-br">
+実はP.T.Pのアルバム名から影響を受けています。
+</p>
+
+<p>    
+開業前にいろいろな名前を考えていましたが、<br class="sp-only-br">
+この言葉がずっと頭の中に残っていました。
+</p>
+
+<p>気付いた方はいたでしょうか？（笑）</p>
+  </section>
+
+  <section class="secret-card">
+    <h2>私が好きな作品</h2>
+    <div class="secret-divider"></div>
+
+    <p>映画やドラマ、アニメ、マンガも好きなので、休みの日にまとめて観ることもあります。
+
+この下は代表的な好きな作品です。
+
+興味のある方だけどうぞ。</p>
+
+    <details class="secret-details" id="favorite-works">
+      <summary>代表的な好きな作品を見る</summary>
+      <div class="secret-details-inner">
+        <dl class="secret-work-grid">
+          <dt>映画</dt>
+          <dd>
+            <span>デジャブ</span>
+            <span>ワイルド・スピードシリーズ</span>
+            <span>グッモーエビアン！</span>
+          </dd>
+
+          <dt>ドラマ</dt>
+          <dd>
+            <span>グッド・ドクター 名医の条件</span>
+            <span>アンナチュラル</span>
+          </dd>
+
+          <dt>アニメ</dt>
+          <dd>
+            <span>ヴァイオレット・エヴァーガーデン</span>
+            <span>（劇場版は映画館に14回観に行きました）</span>
+            <span>86</span>
+          </dd>
+
+          <dt>マンガ</dt>
+          <dd>
+            <span>四月は君の嘘</span>
+            <span>聲の形</span>
+            <span>RAVE</span>
+            <span>金色のガッシュ!!</span>
+          </dd>
+        </dl>
+      </div>
+    </details>
+
+    <p class="secret-small">こうして並べてみると、<br class="sp-only-br">
+    人との繋がりや成長、誰かを想う気持ちが描かれている作品が好きなのかもしれません。
+    </p>
+  </section>
+
+<section class="secret-card secret-footer-message">
+  <h2>
+ここまで読んでいただき<br class="sp-br">
+ありがとうございました。
+</h2>
+  <div class="secret-divider"></div>
+
+ <p>
+ 表のページでは整体の話ばかりですが、<br class="sp-only-br">
+ 少しだけ私のことを知っていただけたなら嬉しいです。
+ </p>
+
+<p>
+他にも書きたいことはたくさんありますが、<br class="sp-only-br">
+まずはこれくらいにしておきます。
+</p>
+
+<p>
+気が向いたら更新して増えているかもしれないので、<br class="sp-only-br">
+良ければまたここだけでも見にきてください（笑）
+</p>
+
+<p>
+もしどこかでお会いした際は、<br class="sp-only-br">
+ONE OK ROCKの話でも整体の話でも気軽に声をかけてくださいね。
+</p>
+
+<p>それでは、またどこかで。</p>
+
+  <div class="secret-divider"></div>
+
+  <p>最後まで読んでくださった方へ。</p>
+
+<p>
+このページは特に案内もしていませんし、<br class="sp-only-br">
+見つけようと思ってもなかなか見つからない場所です。
+</p>
+
+<p>せっかくなので、</p>
+
+<p>
+ご予約・ご来院の際に<br class="sp-only-br">
+「SECRET ROOMを見ました」<br class="sp-only-br">
+とお伝えいただけた方には、
+感謝の気持ちとして料金を500円割引させていただきます。
+</p>
+
+<p>（初回の方限定となります）</p>
+
+<p>
+いつまで続けるかは決めていませんので、<br class="sp-only-br">
+もし残っていたら少しラッキーくらいに思ってください（笑）
+</p>
+
+  <a href="/" class="secret-back-link">表のページへ戻る</a>
+</section>
+</main>
+
+<footer>
+  大阪 自律神経専門整体院 gene<br>
+  営業時間：11:00〜21:00（不定休）<br>
+  最終受付：初診 20:00 / 二回目以降 20:30<br>
+
+  <span class="address">
+    <span class="address-line1">住所：大阪市中央区南船場1-10-12</span>
+    <span class="address-line2">ラインビルド南船場703</span>
+  </span><br>
+
+  © gene. All Rights Reserved.
+</footer>
+
+<script>
+window.addEventListener("load", function(){
+  const hero = document.getElementById("hero-logo");
+  const rsvBtn = document.querySelector(".reserve-btn-sub");
+  const bgLogo = document.getElementById("global-logo-bg");
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const menuPanel = document.getElementById("hamburger-menu");
+  const secretHero = document.querySelector(".secret-hero-card");
+  const cards = document.querySelectorAll(".secret-card");
+
+  setTimeout(function(){
+    if (hamburgerBtn) hamburgerBtn.classList.add("show");
+    if (rsvBtn) rsvBtn.classList.add("show");
+    if (bgLogo) bgLogo.classList.add("fade-in");
+  }, 350);
+
+  setTimeout(function(){
+    if (hero) hero.classList.add("show");
+    if (secretHero) secretHero.classList.add("show");
+    cards.forEach(function(card){ card.classList.add("show"); });
+  }, 500);
+
+  if (hamburgerBtn && menuPanel) {
+    hamburgerBtn.addEventListener("click", function(){
+      menuPanel.classList.add("open");
+      document.body.classList.add("menu-open");
+    });
+
+    const closeBtn = document.querySelector(".menu-close-btn");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function(){
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      });
+    }
+
+    menuPanel.addEventListener("click", function(e){
+      if (e.target === menuPanel) {
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      }
+    });
+
+    menuPanel.querySelectorAll("a").forEach(function(link){
+      link.addEventListener("click", function(){
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      });
+    });
+  }
+
+  const toTopBtn = document.createElement("div");
+  toTopBtn.id = "to-top-btn";
+  toTopBtn.textContent = "▲";
+  document.body.appendChild(toTopBtn);
+
+  window.addEventListener("scroll", function(){
+    if (window.scrollY > 400) {
+      toTopBtn.classList.add("show");
+    } else {
+      toTopBtn.classList.remove("show");
+    }
+  });
+
+  toTopBtn.addEventListener("click", function(){
+    window.scrollTo({ top:0, behavior:"smooth" });
+  });
+});
+</script>
+
+<script>
+(function(){
+  function sendSecretEvent(eventName, label){
+    if (typeof gtag !== "function") return;
+    gtag("event", eventName, {
+      event_category: "secret_page",
+      event_label: label
+    });
+  }
+
+  function setupSecretDetailsTracking(){
+    const oor = document.getElementById("oor-live-history");
+    const works = document.getElementById("favorite-works");
+
+    if (oor) {
+      oor.addEventListener("toggle", function(){
+        if (oor.open && oor.dataset.tracked !== "true") {
+          oor.dataset.tracked = "true";
+          sendSecretEvent("secret_oor_open", "oor_live_history");
+        }
+      });
+    }
+
+    if (works) {
+      works.addEventListener("toggle", function(){
+        if (works.open && works.dataset.tracked !== "true") {
+          works.dataset.tracked = "true";
+          sendSecretEvent("secret_favorite_open", "favorite_works");
+        }
+      });
+    }
+
+    document.querySelectorAll(".secret-back-link").forEach(function(link){
+      link.addEventListener("click", function(){
+        sendSecretEvent("secret_back_click", "back_to_home");
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupSecretDetailsTracking);
+  } else {
+    setupSecretDetailsTracking();
+  }
+})();
+</script>
+
+</body>
+</html>
