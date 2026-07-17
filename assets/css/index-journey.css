@@ -1,0 +1,836 @@
+:root{
+  --gene-gold:#d9c17e;
+  --gene-gold-soft:#f0db9a;
+  --gene-black:#050505;
+  --gene-panel:#0c0c0c;
+  --gene-line:rgba(217,193,126,.38);
+  --gene-text:#f6f2e8;
+  --gene-muted:#c9c4b8;
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:86px;
+}
+
+body.gene-drawer-open{
+  overflow:hidden;
+}
+
+#hamburger-btn,
+#hamburger-menu,
+.reserve-btn-sub{
+  display:none !important;
+}
+
+/* ---------- PC / tablet top navigation ---------- */
+.gene-journey-header{
+  position:sticky;
+  top:0;
+  z-index:1500;
+  display:none;
+  width:100%;
+  border-bottom:1px solid rgba(217,193,126,.26);
+  background:rgba(4,4,4,.93);
+  -webkit-backdrop-filter:blur(16px);
+  backdrop-filter:blur(16px);
+  box-shadow:0 12px 36px rgba(0,0,0,.24);
+}
+
+.gene-journey-header-inner{
+  width:min(1540px, calc(100% - 40px));
+  min-height:72px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  gap:24px;
+  transition:min-height .25s ease;
+}
+
+.gene-journey-header.is-compact .gene-journey-header-inner{
+  min-height:58px;
+}
+
+.gene-journey-brand{
+  flex:0 0 auto;
+  color:var(--gene-gold-soft);
+  text-decoration:none;
+  font-weight:700;
+  letter-spacing:.035em;
+  white-space:nowrap;
+  font-size:.95rem;
+}
+
+.gene-brand-short{
+  display:none;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:1.35rem;
+  letter-spacing:.06em;
+}
+
+.gene-journey-desktop-nav{
+  min-width:0;
+  flex:1 1 auto;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:clamp(12px, 1.45vw, 26px);
+}
+
+.gene-journey-desktop-nav > a,
+.gene-nav-more > summary{
+  position:relative;
+  color:#eee9df;
+  text-decoration:none;
+  font-size:.88rem;
+  letter-spacing:.035em;
+  white-space:nowrap;
+  cursor:pointer;
+  transition:color .2s ease, opacity .2s ease;
+}
+
+.gene-journey-desktop-nav > a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:100%;
+  bottom:-7px;
+  height:1px;
+  background:var(--gene-gold);
+  transition:right .2s ease;
+}
+
+.gene-journey-desktop-nav > a:hover,
+.gene-journey-desktop-nav > a:focus-visible,
+.gene-nav-more > summary:hover,
+.gene-nav-more > summary:focus-visible{
+  color:var(--gene-gold-soft);
+}
+
+.gene-journey-desktop-nav > a:hover::after,
+.gene-journey-desktop-nav > a:focus-visible::after{
+  right:0;
+}
+
+.gene-journey-header-actions{
+  flex:0 0 auto;
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+
+.gene-header-check,
+.gene-header-line{
+  min-height:40px;
+  padding:0 15px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:.84rem;
+  font-weight:700;
+  white-space:nowrap;
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.gene-header-check{
+  border:1px solid var(--gene-line);
+  color:var(--gene-gold-soft);
+  background:rgba(217,193,126,.06);
+}
+
+.gene-header-line{
+  color:#111;
+  background:linear-gradient(135deg,#f7e59f,#d7b85e);
+  box-shadow:0 8px 22px rgba(217,193,126,.2);
+}
+
+.gene-header-check:hover,
+.gene-header-line:hover,
+.gene-header-check:focus-visible,
+.gene-header-line:focus-visible{
+  transform:translateY(-1px);
+}
+
+.gene-nav-more{
+  position:relative;
+  display:none;
+}
+
+.gene-nav-more > summary{
+  list-style:none;
+}
+
+.gene-nav-more > summary::-webkit-details-marker{
+  display:none;
+}
+
+.gene-nav-more > summary::after{
+  content:"⌄";
+  margin-left:5px;
+  color:var(--gene-gold);
+}
+
+.gene-nav-more-menu{
+  position:absolute;
+  top:calc(100% + 18px);
+  right:0;
+  width:250px;
+  padding:10px;
+  border:1px solid var(--gene-line);
+  border-radius:16px;
+  background:rgba(8,8,8,.98);
+  box-shadow:0 20px 48px rgba(0,0,0,.48);
+}
+
+.gene-nav-more-menu a{
+  display:flex;
+  align-items:center;
+  min-height:44px;
+  padding:0 13px;
+  border-radius:10px;
+  color:#eee9df;
+  text-decoration:none;
+  font-size:.88rem;
+}
+
+.gene-nav-more-menu a:hover,
+.gene-nav-more-menu a:focus-visible{
+  color:var(--gene-gold-soft);
+  background:rgba(217,193,126,.09);
+}
+
+@media (min-width:761px){
+  .gene-journey-header{display:block;}
+}
+
+@media (max-width:1279px) and (min-width:761px){
+  .gene-nav-wide{display:none !important;}
+  .gene-nav-more{display:block;}
+}
+
+@media (max-width:1040px) and (min-width:761px){
+  .gene-journey-header-inner{
+    width:min(100% - 24px, 1040px);
+    gap:14px;
+  }
+  .gene-brand-full{display:none;}
+  .gene-brand-short{display:inline;}
+  .gene-nav-secondary{display:none !important;}
+  .gene-journey-desktop-nav{gap:14px;}
+  .gene-header-check{padding-inline:12px;}
+}
+
+@media (max-width:880px) and (min-width:761px){
+  .gene-header-check{display:none;}
+  .gene-journey-desktop-nav > a,
+  .gene-nav-more > summary{font-size:.82rem;}
+}
+
+/* ---------- Hero and strategic CTA ---------- */
+.gene-hero-actions{
+  width:min(1120px, 88%);
+  margin:24px auto 70px;
+  display:flex;
+  justify-content:center;
+  gap:14px;
+}
+
+.gene-cta-primary,
+.gene-cta-secondary{
+  min-height:52px;
+  padding:0 25px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-weight:700;
+  letter-spacing:.045em;
+  line-height:1.35;
+  text-align:center;
+  transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.gene-cta-primary{
+  color:#111;
+  background:linear-gradient(135deg,#f8e7a2,#d3b253);
+  box-shadow:0 12px 30px rgba(217,193,126,.2);
+}
+
+.gene-cta-secondary{
+  color:#eee9df;
+  border:1px solid var(--gene-line);
+  background:rgba(217,193,126,.055);
+}
+
+.gene-cta-primary:hover,
+.gene-cta-secondary:hover,
+.gene-cta-primary:focus-visible,
+.gene-cta-secondary:focus-visible{
+  transform:translateY(-2px);
+  border-color:var(--gene-gold);
+}
+
+/* ---------- Feeling-first symptom guide ---------- */
+.gene-sensation-guide{
+  width:min(1220px, 90%);
+  margin:0 auto 68px;
+  padding:clamp(30px, 4.6vw, 58px);
+  border:1px solid var(--gene-line);
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 84% 10%,rgba(217,193,126,.12),transparent 32%),
+    linear-gradient(145deg,rgba(17,17,17,.98),rgba(7,7,7,.98));
+  box-shadow:0 28px 70px rgba(0,0,0,.28);
+  box-sizing:border-box;
+}
+
+.gene-section-eyebrow{
+  margin:0 0 9px;
+  color:var(--gene-gold);
+  font-size:.75rem;
+  font-weight:700;
+  letter-spacing:.2em;
+}
+
+.gene-sensation-guide > h2{
+  margin:0;
+  color:#fff;
+  font-size:clamp(1.55rem,2.4vw,2.45rem);
+  line-height:1.4;
+  letter-spacing:.035em;
+}
+
+.gene-sensation-lead{
+  margin:12px 0 30px;
+  color:var(--gene-muted);
+  font-size:1rem;
+  line-height:1.9;
+}
+
+.gene-sensation-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+
+.gene-sensation-card{
+  overflow:hidden;
+  border:1px solid rgba(217,193,126,.23);
+  border-radius:17px;
+  background:rgba(0,0,0,.31);
+  transition:border-color .2s ease, background .2s ease;
+}
+
+.gene-sensation-card[open]{
+  border-color:rgba(217,193,126,.72);
+  background:rgba(217,193,126,.055);
+}
+
+.gene-sensation-card summary{
+  position:relative;
+  min-height:86px;
+  padding:17px 52px 17px 19px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:5px;
+  list-style:none;
+  cursor:pointer;
+}
+
+.gene-sensation-card summary::-webkit-details-marker{display:none;}
+
+.gene-sensation-card summary::after{
+  content:"＋";
+  position:absolute;
+  right:19px;
+  top:50%;
+  color:var(--gene-gold);
+  font-size:1.2rem;
+  transform:translateY(-50%);
+}
+
+.gene-sensation-card[open] summary::after{content:"−";}
+
+.gene-sensation-label{
+  color:#f7f3ea;
+  font-weight:700;
+  font-size:1rem;
+  line-height:1.5;
+}
+
+.gene-sensation-hint{
+  color:#aaa59b;
+  font-size:.82rem;
+  line-height:1.55;
+}
+
+.gene-sensation-links{
+  padding:0 14px 14px;
+  display:grid;
+  gap:6px;
+}
+
+.gene-sensation-links a{
+  min-height:43px;
+  padding:0 13px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  color:#e7dfce;
+  background:rgba(255,255,255,.035);
+  text-decoration:none;
+  font-size:.88rem;
+}
+
+.gene-sensation-links a:hover,
+.gene-sensation-links a:focus-visible{
+  color:var(--gene-gold-soft);
+  background:rgba(217,193,126,.1);
+}
+
+.gene-sensation-note{
+  margin:24px 0 0;
+  color:#bdb7ab;
+  font-size:.9rem;
+  line-height:1.75;
+}
+
+.gene-sensation-note a{
+  margin-left:.25em;
+  color:var(--gene-gold-soft);
+  text-underline-offset:4px;
+}
+
+/* ---------- Long-form content accordions ---------- */
+.gene-accordion-card .card-content{
+  min-width:0;
+}
+
+.gene-content-details > summary{
+  position:relative;
+  padding:4px 52px 4px 0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  list-style:none;
+  cursor:pointer;
+}
+
+.gene-content-details > summary::-webkit-details-marker{display:none;}
+
+.gene-content-details > summary::after{
+  content:"＋";
+  position:absolute;
+  top:8px;
+  right:4px;
+  width:34px;
+  height:34px;
+  border:1px solid rgba(217,193,126,.38);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:var(--gene-gold);
+  font-size:1.05rem;
+}
+
+.gene-content-details[open] > summary::after{content:"−";}
+
+.gene-detail-heading{
+  color:var(--gene-gold-soft);
+  font-size:clamp(1.25rem,2vw,1.72rem);
+  font-weight:700;
+  line-height:1.45;
+}
+
+.gene-detail-summary{
+  max-width:760px;
+  color:#ccc6ba;
+  font-size:.95rem;
+  line-height:1.8;
+}
+
+.gene-detail-action{
+  width:max-content;
+  padding-bottom:2px;
+  border-bottom:1px solid rgba(217,193,126,.5);
+  color:var(--gene-gold);
+  font-size:.78rem;
+  letter-spacing:.07em;
+}
+
+.gene-detail-body{
+  padding-top:25px;
+  animation:gene-detail-reveal .3s ease both;
+}
+
+@keyframes gene-detail-reveal{
+  from{opacity:0;transform:translateY(-5px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+.gene-faq-details{
+  border-top:1px solid rgba(217,193,126,.18);
+}
+
+.gene-faq-details summary{
+  position:relative;
+  padding:18px 42px 18px 0;
+  list-style:none;
+  color:#f0eadf;
+  cursor:pointer;
+  line-height:1.65;
+}
+
+.gene-faq-details summary::-webkit-details-marker{display:none;}
+.gene-faq-details summary::after{
+  content:"＋";
+  position:absolute;
+  right:4px;
+  color:var(--gene-gold);
+}
+.gene-faq-details[open] summary::after{content:"−";}
+.gene-faq-answer{padding:0 0 20px;color:#c9c3b8;}
+
+/* ---------- Mid-page CTA ---------- */
+.gene-mid-cta{
+  width:min(1120px, 88%);
+  margin:18px auto 72px;
+  padding:clamp(25px,3.4vw,40px);
+  border:1px solid var(--gene-line);
+  border-radius:24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+  background:linear-gradient(135deg,rgba(19,18,14,.98),rgba(7,7,7,.98));
+  box-sizing:border-box;
+}
+
+.gene-mid-cta h2{
+  margin:0;
+  color:#f5efe3;
+  font-size:clamp(1.25rem,2vw,1.75rem);
+  line-height:1.5;
+}
+
+.gene-mid-cta p:not(.gene-section-eyebrow){
+  margin:9px 0 0;
+  color:#bdb7ab;
+  line-height:1.75;
+}
+
+.gene-mid-cta-actions{
+  flex:0 0 auto;
+  display:flex;
+  gap:10px;
+}
+
+/* ---------- New mobile navigation and drawers ---------- */
+.gene-journey-mobile-nav,
+.gene-journey-drawer,
+.gene-journey-drawer-backdrop{
+  display:none;
+}
+
+@media (max-width:760px){
+  html{scroll-padding-top:16px;}
+  body{padding-bottom:calc(78px + env(safe-area-inset-bottom));}
+
+  .gene-mobile-bottom-nav,
+  .gene-mobile-symptom-panel,
+  .gene-mobile-symptom-backdrop{
+    display:none !important;
+  }
+
+  .gene-journey-mobile-nav{
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:1900;
+    min-height:68px;
+    padding:6px max(7px, env(safe-area-inset-left)) calc(6px + env(safe-area-inset-bottom)) max(7px, env(safe-area-inset-right));
+    display:grid;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    border-top:1px solid rgba(217,193,126,.28);
+    background:rgba(4,4,4,.96);
+    -webkit-backdrop-filter:blur(16px);
+    backdrop-filter:blur(16px);
+    box-shadow:0 -12px 34px rgba(0,0,0,.4);
+  }
+
+  .gene-journey-mobile-nav a,
+  .gene-journey-mobile-nav button{
+    min-width:0;
+    min-height:54px;
+    padding:4px 2px;
+    border:0;
+    border-radius:13px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:2px;
+    color:#d9c17e;
+    background:transparent;
+    text-decoration:none;
+    font:inherit;
+    cursor:pointer;
+  }
+
+  .gene-journey-mobile-nav a > span,
+  .gene-journey-mobile-nav button > span{
+    min-height:22px;
+    display:grid;
+    place-items:center;
+    font-size:1.1rem;
+    line-height:1;
+  }
+
+  .gene-journey-mobile-nav small{
+    overflow:hidden;
+    max-width:100%;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-size:.68rem;
+    letter-spacing:.025em;
+  }
+
+  .gene-journey-mobile-nav .gene-mobile-line{
+    color:#111;
+    background:linear-gradient(135deg,#f7e59f,#d7b85e);
+  }
+
+  .gene-journey-mobile-nav button[aria-expanded="true"]{
+    color:#111;
+    background:var(--gene-gold);
+  }
+
+  .gene-journey-drawer-backdrop{
+    position:fixed;
+    inset:0;
+    z-index:1780;
+    display:block;
+    opacity:0;
+    background:rgba(0,0,0,.67);
+    transition:opacity .24s ease;
+  }
+
+  .gene-journey-drawer-backdrop.is-open{opacity:1;}
+
+  .gene-journey-drawer{
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:calc(68px + env(safe-area-inset-bottom));
+    z-index:1850;
+    display:block;
+    max-height:min(73vh,680px);
+    overflow:auto;
+    padding:20px 16px 18px;
+    border-top:1px solid var(--gene-line);
+    border-radius:24px 24px 0 0;
+    color:#eee9df;
+    background:rgba(7,7,7,.985);
+    box-shadow:0 -26px 60px rgba(0,0,0,.55);
+    transform:translateY(calc(100% + 30px));
+    transition:transform .24s ease;
+    box-sizing:border-box;
+  }
+
+  .gene-journey-drawer.is-open{transform:translateY(0);}
+
+  .gene-drawer-heading{
+    position:sticky;
+    top:-20px;
+    z-index:2;
+    margin:-20px -16px 14px;
+    padding:17px 16px 12px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid rgba(217,193,126,.15);
+    background:rgba(7,7,7,.98);
+  }
+
+  .gene-drawer-heading small{
+    color:var(--gene-gold);
+    font-size:.66rem;
+    letter-spacing:.18em;
+  }
+
+  .gene-drawer-heading h2{
+    margin:2px 0 0;
+    color:#f4eee2;
+    font-size:1.15rem;
+  }
+
+  .gene-drawer-close{
+    width:40px;
+    height:40px;
+    border:1px solid rgba(217,193,126,.32);
+    border-radius:50%;
+    color:var(--gene-gold);
+    background:transparent;
+    font-size:1.45rem;
+  }
+
+  .gene-drawer-symptom-list{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+  }
+
+  .gene-drawer-symptom-list a{
+    min-height:80px;
+    padding:12px;
+    border:1px solid rgba(217,193,126,.2);
+    border-radius:14px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:4px;
+    color:#eee9df;
+    background:rgba(255,255,255,.025);
+    text-decoration:none;
+  }
+
+  .gene-drawer-symptom-list strong{
+    font-size:.78rem;
+    line-height:1.45;
+  }
+
+  .gene-drawer-symptom-list span{
+    color:#9f9a90;
+    font-size:.67rem;
+    line-height:1.45;
+  }
+
+  .gene-drawer-all-link{
+    min-height:46px;
+    margin-top:12px;
+    border:1px solid var(--gene-line);
+    border-radius:999px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--gene-gold-soft);
+    text-decoration:none;
+    font-size:.82rem;
+  }
+
+  .gene-drawer-other-list{
+    display:grid;
+    gap:7px;
+  }
+
+  .gene-drawer-other-list a{
+    min-height:50px;
+    padding:0 14px;
+    border:1px solid rgba(217,193,126,.2);
+    border-radius:13px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    color:#eee9df;
+    background:rgba(255,255,255,.025);
+    text-decoration:none;
+    font-size:.87rem;
+  }
+
+  #to-top-btn{
+    bottom:calc(83px + env(safe-area-inset-bottom)) !important;
+  }
+
+  .gene-hero-actions{
+    width:88%;
+    margin:18px auto 48px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:9px;
+  }
+
+  .gene-cta-primary,
+  .gene-cta-secondary{
+    min-height:50px;
+    padding:0 18px;
+    font-size:.88rem;
+  }
+
+  .gene-sensation-guide{
+    width:90%;
+    margin-bottom:48px;
+    padding:25px 17px;
+    border-radius:22px;
+  }
+
+  .gene-sensation-guide > h2{
+    font-size:1.45rem;
+    line-height:1.55;
+  }
+
+  .gene-sensation-lead{
+    margin:9px 0 21px;
+    font-size:.87rem;
+    line-height:1.75;
+  }
+
+  .gene-sensation-grid{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+  .gene-sensation-card summary{
+    min-height:72px;
+    padding:13px 45px 13px 14px;
+  }
+
+  .gene-sensation-label{font-size:.91rem;}
+  .gene-sensation-hint{font-size:.75rem;}
+
+  .gene-content-details > summary{
+    padding-right:43px;
+    gap:7px;
+  }
+
+  .gene-detail-heading{font-size:1.22rem;}
+  .gene-detail-summary{font-size:.84rem;line-height:1.72;}
+  .gene-detail-body{padding-top:20px;}
+
+  .gene-mid-cta{
+    width:88%;
+    margin:8px auto 50px;
+    padding:24px 18px;
+    border-radius:20px;
+    flex-direction:column;
+    align-items:stretch;
+    gap:20px;
+  }
+
+  .gene-mid-cta-actions{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width:380px){
+  .gene-journey-mobile-nav small{font-size:.62rem;}
+  .gene-drawer-symptom-list{grid-template-columns:1fr;}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .gene-journey-header-inner,
+  .gene-cta-primary,
+  .gene-cta-secondary,
+  .gene-journey-drawer,
+  .gene-journey-drawer-backdrop{
+    transition:none !important;
+  }
+  .gene-detail-body{animation:none;}
+}
