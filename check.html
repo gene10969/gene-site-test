@@ -10,10 +10,30 @@ if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") {
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-8KPJ55NQMT');
+  (function(){
+const params=new URLSearchParams(location.search);
+if(params.get('internal')==='true'){localStorage.setItem('internalUser','true');}
+if(params.get('internal')==='false'){localStorage.removeItem('internalUser');}
+const isInternal=localStorage.getItem('internalUser')==='true';
+if(!isInternal){
+gtag('config','G-8KPJ55NQMT');
+}
+})();
 }
 </script>
 <meta charset="UTF-8">
+<meta name="format-detection" content="telephone=no,email=no,address=no">
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+document.querySelectorAll('input, textarea').forEach(function(el){
+el.setAttribute('autocomplete','off');
+el.setAttribute('autocorrect','off');
+el.setAttribute('autocapitalize','off');
+el.setAttribute('spellcheck','false');
+});
+});
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="canonical" href="https://gene-seitai.com/check.html">
 <title>初めての方へ | 当院オリジナルの自律神経チェック | 大阪 自律神経専門整体院 gene</title>
@@ -30,25 +50,189 @@ if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") {
 body.quick-check-page .page-title,
 body.quick-check-page .gene-check-page-wrap,
 body.quick-check-page footer{position:relative;z-index:1;}
+
+.gene-pc-side-nav{
+  display:none;
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+    position:fixed;
+    right:60px;
+    top:50%;
+    z-index:900;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:18px;
+    transform:translateY(-50%);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .75s ease;
+  }
+
+  .gene-pc-side-nav.show{
+    opacity:1;
+    pointer-events:auto;
+  }
+
+  .gene-pc-side-nav a{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:flex-end;
+    min-height:22px;
+    padding:0 0 0 28px;
+    color:rgba(244,234,208,.82);
+    font-size:.9rem;
+    line-height:1;
+    letter-spacing:.08em;
+    text-decoration:none;
+    writing-mode:horizontal-tb;
+    transition:color .28s ease, transform .28s ease;
+  }
+
+  .gene-pc-side-nav a::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:50%;
+    width:0;
+    height:1px;
+    background:linear-gradient(90deg, rgba(217,193,126,0), rgba(217,193,126,.86));
+    transform:translateY(-50%);
+    transition:width .28s ease;
+  }
+
+  .gene-pc-side-nav a:hover{
+    color:#d9c17e;
+    transform:translateX(-3px);
+  }
+
+  .gene-pc-side-nav a:hover::before{
+    width:18px;
+  }
+
+  .hamburger-btn,
+  #hamburger-btn{
+    display:none !important;
+  }
+}
+
+.gene-mobile-bottom-nav,
+.gene-mobile-symptom-panel,
+.gene-mobile-symptom-backdrop{
+  display:none;
+}
+
 @media (max-width:768px){.breadcrumb-fixed{display:none!important}.reserve-btn-sub,.hamburger-btn{display:none!important}body{padding-bottom:calc(76px + env(safe-area-inset-bottom));}}
+
+
+/* gene CTA wording refinement */
+.gene-cta-two-line{
+  display:inline-flex !important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  text-align:center;
+  line-height:1.35;
+}
+
+.gene-cta-two-line__main{
+  display:block;
+  font-weight:700;
+  line-height:1.35;
+  letter-spacing:.05em;
+}
+
+.gene-cta-two-line__sub{
+  display:block;
+  font-size:.78rem;
+  font-weight:500;
+  line-height:1.45;
+  letter-spacing:.03em;
+  opacity:.86;
+}
+
+.reserve-btn-sub{
+  line-height:1.38;
+  text-align:center;
+}
+
+@media (max-width:640px){
+  .gene-cta-two-line__sub{
+    font-size:.72rem;
+  }
+}
+
+
+
+/* reserve button color match */
+.reserve-btn-sub,
+.reserve-btn-sub:visited{
+  background:linear-gradient(180deg,#fff0a8 0%,#ead893 42%,#d9c17e 100%) !important;
+  border:1px solid rgba(255,238,170,.88) !important;
+  color:#111 !important;
+  font-weight:700 !important;
+  box-shadow:0 12px 30px rgba(217,193,126,.28), 0 0 22px rgba(217,193,126,.22) !important;
+}
+
+.reserve-btn-sub *{
+  color:#111 !important;
+}
+
+.reserve-btn-sub:hover{
+  background:linear-gradient(180deg,#fff4ba 0%,#eedf9e 45%,#dcc47f 100%) !important;
+  border-color:rgba(255,244,186,.98) !important;
+  color:#111 !important;
+  box-shadow:0 16px 36px rgba(217,193,126,.36), 0 0 28px rgba(217,193,126,.28) !important;
+}
+
+/* PC fixed CTA / side navigation alignment */
+@media (min-width: 769px){
+  .reserve-btn-sub{
+    top:95px !important;
+    right:24px !important;
+  }
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+    right:24px !important;
+  }
+}
+
 </style>
+<link rel="stylesheet" href="assets/css/gene-text-control.css">
 </head>
 <body class="subpage quick-check-page">
 <div id="global-logo-bg"><img src="assets/img/logo.svg" alt=""></div>
 <nav class="breadcrumb-fixed"><a href="/">ホーム</a> ＞ <span>自律神経チェック</span></nav>
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub" target="_blank" rel="noopener">LINE<br>予約</a>
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub" target="_blank" rel="noopener">空き状況<br>を見る</a>
 <button id="hamburger-btn" class="hamburger-btn">≡</button>
 <div id="hamburger-menu" class="hamburger-menu">
   <button class="menu-close-btn">×</button>
   <a href="/">ホーム</a>
-  <a href="menu.html">施術内容</a>
+  <a href="menu.html">施術内容・料金</a>
+  <a href="symptoms.html">症状別に見る</a>
   <a href="access.html">アクセス</a>
   <a href="faq.html">よくある質問</a>
   <a href="voice.html">院内・改善写真</a>
 </div>
+
+<nav class="gene-pc-side-nav" aria-label="PC用サイドナビゲーション">
+  <a href="/">ホーム</a>
+  <a href="menu.html">施術内容・料金</a>
+  <a href="symptoms.html">症状別に見る</a>
+  <a href="access.html">アクセス</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="voice.html">院内・改善写真</a>
+</nav>
+
 <h1 class="page-title">初めての方へ</h1>
 <div class="gene-check-page-wrap" data-gene-check>
-  <p class="gene-check-lead">現在の不調が、<br>睡眠・ストレス・胃腸・呼吸など、<br>どの負担と重なりやすいかを<br>無料・登録なしで簡易的に確認できます。<br><br>来院時には82項目の詳細チェックを行い、<br>現在の状態をより詳しく確認できます。</p>
+  <p class="gene-check-lead">現在の不調が、<br>睡眠・ストレス・胃腸・呼吸など、<br>どの負担と重なりやすいかを<br>無料・登録なしで簡易的に確認できます。<br><br>来院時には82項目(3分程度)の詳細チェックを行い、<br>現在の状態をより詳しく確認できます。</p>
   <div class="gene-check-card" data-gene-check-main>
     <div class="gene-check-progress" data-gene-check-progress><span></span></div>
     <div data-gene-check-questions></div>
@@ -62,7 +246,7 @@ body.quick-check-page footer{position:relative;z-index:1;}
     <div class="gene-check-result-text" data-gene-check-result-text></div>
     <div class="gene-check-related" data-gene-check-related aria-label="関連する症状ページ"></div>
     <div class="gene-check-result-actions">
-      <a href="https://lin.ee/6bBKc67" class="gene-check-btn" target="_blank" rel="noopener" data-gene-check-line>LINEで相談する</a>
+      <a href="https://lin.ee/6bBKc67" class="gene-check-btn gene-cta-two-line" target="_blank" rel="noopener" data-gene-check-line><span class="gene-cta-two-line__main">まずは相談してみる</span><span class="gene-cta-two-line__sub">LINEでご相談いただけます</span></a>
       <button type="button" class="gene-check-btn gene-check-btn--ghost" data-gene-check-reset>もう一度チェックする</button>
     </div>
   </div>
@@ -139,7 +323,7 @@ body.quick-check-page footer{position:relative;z-index:1;}
   </button>
   <a href="menu.html">
     <span class="nav-icon">◇</span>
-    <span class="nav-text">施術内容</span>
+    <span class="nav-text">施術料金</span>
   </a>
   <a href="access.html">
     <span class="nav-icon">⌖</span>
@@ -147,7 +331,7 @@ body.quick-check-page footer{position:relative;z-index:1;}
   </a>
   <a href="https://lin.ee/6bBKc67" class="line-nav" target="_blank" rel="noopener">
     <span class="nav-icon">↗</span>
-    <span class="nav-text">LINE予約</span>
+    <span class="nav-text">空き状況</span>
   </a>
 </nav>
 
@@ -159,6 +343,7 @@ body.quick-check-page footer{position:relative;z-index:1;}
   <span class="address"><span class="address-line1">住所：大阪市中央区南船場1-10-12</span><span class="address-line2">ラインビルド南船場703</span></span><br>
   © gene. All Rights Reserved.
 </footer>
+  
 <script src="assets/js/gene-quick-check.js"></script>
 <script>
 (function(){
@@ -170,6 +355,7 @@ body.quick-check-page footer{position:relative;z-index:1;}
       '.quick-check-page .page-title',
       '.quick-check-page .gene-check-lead',
       '.quick-check-page .gene-check-card',
+      '.quick-check-page .gene-pc-side-nav',
       '.quick-check-page .gene-mobile-bottom-nav',
       '.quick-check-page footer'
     ];
@@ -243,5 +429,91 @@ body.quick-check-page footer{position:relative;z-index:1;}
   }
 })();
 </script>
+
+<script>
+window.addEventListener("load", function(){
+  const pcSideNav = document.querySelector(".gene-pc-side-nav");
+  setTimeout(function(){
+    if (pcSideNav) pcSideNav.classList.add("show");
+  }, 500);
+});
+</script>
+
+
+
+<script>
+(function () {
+  var currentPath = window.location.pathname.replace(/\/+$/, "");
+  var isCheckPage = currentPath === "/check.html" || currentPath.endsWith("/check.html");
+
+  if (!isCheckPage) {
+    return;
+  }
+
+  var params = new URLSearchParams(window.location.search);
+
+  if (params.get("internal") === "true") {
+    localStorage.setItem("internalUser", "true");
+  }
+
+  if (params.get("internal") === "false") {
+    localStorage.removeItem("internalUser");
+  }
+
+
+  function isLocalPreview() {
+    var host = window.location.hostname;
+
+    return (
+      window.location.protocol === "file:" ||
+      host === "localhost" ||
+      host === "127.0.0.1" ||
+      host === "::1" ||
+      /^192\.168\./.test(host) ||
+      /^10\./.test(host) ||
+      /^172\.(1[6-9]|2[0-9]|3[0-1])\./.test(host)
+    );
+  }
+
+  if (isLocalPreview()) {
+    return;
+  }
+
+  var isInternal = localStorage.getItem("internalUser") === "true";
+
+  if (isInternal) {
+    return;
+  }
+
+  var storageKey = "check_page_notify_last_sent";
+  var now = Date.now();
+  var lastSent = Number(localStorage.getItem(storageKey) || 0);
+  var oneHour = 60 * 60 * 1000;
+
+  if (now - lastSent < oneHour) {
+    return;
+  }
+
+  localStorage.setItem(storageKey, String(now));
+
+  fetch(
+    "https://script.google.com/macros/s/AKfycbyzDrbDgk6Hqkl8n-0PToOPC5oisxZscgAZupO_Gqjm3YLYhvQanuuvtp7leo2RmwLk/exec",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        page: "check.html",
+        url: window.location.href,
+        referrer: document.referrer || "直接アクセス / 不明",
+        userAgent: navigator.userAgent,
+        internal: false
+      })
+    }
+  );
+})();
+</script>
+
+<script src="assets/js/line-click-tracking.js"></script>
+
 </body>
 </html>
+

@@ -3,6 +3,7 @@
 <head>
 
 <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script>
 if (
   location.hostname !== "localhost" &&
@@ -15,9 +16,30 @@ if (
   document.head.appendChild(script);
 
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-8KPJ55NQMT');
+  function gtag(){
+    dataLayer.push(arguments);
+  }
+
+  gtag("js", new Date());
+
+  (function(){
+    const params = new URLSearchParams(location.search);
+
+    if (params.get("internal") === "true") {
+      localStorage.setItem("internalUser", "true");
+    }
+
+    if (params.get("internal") === "false") {
+      localStorage.removeItem("internalUser");
+    }
+
+    const isInternal =
+      localStorage.getItem("internalUser") === "true";
+
+    if (!isInternal) {
+      gtag("config", "G-8KPJ55NQMT");
+    }
+  })();
 }
 </script>
   
@@ -26,13 +48,83 @@ if (
 <meta name="description" content="大阪市中央区・南船場の自律神経専門整体院 geneへのアクセス案内。最寄り駅、道順、院内までの行き方をご確認いただけます。">
 
 <link rel="canonical" href="https://gene-seitai.com/access.html">
+<meta property="og:title" content="アクセス・営業時間｜長堀橋駅徒歩約5分｜大阪 自律神経専門整体院 gene">
 <meta property="og:url" content="https://gene-seitai.com/access.html">
-<title>アクセス | 大阪 自律神経専門整体院 gene</title>
+<title>アクセス・営業時間｜長堀橋駅徒歩約5分｜大阪 自律神経専門整体院 gene</title>
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="assets/css/gene-first-view.css">
 <style>
 
 /* gene mobile bottom navigation */
+
+.gene-pc-side-nav{
+  display:none;
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+    position:fixed;
+    right:60px;
+    top:50%;
+    z-index:900;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:18px;
+    transform:translateY(-50%);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .75s ease;
+  }
+
+  .gene-pc-side-nav.show{
+    opacity:1;
+    pointer-events:auto;
+  }
+
+  .gene-pc-side-nav a{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:flex-end;
+    min-height:22px;
+    padding:0 0 0 28px;
+    color:rgba(244,234,208,.82);
+    font-size:.9rem;
+    line-height:1;
+    letter-spacing:.08em;
+    text-decoration:none;
+    writing-mode:horizontal-tb;
+    transition:color .28s ease, transform .28s ease;
+  }
+
+  .gene-pc-side-nav a::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:50%;
+    width:0;
+    height:1px;
+    background:linear-gradient(90deg, rgba(217,193,126,0), rgba(217,193,126,.86));
+    transform:translateY(-50%);
+    transition:width .28s ease;
+  }
+
+  .gene-pc-side-nav a:hover{
+    color:#d9c17e;
+    transform:translateX(-3px);
+  }
+
+  .gene-pc-side-nav a:hover::before{
+    width:18px;
+  }
+
+  .hamburger-btn,
+  #hamburger-btn{
+    display:none !important;
+  }
+}
+
 .gene-mobile-bottom-nav,
 .gene-mobile-symptom-panel,
 .gene-mobile-symptom-backdrop{
@@ -658,7 +750,321 @@ if (
   transform:translateY(-2px);
   box-shadow:0 16px 36px rgba(217,193,126,.36), 0 0 28px rgba(217,193,126,.28) !important;
 }
+
+
+/* gene CTA wording refinement */
+.gene-cta-two-line{
+  display:inline-flex !important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  text-align:center;
+  line-height:1.35;
+}
+
+.gene-cta-two-line__main{
+  display:block;
+  font-weight:700;
+  line-height:1.35;
+  letter-spacing:.05em;
+}
+
+.gene-cta-two-line__sub{
+  display:block;
+  font-size:.78rem;
+  font-weight:500;
+  line-height:1.45;
+  letter-spacing:.03em;
+  opacity:.86;
+}
+
+.reserve-btn-sub{
+  line-height:1.38;
+  text-align:center;
+}
+
+@media (max-width:640px){
+  .gene-cta-two-line__sub{
+    font-size:.72rem;
+  }
+}
+
+
+
+/* reserve button color match */
+.reserve-btn-sub,
+.reserve-btn-sub:visited{
+  background:linear-gradient(180deg,#fff0a8 0%,#ead893 42%,#d9c17e 100%) !important;
+  border:1px solid rgba(255,238,170,.88) !important;
+  color:#111 !important;
+  font-weight:700 !important;
+  box-shadow:0 12px 30px rgba(217,193,126,.28), 0 0 22px rgba(217,193,126,.22) !important;
+}
+
+.reserve-btn-sub *{
+  color:#111 !important;
+}
+
+.reserve-btn-sub:hover{
+  background:linear-gradient(180deg,#fff4ba 0%,#eedf9e 45%,#dcc47f 100%) !important;
+  border-color:rgba(255,244,186,.98) !important;
+  color:#111 !important;
+  box-shadow:0 16px 36px rgba(217,193,126,.36), 0 0 28px rgba(217,193,126,.28) !important;
+}
+
+/* PC fixed CTA / side navigation alignment */
+@media (min-width: 769px){
+  .reserve-btn-sub{
+    top:95px !important;
+    right:24px !important;
+  }
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+    right:24px !important;
+  }
+}
+
+
+/* access nearest station cards - matched with index design */
+.access-station-card{
+  position:relative;
+  overflow:hidden;
+}
+
+.access-station-card::before{
+  opacity:.055 !important;
+}
+
+.access-station-card h2{
+  position:relative;
+  z-index:1;
+}
+
+.access-station-lead{
+  position:relative;
+  z-index:1;
+  max-width:760px;
+  margin:0 auto 24px !important;
+  color:rgba(255,255,255,.86) !important;
+  text-align:center;
+  line-height:2 !important;
+  white-space:normal !important;
+}
+
+.access-station-visual{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  margin:24px 0 4px;
+}
+
+.access-station-item{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  min-width:0;
+  padding:18px 18px;
+  border-radius:18px;
+  border:1px solid rgba(217,193,126,.28);
+  background:rgba(255,255,255,.026);
+  box-shadow:0 10px 26px rgba(0,0,0,.18);
+}
+
+.access-station-icon{
+  flex:0 0 46px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  border:1px solid rgba(217,193,126,.34);
+  color:#d9c17e;
+  background:rgba(217,193,126,.07);
+}
+
+.access-station-icon svg{
+  display:block;
+  width:25px;
+  height:25px;
+}
+
+.access-station-text{
+  display:block;
+  min-width:0;
+}
+
+.access-station-text strong{
+  display:block;
+  color:#f4ead0;
+  font-size:.98rem;
+  line-height:1.5;
+  letter-spacing:.04em;
+  font-weight:600;
+}
+
+.access-station-text span{
+  display:block;
+  margin-top:3px;
+  color:rgba(255,255,255,.82);
+  font-size:.86rem;
+  line-height:1.55;
+}
+
+.access-station-text small{
+  display:block;
+  margin-top:8px;
+  color:rgba(255,255,255,.66);
+  font-size:.78rem;
+  line-height:1.65;
+  letter-spacing:.02em;
+}
+
+@media (max-width:860px){
+  .access-station-visual{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .access-station-lead{
+    text-align:left;
+  }
+}
+
+@media (max-width:640px){
+  .access-station-card{
+    padding-left:20px !important;
+    padding-right:20px !important;
+  }
+
+  .access-station-lead{
+    margin-bottom:22px !important;
+    line-height:1.95 !important;
+  }
+
+  .access-station-item{
+    padding:16px 16px;
+    border-radius:17px;
+  }
+
+  .access-station-icon{
+    flex-basis:44px;
+    width:44px;
+    height:44px;
+  }
+
+  .access-station-text strong{
+    font-size:.96rem;
+  }
+}
+
+
+/* access guide photos - building entrance flow */
+.access-guide-card{
+  position:relative;
+  overflow:hidden;
+}
+
+.access-guide-card::before{
+  opacity:.055 !important;
+}
+
+.access-guide-lead{
+  position:relative;
+  z-index:1;
+  max-width:760px;
+  margin:0 auto 24px !important;
+  color:rgba(255,255,255,.86) !important;
+  text-align:center;
+  line-height:2 !important;
+  white-space:normal !important;
+}
+
+.access-guide-grid{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  margin:26px 0 4px;
+}
+
+.access-guide-item{
+  margin:0;
+  padding:12px;
+  border-radius:20px;
+  border:1px solid rgba(217,193,126,.28);
+  background:rgba(255,255,255,.026);
+  box-shadow:0 12px 30px rgba(0,0,0,.24);
+}
+
+.access-guide-item img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:15px;
+  border:1px solid rgba(217,193,126,.18);
+  background:#050505;
+}
+
+.access-guide-item figcaption{
+  margin-top:10px;
+  color:rgba(244,234,208,.86);
+  font-size:.86rem;
+  line-height:1.65;
+  letter-spacing:.04em;
+  text-align:center;
+}
+
+.access-guide-item figcaption strong{
+  color:#d9c17e;
+  font-weight:600;
+}
+
+@media (max-width:860px){
+  .access-guide-grid{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .access-guide-lead{
+    text-align:left;
+  }
+}
+
+@media (max-width:640px){
+  .access-guide-card{
+    padding-left:18px !important;
+    padding-right:18px !important;
+  }
+
+  .access-guide-lead{
+    margin-bottom:22px !important;
+    line-height:1.95 !important;
+  }
+
+  .access-guide-item{
+    padding:9px;
+    border-radius:18px;
+  }
+
+  .access-guide-item img{
+    border-radius:13px;
+  }
+
+  .access-guide-item figcaption{
+    font-size:.82rem;
+  }
+}
+
+
 </style>
+<link rel="stylesheet" href="assets/css/gene-text-control.css">
 </head>
 <body class="subpage">
 
@@ -668,12 +1074,10 @@ if (
 
 <!-- パンくず -->
 <nav class="breadcrumb-fixed hidden">
-  <a href="/">ホーム</a> ＞ <span>アクセス</span>
+  <a href="/">ホーム</a> ＞ <span>アクセス・営業時間</span>
 </nav>
 
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">
-  LINE<br>予約
-</a>
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">空き状況<br>を見る</a>
 
 <!-- ハンバーガーアイコン -->
 <button id="hamburger-btn" class="hamburger-btn">≡</button>
@@ -685,61 +1089,94 @@ if (
   <button class="menu-close-btn">×</button>
 
   <a href="/">ホーム</a>
-<a href="menu.html">施術内容</a>
+<a href="menu.html">施術内容・料金</a>
+<a href="symptoms.html">症状別に見る</a>
 <a href="access.html">アクセス</a>
 <a href="faq.html">よくある質問</a>
 <!-- <a href="news.html">お知らせ</a> -->
 <a href="voice.html">院内・改善写真</a>
-
 </div>
 
-<h1 class="page-title hidden">アクセス</h1>
+<nav class="gene-pc-side-nav" aria-label="PC用サイドナビゲーション">
+  <a href="/">ホーム</a>
+  <a href="menu.html">施術内容・料金</a>
+  <a href="symptoms.html">症状別に見る</a>
+  <a href="access.html">アクセス</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="voice.html">院内・改善写真</a>
+</nav>
+
+
+<h1 class="page-title hidden">アクセス・営業時間</h1>
 
 <div class="menu-container">
 
 <!-- 最寄駅 -->
-<div class="menu-card card-hidden">
+<div class="menu-card card-hidden access-station-card">
   <h2>最寄駅</h2>
+  <p class="access-station-lead">
+    長堀橋駅・松屋町駅・心斎橋駅からご来院いただけます。
+  </p>
 
-  <table class="station-table station-wide">
-    <thead>
-      <tr>
-        <th>駅名</th>
-        <th>路線</th>
-        <th>出口</th>
-      </tr>
-    </thead>
+  <div class="access-station-visual" aria-label="大阪 自律神経専門整体院 geneの最寄駅">
+    <div class="access-station-item">
+      <span class="access-station-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="3" width="12" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8H15.5M9 20L11 17M15 20L13 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9.5" cy="13" r="1" fill="currentColor"/><circle cx="14.5" cy="13" r="1" fill="currentColor"/></svg></span>
+      <span class="access-station-text">
+        <strong>長堀橋駅</strong>
+        <span>徒歩約5分</span>
+        <small>長堀鶴見緑地線<br>堺筋線<br>北改札口 1番出口</small>
+      </span>
+    </div>
 
-    <tbody>
-      <tr>
-        <td><strong>長堀橋駅（徒歩5分）</strong></td>
-        <td>長堀鶴見緑地線 / 堺筋線</td>
-        <td>北改札口 1番出口</td>
-      </tr>
+    <div class="access-station-item">
+      <span class="access-station-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="3" width="12" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8H15.5M9 20L11 17M15 20L13 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9.5" cy="13" r="1" fill="currentColor"/><circle cx="14.5" cy="13" r="1" fill="currentColor"/></svg></span>
+      <span class="access-station-text">
+        <strong>松屋町駅</strong>
+        <span>徒歩約6分</span>
+        <small>長堀鶴見緑地線<br>1番出口</small>
+      </span>
+    </div>
 
-      <tr>
-        <td><strong>松屋町駅（徒歩6分）</strong></td>
-        <td>長堀鶴見緑地線</td>
-        <td>1番出口</td>
-      </tr>
-
-      <tr>
-        <td><strong>心斎橋駅（徒歩15分）</strong></td>
-        <td>御堂筋線</td>
-        <td>北8出口 / 北9出口</td>
-      </tr>
-    </tbody>
-  </table>
+    <div class="access-station-item">
+      <span class="access-station-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="3" width="12" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8H15.5M9 20L11 17M15 20L13 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9.5" cy="13" r="1" fill="currentColor"/><circle cx="14.5" cy="13" r="1" fill="currentColor"/></svg></span>
+      <span class="access-station-text">
+        <strong>心斎橋駅</strong>
+        <span>徒歩約14分</span>
+        <small>御堂筋線<br>北8出口 / 北9出口</small>
+      </span>
+    </div>
+  </div>
 </div>
 
-  <!-- アクセス案内 -->
-  <div class="menu-card card-hidden">
-    <h2>駅からのアクセス案内</h2>
-    <p>
-      長堀通沿いのビルです。<br>
-      ビル入口には「<strong style="color:#d9c17e;">あい歯科 長堀橋院</strong>」さんの看板があります。<br>
-      建物右側の通路を奥へ進み、エレベーターで7階へお越しください。
+<!-- 建物入口から院内まで -->
+  <div class="menu-card card-hidden access-guide-card">
+    <h2>建物入口から院内まで</h2>
+    <p class="access-guide-lead">
+      ビル到着後は、以下の写真を目印にお進みください。<br>
+      入口、エレベーター、703号室のインターホンまで順番にご確認いただけます。
     </p>
+
+    <div class="access-guide-grid" aria-label="geneまでの建物内アクセス案内">
+      <figure class="access-guide-item">
+        <img src="assets/img/gene-building-guide.webp" alt="geneが入るビル外観と入口の案内" width="1200" height="1600" loading="lazy">
+        <figcaption><strong>1. ビル入口</strong><br>1階のあい歯科様の右側が入口です。</figcaption>
+      </figure>
+
+      <figure class="access-guide-item">
+        <img src="assets/img/gene-building-entrance-guide.webp" alt="ビル入口から奥のエレベーターへ進む案内" width="1536" height="2048" loading="lazy">
+        <figcaption><strong>2. 建物内通路</strong><br>扉の奥にエレベーターがあります。</figcaption>
+      </figure>
+
+      <figure class="access-guide-item">
+        <img src="assets/img/gene-elevator-hall-guide.webp" alt="エレベーターホールで7階へ上がる案内" width="630" height="840" loading="lazy">
+        <figcaption><strong>3. エレベーター</strong><br>エレベーターで7階へお上がりください。</figcaption>
+      </figure>
+
+      <figure class="access-guide-item">
+        <img src="assets/img/gene-door-guide.webp" alt="703号室geneの玄関とインターホン案内" width="1536" height="2048" loading="lazy">
+        <figcaption><strong>4. 703号室</strong><br>到着されましたらインターホンを押してください。</figcaption>
+      </figure>
+    </div>
   </div>
 
   <!-- MAP -->
@@ -842,7 +1279,7 @@ if (
   </button>
   <a href="menu.html">
     <span class="nav-icon">◇</span>
-    <span class="nav-text">施術内容</span>
+    <span class="nav-text">施術料金</span>
   </a>
   <a href="access.html">
     <span class="nav-icon">⌖</span>
@@ -850,7 +1287,7 @@ if (
   </a>
   <a href="https://lin.ee/6bBKc67" class="line-nav" target="_blank" rel="noopener">
     <span class="nav-icon">↗</span>
-    <span class="nav-text">LINE予約</span>
+    <span class="nav-text">空き状況</span>
   </a>
 </nav>
 
@@ -878,6 +1315,7 @@ window.addEventListener("load", () => {
   const bgLogo = document.getElementById("global-logo-bg");
   const cards = document.querySelectorAll(".card-hidden, .menu-card");
   const hamburgerBtn = document.getElementById("hamburger-btn");
+  const pcSideNav = document.querySelector(".gene-pc-side-nav");
   const menuPanel = document.getElementById("hamburger-menu");
 
   setTimeout(() => {
@@ -888,6 +1326,7 @@ window.addEventListener("load", () => {
     if (hamburgerBtn) hamburgerBtn.classList.add("show");
     if (rsvBtn) rsvBtn.classList.add("show");
     if (bgLogo) bgLogo.classList.add("fade-in");
+    if (pcSideNav) pcSideNav.classList.add("show");
     if (pageTitle) pageTitle.classList.add("show");
     if (menuContainer) menuContainer.querySelectorAll(".menu-card").forEach(card => card.classList.add("show"));
     cards.forEach(c => c.classList.add("show"));
@@ -1013,79 +1452,74 @@ window.addEventListener("load", () => {
 </script>
 
 
+
+
 <script>
-(function(){
-  function setupGeneToTopPanelAvoidance(){
-    const panel = document.getElementById("gene-mobile-symptom-panel");
-    const toggle = document.getElementById("gene-mobile-symptom-toggle");
-    const close = document.getElementById("gene-mobile-symptom-close");
-    const backdrop = document.getElementById("gene-mobile-symptom-backdrop");
+(function () {
+  var params = new URLSearchParams(window.location.search);
 
-    if (!panel) return;
-    if (panel.dataset.toTopAvoidanceReady === "true") return;
-    panel.dataset.toTopAvoidanceReady = "true";
-
-    function getToTopBtn(){
-      return document.getElementById("to-top-btn");
-    }
-
-    function updateToTopPosition(){
-      const btn = getToTopBtn();
-      if (!btn) return;
-
-      if (window.innerWidth > 768) {
-        btn.style.removeProperty("bottom");
-        btn.style.removeProperty("z-index");
-        return;
-      }
-
-      if (panel.classList.contains("open")) {
-        const rect = panel.getBoundingClientRect();
-        const bottomValue = Math.max(120, Math.round(window.innerHeight - rect.top + 12));
-        btn.style.setProperty("bottom", "calc(" + bottomValue + "px + env(safe-area-inset-bottom))", "important");
-        btn.style.setProperty("z-index", "9999", "important");
-      } else {
-        btn.style.removeProperty("bottom");
-        btn.style.removeProperty("z-index");
-      }
-    }
-
-    const observer = new MutationObserver(updateToTopPosition);
-    observer.observe(panel, {
-      attributes: true,
-      attributeFilter: ["class"]
-    });
-
-    [toggle, close, backdrop].forEach(function(el){
-      if (!el) return;
-      el.addEventListener("click", function(){
-        setTimeout(updateToTopPosition, 30);
-      });
-    });
-
-    panel.querySelectorAll("a").forEach(function(link){
-      link.addEventListener("click", function(){
-        setTimeout(updateToTopPosition, 30);
-      });
-    });
-
-    window.addEventListener("resize", updateToTopPosition, { passive:true });
-    window.addEventListener("scroll", updateToTopPosition, { passive:true });
-
-    setTimeout(updateToTopPosition, 300);
+  if (params.get("internal") === "true") {
+    localStorage.setItem("internalUser", "true");
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", setupGeneToTopPanelAvoidance);
-  } else {
-    setupGeneToTopPanelAvoidance();
+  if (params.get("internal") === "false") {
+    localStorage.removeItem("internalUser");
   }
 
-  window.addEventListener("load", function(){
-    setTimeout(setupGeneToTopPanelAvoidance, 500);
-  });
+
+  function isLocalPreview() {
+    var host = window.location.hostname;
+
+    return (
+      window.location.protocol === "file:" ||
+      host === "localhost" ||
+      host === "127.0.0.1" ||
+      host === "::1" ||
+      /^192\.168\./.test(host) ||
+      /^10\./.test(host) ||
+      /^172\.(1[6-9]|2[0-9]|3[0-1])\./.test(host)
+    );
+  }
+
+  if (isLocalPreview()) {
+    return;
+  }
+
+  var isInternal = localStorage.getItem("internalUser") === "true";
+
+  if (isInternal) {
+    return;
+  }
+
+  var page = window.location.pathname.split("/").pop() || "index.html";
+  var storageKey = page.replace(/[^a-z0-9_-]/gi, "_") + "_notify_last_sent";
+  var now = Date.now();
+  var lastSent = Number(localStorage.getItem(storageKey) || 0);
+  var oneHour = 60 * 60 * 1000;
+
+  if (now - lastSent < oneHour) {
+    return;
+  }
+
+  localStorage.setItem(storageKey, String(now));
+
+  fetch(
+    "https://script.google.com/macros/s/AKfycbyzDrbDgk6Hqkl8n-0PToOPC5oisxZscgAZupO_Gqjm3YLYhvQanuuvtp7leo2RmwLk/exec",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        page: page,
+        url: window.location.href,
+        referrer: document.referrer || "直接アクセス / 不明",
+        userAgent: navigator.userAgent,
+        internal: false
+      })
+    }
+  );
 })();
 </script>
+
+<script src="assets/js/line-click-tracking.js"></script>
 
 </body>
 </html>

@@ -30,13 +30,13 @@ if (
 
     if (!isInternal) {
       gtag("config", "G-8KPJ55NQMT", {
-        page_title: "隠しページ｜大阪 自律神経専門整体院 gene",
+        page_title: "Nobody's Home｜大阪 自律神経専門整体院 gene",
         page_path: location.pathname
       });
 
       gtag("event", "secret_page_view", {
         event_category: "secret_page",
-        event_label: "quiet_room"
+        event_label: "nobodys_home"
       });
     }
   })();
@@ -46,9 +46,9 @@ if (
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow, noarchive">
-<title>見つけてくださってありがとうございます｜大阪 自律神経専門整体院 gene</title>
+<title>Nobody's Home｜大阪 自律神経専門整体院 gene</title>
 <meta name="description" content="geneのホームページの中にある、偶然見つけた方だけに向けた小さなページです。">
-<meta property="og:title" content="見つけてくださってありがとうございます｜gene">
+<meta property="og:title" content="Nobody's Home｜gene">
 <meta property="og:description" content="geneのホームページの中にある、偶然見つけた方だけに向けた小さなページです。">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://gene-seitai.com/assets/img/gene-profile.webp">
@@ -98,16 +98,17 @@ if (
   text-align:left;
 }
 
-.secret-room-title{
+.secret-room-title-image{
+  margin:28 0 42px;
+  text-align:center;
+}
+
+.secret-room-title-image img{
   display:block;
   width:100%;
-  text-align:center;
-  color:#d9c17e;
-  font-size:clamp(3rem,5vw,4.8rem);
-  line-height:1.2;
-  font-weight:500;
-  letter-spacing:.08em;
-  margin:0 0 42px;
+  max-width:980px;
+  height:auto;
+  margin:0 auto;
 }
 
 .secret-hero-copy p{
@@ -295,6 +296,74 @@ if (
   transform:translateY(-2px);
 }
 
+.gene-pc-side-nav{
+  display:none;
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+  position:fixed;
+  right:60px;
+  top:50%;
+  z-index:900;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:18px;
+  transform:translateY(-50%);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .75s ease;
+}
+
+  .gene-pc-side-nav.show{
+    opacity:1;
+    pointer-events:auto;
+  }
+
+ .gene-pc-side-nav a{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:flex-end;
+  min-height:22px;
+  padding:0 0 0 28px;
+  color:rgba(244,234,208,.82);
+  font-size:.9rem;
+  line-height:1;
+  letter-spacing:.08em;
+  text-decoration:none;
+  writing-mode:horizontal-tb;
+  transition:color .28s ease, transform .28s ease;
+}
+
+  .gene-pc-side-nav a::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:50%;
+    width:0;
+    height:1px;
+    background:linear-gradient(90deg, rgba(217,193,126,0), rgba(217,193,126,.86));
+    transform:translateY(-50%);
+    transition:width .28s ease;
+  }
+
+  .gene-pc-side-nav a:hover{
+    color:#d9c17e;
+    transform:translateX(-3px);
+  }
+
+  .gene-pc-side-nav a:hover::before{
+    width:18px;
+  }
+
+  .hamburger-btn,
+  #hamburger-btn{
+    display:none !important;
+  }
+}
+
 .gene-mobile-bottom-nav,
 .gene-mobile-symptom-panel,
 .gene-mobile-symptom-backdrop{
@@ -307,8 +376,7 @@ if (
 }
 
 @media (max-width:768px){
-  .reserve-btn-sub,
-  .hamburger-btn{
+  .reserve-btn-sub{
     display:none !important;
   }
 
@@ -347,8 +415,7 @@ if (
     padding:20px;
   }
 
-  .secret-room-title{
-    font-size:clamp(2.15rem,12vw,3.2rem);
+  .secret-room-title-image{
     margin-bottom:34px;
   }
 
@@ -394,7 +461,85 @@ if (
   }
 }
 
+
+
+/* gene CTA wording refinement */
+.gene-cta-two-line{
+  display:inline-flex !important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  text-align:center;
+  line-height:1.35;
+}
+
+.gene-cta-two-line__main{
+  display:block;
+  font-weight:700;
+  line-height:1.35;
+  letter-spacing:.05em;
+}
+
+.gene-cta-two-line__sub{
+  display:block;
+  font-size:.78rem;
+  font-weight:500;
+  line-height:1.45;
+  letter-spacing:.03em;
+  opacity:.86;
+}
+
+.reserve-btn-sub{
+  line-height:1.38;
+  text-align:center;
+}
+
+@media (max-width:640px){
+  .gene-cta-two-line__sub{
+    font-size:.72rem;
+  }
+}
+
+
+
+/* reserve button color match */
+.reserve-btn-sub,
+.reserve-btn-sub:visited{
+  background:linear-gradient(180deg,#fff0a8 0%,#ead893 42%,#d9c17e 100%) !important;
+  border:1px solid rgba(255,238,170,.88) !important;
+  color:#111 !important;
+  font-weight:700 !important;
+  box-shadow:0 12px 30px rgba(217,193,126,.28), 0 0 22px rgba(217,193,126,.22) !important;
+}
+
+.reserve-btn-sub *{
+  color:#111 !important;
+}
+
+.reserve-btn-sub:hover{
+  background:linear-gradient(180deg,#fff4ba 0%,#eedf9e 45%,#dcc47f 100%) !important;
+  border-color:rgba(255,244,186,.98) !important;
+  color:#111 !important;
+  box-shadow:0 16px 36px rgba(217,193,126,.36), 0 0 28px rgba(217,193,126,.28) !important;
+}
+
+/* PC fixed CTA / side navigation alignment */
+@media (min-width: 769px){
+  .reserve-btn-sub{
+    top:95px !important;
+    right:24px !important;
+  }
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+    right:24px !important;
+  }
+}
+
 </style>
+<link rel="stylesheet" href="assets/css/gene-text-control.css">
 </head>
 
 <body>
@@ -414,11 +559,21 @@ if (
 <div id="hamburger-menu" class="hamburger-menu">
   <button class="menu-close-btn">×</button>
   <a href="/">ホーム</a>
-  <a href="menu.html">施術内容</a>
+  <a href="menu.html">施術内容・料金</a>
+  <a href="symptoms.html">症状別に見る</a>
   <a href="access.html">アクセス</a>
   <a href="faq.html">よくある質問</a>
   <a href="voice.html">院内・改善写真</a>
 </div>
+
+<nav class="gene-pc-side-nav" aria-label="PC用サイドナビゲーション">
+  <a href="/">ホーム</a>
+  <a href="menu.html">施術内容・料金</a>
+  <a href="symptoms.html">症状別に見る</a>
+  <a href="access.html">アクセス</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="voice.html">院内・改善写真</a>
+</nav>
 
 <div id="hero-logo" class="hidden">
   <h1 class="main-title">
@@ -432,14 +587,14 @@ if (
 </p>
 </div>
 
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">
-  LINE<br class="sp-only-br">予約
-</a>
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">空き状況<br>を見る</a>
 
 <section class="secret-hero-card">
   <div class="secret-hero-inner secret-hero-inner-text-only">
     <div class="secret-hero-copy">
-      <h1 class="secret-room-title">SECRET ROOM</h1>
+      <h1 class="secret-room-title-image">
+  <img src="assets/img/nobodys-home-title.webp" alt="Nobody's Home">
+</h1>
 <p>
 普段は整体のことばかり書いていますが、
 このページでは少しだけ私自身のことを書いてみようと思います。
@@ -688,7 +843,7 @@ ONE OK ROCKの話でも整体の話でも気軽に声をかけてくださいね
 
 <p>
 ご予約・ご来院の際に<br class="sp-only-br">
-「SECRET ROOMを見ました」<br class="sp-only-br">
+「Nobody's Homeを見ました」<br class="sp-only-br">
 とお伝えいただけた方には、
 感謝の気持ちとして料金を500円割引させていただきます。
 </p>
@@ -724,6 +879,7 @@ window.addEventListener("load", function(){
   const bgLogo = document.getElementById("global-logo-bg");
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const menuPanel = document.getElementById("hamburger-menu");
+  const pcSideNav = document.querySelector(".gene-pc-side-nav");
   const secretHero = document.querySelector(".secret-hero-card");
   const cards = document.querySelectorAll(".secret-card");
 
@@ -731,6 +887,7 @@ window.addEventListener("load", function(){
     if (hamburgerBtn) hamburgerBtn.classList.add("show");
     if (rsvBtn) rsvBtn.classList.add("show");
     if (bgLogo) bgLogo.classList.add("fade-in");
+    if (pcSideNav) pcSideNav.classList.add("show");
   }, 350);
 
   setTimeout(function(){
@@ -834,5 +991,80 @@ window.addEventListener("load", function(){
 })();
 </script>
 
+<script>
+(function () {
+  var currentPath = window.location.pathname.replace(/\/+$/, "");
+  var isNobodyHomePage = currentPath === "/nobodys-home.html" || currentPath.endsWith("/nobodys-home.html");
+
+  if (!isNobodyHomePage) {
+    return;
+  }
+
+  var params = new URLSearchParams(window.location.search);
+
+  if (params.get("internal") === "true") {
+    localStorage.setItem("internalUser", "true");
+  }
+
+  if (params.get("internal") === "false") {
+    localStorage.removeItem("internalUser");
+  }
+
+
+  function isLocalPreview() {
+    var host = window.location.hostname;
+
+    return (
+      window.location.protocol === "file:" ||
+      host === "localhost" ||
+      host === "127.0.0.1" ||
+      host === "::1" ||
+      /^192\.168\./.test(host) ||
+      /^10\./.test(host) ||
+      /^172\.(1[6-9]|2[0-9]|3[0-1])\./.test(host)
+    );
+  }
+
+  if (isLocalPreview()) {
+    return;
+  }
+
+  var isInternal = localStorage.getItem("internalUser") === "true";
+
+  if (isInternal) {
+    return;
+  }
+
+  var storageKey = "nobodys_home_notify_last_sent";
+  var now = Date.now();
+  var lastSent = Number(localStorage.getItem(storageKey) || 0);
+  var oneHour = 60 * 60 * 1000;
+
+  if (now - lastSent < oneHour) {
+    return;
+  }
+
+  localStorage.setItem(storageKey, String(now));
+
+  fetch(
+    "https://script.google.com/macros/s/AKfycbyzDrbDgk6Hqkl8n-0PToOPC5oisxZscgAZupO_Gqjm3YLYhvQanuuvtp7leo2RmwLk/exec",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        page: "nobodys-home.html",
+        url: window.location.href,
+        referrer: document.referrer || "直接アクセス / 不明",
+        userAgent: navigator.userAgent,
+        internal: false
+      })
+    }
+  );
+})();
+</script>
+  
+
+<script src="assets/js/line-click-tracking.js"></script>
+
 </body>
 </html>
+

@@ -40,10 +40,783 @@ if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") {
 body.symptom-page .page-title,body.symptom-page .dizziness-lead,body.symptom-page .menu-container,body.symptom-page footer{position:relative;z-index:1;}
 body.symptom-page .menu-card{background:rgba(255,255,255,.055);}
 @media (max-width:640px){.dizziness-lead{text-align:left;font-size:.92rem;}.dizziness-intro-card{padding:22px 18px;border-radius:18px;}.dizziness-intro-card p{text-align:left;line-height:1.95;}.dizziness-links{gap:10px;width:92%;margin-bottom:30px;}.dizziness-links a{min-height:40px;padding:9px 14px;font-size:.86rem;letter-spacing:.03em;}}
+
+.gene-pc-side-nav{
+  display:none;
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+    position:fixed;
+    right:60px;
+    top:50%;
+    z-index:900;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:18px;
+    transform:translateY(-50%);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .75s ease;
+  }
+
+  .gene-pc-side-nav.show{
+    opacity:1;
+    pointer-events:auto;
+  }
+
+  .gene-pc-side-nav a{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:flex-end;
+    min-height:22px;
+    padding:0 0 0 28px;
+    color:rgba(244,234,208,.82);
+    font-size:.9rem;
+    line-height:1;
+    letter-spacing:.08em;
+    text-decoration:none;
+    writing-mode:horizontal-tb;
+    transition:color .28s ease, transform .28s ease;
+  }
+
+  .gene-pc-side-nav a::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:50%;
+    width:0;
+    height:1px;
+    background:linear-gradient(90deg, rgba(217,193,126,0), rgba(217,193,126,.86));
+    transform:translateY(-50%);
+    transition:width .28s ease;
+  }
+
+  .gene-pc-side-nav a:hover{
+    color:#d9c17e;
+    transform:translateX(-3px);
+  }
+
+  .gene-pc-side-nav a:hover::before{
+    width:18px;
+  }
+
+  .hamburger-btn,
+  #hamburger-btn{
+    display:none !important;
+  }
+}
+
 .gene-mobile-bottom-nav,.gene-mobile-symptom-panel,.gene-mobile-symptom-backdrop{display:none;}
 @media (max-width: 768px){body{padding-bottom:calc(76px + env(safe-area-inset-bottom));}.gene-mobile-bottom-nav{position:fixed;left:0;right:0;bottom:0;z-index:9998;display:grid;grid-template-columns:repeat(5,1fr);gap:0;padding:7px 8px calc(7px + env(safe-area-inset-bottom));background:rgba(5,5,5,.94);border-top:1px solid rgba(217,193,126,.28);box-shadow:0 -12px 30px rgba(0,0,0,.42);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}.gene-mobile-bottom-nav a,.gene-mobile-bottom-nav button{appearance:none;-webkit-appearance:none;border:0;background:transparent;color:rgba(255,255,255,.82);text-decoration:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:0;min-height:50px;padding:4px 2px;font-family:inherit;letter-spacing:.04em;font-size:10px;line-height:1.25;cursor:pointer;}.gene-mobile-bottom-nav .nav-icon{display:flex;align-items:center;justify-content:center;width:22px;height:22px;color:#d9c17e;font-size:18px;line-height:1;}.gene-mobile-bottom-nav .nav-text{white-space:nowrap;}.gene-mobile-bottom-nav .line-nav{color:#111;background:linear-gradient(180deg,#ead893 0%,#d9c17e 100%);border-radius:16px;box-shadow:0 6px 18px rgba(217,193,126,.20);}.gene-mobile-bottom-nav .line-nav .nav-icon,.gene-mobile-bottom-nav .line-nav .nav-text{color:#111;font-weight:600;}.gene-mobile-symptom-backdrop{position:fixed;inset:0;z-index:9996;background:rgba(0,0,0,.38);opacity:0;pointer-events:none;transition:opacity .25s ease;display:block;}.gene-mobile-symptom-backdrop.open{opacity:1;pointer-events:auto;}.gene-mobile-symptom-panel{position:fixed;left:10px;right:10px;bottom:calc(72px + env(safe-area-inset-bottom));z-index:9997;display:block;padding:15px 14px 14px;border:1px solid rgba(217,193,126,.34);border-radius:22px;background:rgba(8,8,8,.96);box-shadow:0 -16px 34px rgba(0,0,0,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transform:translateY(18px);opacity:0;pointer-events:none;transition:opacity .25s ease, transform .25s ease;top:auto;max-height:calc(100vh - 112px - env(safe-area-inset-bottom));overflow-y:auto;overscroll-behavior:contain;}.gene-mobile-symptom-panel.open{opacity:1;transform:translateY(0);pointer-events:auto;}.gene-mobile-symptom-panel-title{position:sticky;top:-15px;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:12px;color:#d9c17e;font-size:.95rem;letter-spacing:.08em;margin:-15px -14px 12px;padding:14px 14px 10px;background:rgba(8,8,8,.98);border-bottom:1px solid rgba(217,193,126,.16);}.gene-mobile-symptom-close{appearance:none;-webkit-appearance:none;border:1px solid rgba(217,193,126,.28);background:rgba(255,255,255,.04);color:#d9c17e;width:34px;height:34px;border-radius:50%;font-size:1.35rem;line-height:1;cursor:pointer;}.gene-mobile-symptom-grid{display:block;}.gene-mobile-symptom-group{margin:0 0 14px;}.gene-mobile-symptom-group:last-child{margin-bottom:0;}.gene-mobile-symptom-group-title{margin:0 0 8px;color:rgba(217,193,126,.92);font-size:.78rem;letter-spacing:.08em;line-height:1.4;}.gene-mobile-symptom-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}.gene-mobile-symptom-list a{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:42px;padding:10px 11px;border-radius:14px;border:1px solid rgba(217,193,126,.38);background:rgba(217,193,126,.10);color:#d9c17e;text-decoration:none;font-size:.84rem;line-height:1.35;box-shadow:none;}.gene-mobile-symptom-list a::after{content:"›";color:#d9c17e;font-size:1.05rem;line-height:1;opacity:.85;}.gene-mobile-extra-links{position:sticky;bottom:-14px;margin:14px -14px -14px;padding:12px 14px calc(12px + env(safe-area-inset-bottom));background:rgba(8,8,8,.98);border-top:1px solid rgba(217,193,126,.16);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}.gene-mobile-extra-links a{display:flex;align-items:center;justify-content:center;min-height:42px;padding:10px 12px;border-radius:14px;border:1px solid rgba(217,193,126,.28);background:rgba(217,193,126,.075);color:#d9c17e;text-decoration:none;font-size:.88rem;line-height:1.35;}.reserve-btn-sub,.hamburger-btn{display:none !important;}#to-top-btn{bottom:calc(92px + env(safe-area-inset-bottom)) !important;}.breadcrumb,.breadcrumb-fixed{display:none !important;}html,body{margin-top:0 !important;padding-top:0 !important;}#hero-logo,.page-title,.main-title,.section-title,.page-heading,.access-title,.menu-title,.voice-title,.case-title{margin-top:0 !important;}.page-title{padding-top:34px !important;padding-bottom:22px !important;margin-bottom:22px !important;}main,#index-cards,.page-container,.menu-container,.voice-container,.case-container,.access-container,.faq-container,.profile-container,.news-container{margin-top:0 !important;padding-top:0 !important;}.menu-card:first-child{margin-top:22px !important;}}
 .dizziness-fade{opacity:0;transform:translateY(22px);transition:opacity .65s ease, transform .65s ease;}.dizziness-fade.show{opacity:1;transform:translateY(0);}
 .top-symptom-links a,.menu-symptom-card,.gene-mobile-symptom-list a,.gene-mobile-symptom-list a:visited,.gene-mobile-extra-links a,.gene-mobile-extra-links a:visited,.gene-mobile-symptom-grid a,.gene-mobile-symptom-grid a:visited,.symptom-list div.has-link,.map-open-btn,.case-cta-btn,.voice-cta-btn{background:rgba(20,20,20,.9) !important;border:1px solid rgba(217,193,126,.56) !important;color:#d9c17e !important;box-shadow:0 10px 26px rgba(0,0,0,.22) !important;}.top-symptom-links a::after,.menu-symptom-card::after,.gene-mobile-symptom-list a::after,.gene-mobile-extra-links a::after,.gene-mobile-symptom-grid a::after{color:#d9c17e !important;}.top-symptom-links a:hover,.menu-symptom-card:hover,.gene-mobile-symptom-list a:hover,.gene-mobile-extra-links a:hover,.map-open-btn:hover,.case-cta-btn:hover,.voice-cta-btn:hover{background:rgba(28,26,20,.96) !important;border-color:rgba(234,216,147,.78) !important;transform:translateY(-2px);box-shadow:0 14px 32px rgba(0,0,0,.28), 0 0 18px rgba(217,193,126,.10) !important;}.reserve-btn-sub,.reserve-btn-sub:visited,.gene-mobile-bottom-nav .line-nav,.gene-mobile-bottom-nav .line-nav:visited,.map-open-btn[href*="lin.ee"],.map-open-btn[href*="lin.ee"]:visited{background:linear-gradient(180deg,#fff0a8 0%,#ead893 42%,#d9c17e 100%) !important;border:1px solid rgba(255,238,170,.88) !important;color:#111 !important;font-weight:700 !important;box-shadow:0 12px 30px rgba(217,193,126,.28), 0 0 22px rgba(217,193,126,.22) !important;}
+
+
+/* atopic case1 compact comparison */
+.atopic-case1-compare{
+  width:100%;
+  max-width:none;
+  margin:0 0 28px;
+  padding:28px 24px 30px;
+  box-sizing:border-box;
+  border-radius:22px;
+  border:1px solid rgba(217,193,126,.32);
+  background:
+    radial-gradient(circle at 50% 28%, rgba(217,193,126,.10), transparent 42%),
+    linear-gradient(180deg, rgba(12,12,12,.72), rgba(8,8,8,.76));
+  box-shadow:0 18px 50px rgba(0,0,0,.26), inset 0 0 30px rgba(217,193,126,.025);
+  position:relative;
+  z-index:1;
+}
+
+.atopic-case1-compare h2{
+  margin:0 0 18px;
+  color:#d9c17e;
+  font-size:clamp(1.45rem,2.3vw,1.85rem);
+  line-height:1.65;
+  letter-spacing:.08em;
+  font-weight:500;
+}
+
+.atopic-case1-compare__lead{
+  max-width:760px;
+  margin:0 auto 24px;
+  text-align:center;
+  color:rgba(255,255,255,.9);
+  line-height:2;
+  letter-spacing:.04em;
+}
+
+.atopic-case1-compare__grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:20px;
+  margin:0 auto 24px;
+}
+
+.atopic-case1-compare__item{
+  padding:18px;
+  border:1px solid rgba(217,193,126,.28);
+  border-radius:20px;
+  background:rgba(255,255,255,.025);
+}
+
+.atopic-case1-compare__item h3{
+  margin:0 0 16px;
+  color:#d9c17e;
+  font-size:1.08rem;
+  line-height:1.55;
+  letter-spacing:.08em;
+  font-weight:500;
+}
+
+.atopic-case1-compare__photos{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+
+.atopic-case1-compare__photo{
+  overflow:hidden;
+  border:1px solid rgba(217,193,126,.22);
+  border-radius:16px;
+  background:rgba(0,0,0,.32);
+}
+
+.atopic-case1-compare__photo img{
+  display:block;
+  width:100%;
+  aspect-ratio:3 / 4;
+  object-fit:cover;
+}
+
+.atopic-case1-compare__photo span{
+  display:block;
+  padding:8px 4px 9px;
+  text-align:center;
+  color:#d9c17e;
+  font-size:.86rem;
+  letter-spacing:.06em;
+  line-height:1.4;
+  background:rgba(0,0,0,.36);
+}
+
+.atopic-case1-compare__note{
+  margin:0 auto 8px;
+  text-align:center;
+  color:rgba(255,255,255,.72);
+  font-size:.9rem;
+  line-height:1.9;
+}
+
+.atopic-case1-compare__actions{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:22px;
+}
+
+.atopic-case1-compare__actions a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  padding:12px 24px;
+  border-radius:999px;
+  border:1px solid rgba(217,193,126,.56);
+  background:rgba(20,20,20,.9);
+  color:#d9c17e;
+  text-decoration:none;
+  letter-spacing:.05em;
+  line-height:1.45;
+  transition:transform .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.atopic-case1-compare__actions a:hover{
+  background:rgba(28,26,20,.96);
+  border-color:rgba(234,216,147,.78);
+  transform:translateY(-2px);
+}
+
+.atopic-case1-compare__actions a.atopic-case1-compare__line{
+  background:linear-gradient(180deg,#fff0a8 0%,#ead893 42%,#d9c17e 100%);
+  border:1px solid rgba(255,238,170,.88);
+  color:#111;
+  font-weight:700;
+  box-shadow:0 12px 30px rgba(217,193,126,.25), 0 0 22px rgba(217,193,126,.18);
+}
+
+@media (max-width:900px){
+  .atopic-case1-compare__grid{
+    grid-template-columns:1fr;
+    max-width:520px;
+  }
+}
+
+
+@media (min-width:901px){
+  .atopic-case1-compare__grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:18px;
+    max-width:760px;
+    margin:0 auto 24px;
+  }
+
+  .atopic-case1-compare__item{
+    display:block;
+    padding:18px 20px 20px;
+  }
+
+  .atopic-case1-compare__item h3{
+    margin:0 0 16px;
+    text-align:center;
+    line-height:1.6;
+  }
+
+  .atopic-case1-compare__photos{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+  }
+
+  .atopic-case1-compare__photo img{
+    aspect-ratio:3 / 4;
+    object-fit:cover;
+  }
+}
+
+@media (max-width:640px){
+  .atopic-case1-compare{
+    padding:22px 18px 24px;
+    border-radius:20px;
+  }
+
+  .atopic-case1-compare h2{
+    font-size:1.32rem;
+    text-align:left;
+  }
+
+  .atopic-case1-compare__lead{
+    text-align:left;
+    line-height:1.95;
+  }
+
+  .atopic-case1-compare__item{
+    padding:16px;
+    border-radius:18px;
+  }
+
+  .atopic-case1-compare__actions{
+    gap:10px;
+  }
+
+  .atopic-case1-compare__actions a{
+    width:100%;
+    max-width:280px;
+  }
+}
+
+
+/* atopic case direct links */
+.atopic-case-direct{
+  width:100%;
+  max-width:none;
+  margin:0 0 28px;
+  padding:28px 24px 30px;
+  box-sizing:border-box;
+  border-radius:22px;
+  border:1px solid rgba(217,193,126,.32);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(217,193,126,.12), transparent 40%),
+    linear-gradient(180deg, rgba(20,18,13,.70), rgba(8,8,8,.76));
+  box-shadow:0 18px 50px rgba(0,0,0,.26), inset 0 0 30px rgba(217,193,126,.025);
+  position:relative;
+  z-index:1;
+}
+
+.atopic-case-direct__eyebrow{
+  margin:0 0 8px;
+  text-align:center;
+  color:rgba(217,193,126,.82);
+  font-size:.78rem;
+  line-height:1.5;
+  letter-spacing:.16em;
+}
+
+.atopic-case-direct h2{
+  margin:0 0 14px;
+  text-align:center;
+  color:#f4ead0;
+  font-size:clamp(1.38rem,2.4vw,1.82rem);
+  line-height:1.65;
+  letter-spacing:.08em;
+  font-weight:500;
+}
+
+.atopic-case-direct h2 span{
+  color:#d9c17e;
+}
+
+.atopic-case-direct__lead{
+  max-width:760px;
+  margin:0 auto 24px;
+  text-align:center;
+  color:rgba(255,255,255,.86);
+  line-height:2;
+  letter-spacing:.04em;
+}
+
+.atopic-case-direct__grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  margin:0 auto 20px;
+}
+
+.atopic-case-direct__card{
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+  padding:16px;
+  box-sizing:border-box;
+  border:1px solid rgba(217,193,126,.30);
+  border-radius:20px;
+  background:rgba(255,255,255,.032);
+  color:inherit;
+  text-decoration:none;
+  box-shadow:0 12px 30px rgba(0,0,0,.20);
+  transition:transform .25s ease, border-color .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+.atopic-case-direct__card:hover{
+  transform:translateY(-3px);
+  border-color:rgba(234,216,147,.72);
+  background:rgba(217,193,126,.065);
+  box-shadow:0 16px 38px rgba(0,0,0,.28), 0 0 18px rgba(217,193,126,.10);
+}
+
+.atopic-case-direct__card:visited{
+  color:inherit;
+}
+
+.atopic-case-direct__photos{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+  margin:0 0 14px;
+}
+
+.atopic-case-direct__photo{
+  overflow:hidden;
+  border:1px solid rgba(217,193,126,.22);
+  border-radius:15px;
+  background:rgba(0,0,0,.32);
+}
+
+.atopic-case-direct__photo img{
+  display:block;
+  width:100%;
+  aspect-ratio:3 / 4;
+  object-fit:cover;
+}
+
+.atopic-case-direct__photo span{
+  display:block;
+  padding:7px 4px 8px;
+  text-align:center;
+  color:#d9c17e;
+  font-size:.78rem;
+  line-height:1.35;
+  letter-spacing:.06em;
+  background:rgba(0,0,0,.38);
+}
+
+.atopic-case-direct__card h3{
+  margin:0 0 8px;
+  color:#d9c17e;
+  font-size:1.05rem;
+  line-height:1.55;
+  letter-spacing:.07em;
+  font-weight:500;
+}
+
+.atopic-case-direct__meta{
+  margin:0 0 10px;
+  color:rgba(244,234,208,.82);
+  font-size:.86rem;
+  line-height:1.75;
+  letter-spacing:.04em;
+}
+
+.atopic-case-direct__text{
+  margin:0 0 16px;
+  color:rgba(255,255,255,.78);
+  font-size:.9rem;
+  line-height:1.85;
+  letter-spacing:.03em;
+}
+
+.atopic-case-direct__more{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:40px;
+  margin-top:auto;
+  padding:9px 14px;
+  border-radius:999px;
+  border:1px solid rgba(217,193,126,.48);
+  color:#d9c17e;
+  background:rgba(20,20,20,.88);
+  font-size:.9rem;
+  line-height:1.4;
+  letter-spacing:.05em;
+}
+
+.atopic-case-direct__note{
+  margin:12px auto 0;
+  text-align:center;
+  color:rgba(255,255,255,.70);
+  font-size:.86rem;
+  line-height:1.8;
+}
+
+@media (max-width:980px){
+  .atopic-case-direct__grid{
+    grid-template-columns:1fr;
+    max-width:560px;
+  }
+}
+
+@media (max-width:640px){
+  .atopic-case-direct{
+    padding:22px 18px 24px;
+    border-radius:20px;
+  }
+
+  .atopic-case-direct__eyebrow,
+  .atopic-case-direct h2,
+  .atopic-case-direct__lead,
+  .atopic-case-direct__note{
+    text-align:left;
+  }
+
+  .atopic-case-direct h2{
+    font-size:1.3rem;
+  }
+
+  .atopic-case-direct__lead{
+    line-height:1.95;
+  }
+
+  .atopic-case-direct__card{
+    padding:15px;
+    border-radius:18px;
+  }
+}
+
+
+/* gene compact lifestyle card - symptom pages */
+.gene-compact-life-card{
+  width:100%;
+  max-width:none;
+  margin:0 0 22px;
+  padding:26px 24px 28px;
+  box-sizing:border-box;
+  border-radius:22px;
+  border:1px solid rgba(217,193,126,.32);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(217,193,126,.12), transparent 38%),
+    linear-gradient(180deg, rgba(20,18,13,.72), rgba(8,8,8,.72));
+  box-shadow:0 16px 42px rgba(0,0,0,.28), inset 0 0 24px rgba(217,193,126,.035);
+  text-align:center;
+  position:relative;
+  z-index:1;
+}
+
+.gene-compact-life-card *{
+  box-sizing:border-box;
+}
+
+.gene-compact-life-card h2{
+  margin:0 0 12px;
+  color:#f4ead0;
+  font-size:clamp(1.28rem,2.4vw,1.72rem);
+  line-height:1.65;
+  letter-spacing:.08em;
+  font-weight:400;
+}
+
+.gene-compact-life-card h2 span{
+  color:#d9c17e;
+}
+
+.gene-compact-life-card p{
+  max-width:760px;
+  margin:0 auto 20px;
+  color:rgba(255,255,255,.86);
+  line-height:2;
+  letter-spacing:.04em;
+}
+
+.gene-compact-life-flow{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1.2fr);
+  align-items:stretch;
+  gap:10px;
+  max-width:860px;
+  margin:0 auto;
+}
+
+.gene-compact-life-box{
+  min-height:86px;
+  padding:16px 14px;
+  border-radius:18px;
+  border:1px solid rgba(217,193,126,.36);
+  background:rgba(255,255,255,.025);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.gene-compact-life-box strong{
+  display:block;
+  color:#d9c17e;
+  font-size:1.05rem;
+  line-height:1.55;
+  letter-spacing:.1em;
+  font-weight:400;
+}
+
+.gene-compact-life-box span{
+  display:block;
+  margin-top:6px;
+  color:rgba(255,255,255,.8);
+  font-size:.84rem;
+  line-height:1.65;
+  letter-spacing:.04em;
+}
+
+.gene-compact-life-arrow{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#d9c17e;
+  font-size:1.2rem;
+  opacity:.9;
+}
+
+.gene-compact-habits{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:7px;
+  width:100%;
+}
+
+.gene-compact-habits span{
+  min-height:34px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0;
+  border-radius:999px;
+  border:1px solid rgba(217,193,126,.24);
+  background:rgba(217,193,126,.055);
+  color:rgba(255,255,255,.84);
+  font-size:.82rem;
+  line-height:1.35;
+}
+
+@media (max-width:768px){
+  .gene-compact-life-card{
+    width:100%;
+    padding:22px 18px 24px;
+    border-radius:20px;
+  }
+
+  .gene-compact-life-card h2{
+    font-size:1.28rem;
+    text-align:center;
+  }
+
+  .gene-compact-life-card h2 span{
+    display:block;
+    margin:2px 0;
+  }
+
+  .gene-compact-life-card p{
+    text-align:center;
+    line-height:1.95;
+  }
+
+  .gene-compact-life-flow{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  .gene-compact-life-arrow{
+    transform:rotate(90deg);
+    min-height:22px;
+  }
+
+  .gene-compact-life-box{
+    min-height:auto;
+    padding:15px 12px;
+  }
+
+  .gene-compact-habits{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+
+/* symptom page card width alignment */
+body.symptom-page .dizziness-intro-card,
+body.symptom-page .gene-check-invite,
+body.symptom-page > .atopic-case1-compare{
+  width:90% !important;
+  max-width:760px !important;
+}
+
+body.symptom-page > .atopic-case1-compare{
+  margin:0 auto 28px !important;
+}
+
+body.symptom-page .dizziness-links{
+  max-width:760px !important;
+}
+
+
+/* gene CTA wording refinement */
+.gene-cta-two-line{
+  display:inline-flex !important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  text-align:center;
+  line-height:1.35;
+}
+
+.gene-cta-two-line__main{
+  display:block;
+  font-weight:700;
+  line-height:1.35;
+  letter-spacing:.05em;
+}
+
+.gene-cta-two-line__sub{
+  display:block;
+  font-size:.78rem;
+  font-weight:500;
+  line-height:1.45;
+  letter-spacing:.03em;
+  opacity:.86;
+}
+
+.reserve-btn-sub{
+  line-height:1.38;
+  text-align:center;
+}
+
+@media (max-width:640px){
+  .gene-cta-two-line__sub{
+    font-size:.72rem;
+  }
+}
+
+
+/* atopic first view strengthening */
+.atopic-hero-points{
+  max-width:760px;
+  margin:20px auto 0;
+  padding:0;
+  list-style:none;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+
+.atopic-hero-points li{
+  padding:12px 14px;
+  border:1px solid rgba(217,193,126,.24);
+  border-radius:14px;
+  background:rgba(217,193,126,.055);
+  color:rgba(255,255,255,.88);
+  line-height:1.7;
+  letter-spacing:.04em;
+}
+
+.atopic-hero-note{
+  margin-top:18px !important;
+  color:rgba(255,255,255,.68) !important;
+  font-size:.88rem !important;
+  line-height:1.8 !important;
+}
+
+@media (max-width:640px){
+  .atopic-hero-points{
+    grid-template-columns:1fr;
+  }
+}
+
+
+
+/* PC fixed CTA / side navigation alignment */
+@media (min-width: 769px){
+  .reserve-btn-sub{
+    top:95px !important;
+    right:24px !important;
+  }
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+    right:24px !important;
+  }
+}
+
+
+/* reserve button color match */
+.reserve-btn-sub,
+.reserve-btn-sub:visited{
+  background:linear-gradient(180deg,#fff0a8 0%,#ead893 42%,#d9c17e 100%) !important;
+  border:1px solid rgba(255,238,170,.88) !important;
+  color:#111 !important;
+  font-weight:700 !important;
+  box-shadow:0 12px 30px rgba(217,193,126,.28), 0 0 22px rgba(217,193,126,.22) !important;
+}
+
+.reserve-btn-sub *{
+  color:#111 !important;
+}
+
+.reserve-btn-sub:hover{
+  background:linear-gradient(180deg,#fff4ba 0%,#eedf9e 45%,#dcc47f 100%) !important;
+  border-color:rgba(255,244,186,.98) !important;
+  color:#111 !important;
+  box-shadow:0 16px 36px rgba(217,193,126,.36), 0 0 28px rgba(217,193,126,.28) !important;
+}
+
+/* PC fixed CTA / side navigation alignment */
+@media (min-width: 769px){
+  .reserve-btn-sub{
+    top:95px !important;
+    right:24px !important;
+  }
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+    right:24px !important;
+  }
+}
+
 </style>
 <script type="application/ld+json">
 {
@@ -101,30 +874,185 @@ body.symptom-page .menu-card{background:rgba(255,255,255,.055);}
   ]
 }
 </script>
+<link rel="stylesheet" href="assets/css/gene-text-control.css">
+<style>
+/* atopic mobile text readability fix - placed after gene-text-control.css */
+.atopic-mobile-break{display:none;}
+
+@media (max-width:640px){
+  body.atopic-page .atopic-mobile-break{
+    display:inline;
+  }
+
+  body.atopic-page .menu-card,
+  body.atopic-page .dizziness-intro-card,
+  body.atopic-page .gene-check-invite,
+  body.atopic-page .atopic-case1-compare,
+  body.atopic-page .atopic-case-direct,
+  body.atopic-page .gene-compact-life-card{
+    padding-left:22px !important;
+    padding-right:22px !important;
+  }
+
+  body.atopic-page .menu-card h2,
+  body.atopic-page .gene-check-invite h2,
+  body.atopic-page .atopic-case1-compare h2,
+  body.atopic-page .atopic-case-direct h2,
+  body.atopic-page .gene-compact-life-card h2{
+    font-size:clamp(1.32rem,5.15vw,1.68rem) !important;
+    line-height:1.65 !important;
+    letter-spacing:.035em !important;
+    word-break:normal !important;
+    overflow-wrap:normal !important;
+    line-break:strict !important;
+    text-wrap:wrap !important;
+  }
+
+  body.atopic-page .dizziness-lead,
+  body.atopic-page .dizziness-intro-card p,
+  body.atopic-page .gene-check-invite p,
+  body.atopic-page .menu-card p,
+  body.atopic-page .atopic-case1-compare__lead,
+  body.atopic-page .atopic-case1-compare__note,
+  body.atopic-page .atopic-case-direct__lead,
+  body.atopic-page .atopic-case-direct__meta,
+  body.atopic-page .atopic-case-direct__text,
+  body.atopic-page .atopic-case-direct__note,
+  body.atopic-page .gene-compact-life-card p{
+    font-size:.96rem !important;
+    line-height:2.04 !important;
+    letter-spacing:.015em !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+    line-break:strict !important;
+    text-wrap:wrap !important;
+  }
+
+  body.atopic-page .atopic-case-direct h2,
+  body.atopic-page .atopic-case-direct__lead,
+  body.atopic-page .menu-card h2,
+  body.atopic-page .menu-card p{
+    text-align:left !important;
+  }
+
+  body.atopic-page .atopic-case-direct__card h3{
+    font-size:1rem !important;
+    line-height:1.68 !important;
+    letter-spacing:.035em !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+    line-break:strict !important;
+  }
+}
+</style>
+<link rel="stylesheet" href="assets/css/gene-content-accordion.css">
+<script src="assets/js/gene-content-accordion.js" defer></script>
 </head>
 <body class="subpage symptom-page atopic-page">
 <div id="global-logo-bg"><img src="assets/img/logo.svg" alt=""></div>
 <nav class="breadcrumb-fixed hidden"><a href="/">ホーム</a> ＞ <span>アトピー・皮膚症状でお悩みの方へ</span></nav>
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">LINE<br>予約</a>
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">空き状況<br>を見る</a>
 <button id="hamburger-btn" class="hamburger-btn">≡</button>
 <div id="hamburger-menu" class="hamburger-menu">
   <button class="menu-close-btn">×</button>
   <a href="/">ホーム</a>
-  <a href="menu.html">施術内容</a>
+  <a href="menu.html">施術内容・料金</a>
+  <a href="symptoms.html">症状別に見る</a>
   <a href="access.html">アクセス</a>
   <a href="faq.html">よくある質問</a>
   <a href="voice.html">院内・改善写真</a>
 </div>
-<h1 class="page-title dizziness-fade">アトピー・皮膚症状で<span class="symptom-sp-br"><br></span>お悩みの方へ</h1>
-<p class="dizziness-lead dizziness-fade">かゆみや赤みが長引く時、皮膚だけでなく睡眠・ストレス・胃腸・自律神経の状態が重なっていることがあります。</p>
-<div class="dizziness-intro-card dizziness-fade"><p>アトピーや慢性的な皮膚症状は、皮膚表面の問題だけでなく、かゆみによる睡眠低下、ストレス反応、胃腸の状態、冷えや緊張などが複雑に関わることがあります。<br>
-    <br>
-    当院では皮膚そのものを直接治すというより、身体全体の緊張・呼吸・循環・自律神経の偏りを確認し、負担の少ない範囲で整えていきます。</p></div>
+
+<nav class="gene-pc-side-nav" aria-label="PC用サイドナビゲーション">
+  <a href="/">ホーム</a>
+  <a href="menu.html">施術内容・料金</a>
+  <a href="symptoms.html">症状別に見る</a>
+  <a href="access.html">アクセス</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="voice.html">院内・改善写真</a>
+</nav>
+
+<h1 class="page-title dizziness-fade">大阪でアトピー・皮膚症状に<span class="symptom-sp-br"><br></span>お悩みの方へ</h1>
+<p class="dizziness-lead dizziness-fade">薬だけでは波が戻る、ストレスや睡眠で肌の状態が揺れやすい方へ。皮膚だけでなく、身体全体の状態から確認します。</p>
+<div class="dizziness-intro-card dizziness-fade">
+  <p>
+アトピーや慢性的な皮膚症状は、皮膚表面の問題だけでなく、かゆみによる睡眠低下、ストレス反応、胃腸の状態、冷えや緊張などが複雑に関わることがあります。<br>
+<br>
+当院では、病院や薬を否定するのではなく、薬だけでは不安が残る方のために、呼吸・循環・睡眠・食事・筋緊張・自律神経の偏りを確認しながら、負担の少ない範囲で身体全体を整えていきます。
+  </p>
+  <ul class="atopic-hero-points">
+    <li>薬を続けているが、赤みやかゆみの波が戻りやすい</li>
+    <li>かゆみで眠りが浅く、疲労やストレスで悪化しやすい</li>
+    <li>病院の治療と併用しながら、体質面も見直したい</li>
+    <li>薬だけに頼らない方向性を、身体全体から相談したい</li>
+  </ul>
+  <p class="atopic-hero-note">※医療機関での治療やお薬を否定するものではありません。お薬の変更・中止は医師の指示に従ってください。</p>
+</div>
 <div class="dizziness-links dizziness-fade">
-  <a href="menu.html">施術内容を見る</a>
-  <a href="voice.html">院内・改善事例を見る</a>
+  <a href="#atopic-case-links">改善例を見る</a>
+  <a href="voice.html">経過写真を見る</a>
+  <a href="menu.html">施術内容・料金を見る</a>
   <a href="https://lin.ee/6bBKc67" target="_blank" rel="noopener">LINEで相談する</a>
 </div>
+
+<section class="atopic-case1-compare dizziness-fade" aria-labelledby="atopic-case1-compare-title">
+    <h2 id="atopic-case1-compare-title">改善写真・経過の一例</h2>
+    <p class="atopic-case1-compare__lead">
+      実際の変化は一人ひとり異なりますが、<br>
+      皮膚の状態だけでなく、睡眠・緊張・呼吸・疲労の出方も含めて経過を確認しています。
+    </p>
+
+    <div class="atopic-case1-compare__grid">
+      <div class="atopic-case1-compare__item">
+        <h3>顔まわりの変化</h3>
+        <div class="atopic-case1-compare__photos">
+          <div class="atopic-case1-compare__photo">
+            <img src="cases/case1/osaka_seitai_atopy_case1_face_before.webp" alt="大阪 自律神経専門整体院 gene アトピー改善例 顔 初回">
+            <span>初回</span>
+          </div>
+          <div class="atopic-case1-compare__photo">
+            <img src="cases/case1/osaka_seitai_atopy_case1_face_6months.webp" alt="大阪 自律神経専門整体院 gene アトピー改善例 顔 6か月目">
+            <span>6か月目</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="atopic-case1-compare__item">
+        <h3>首まわりの変化</h3>
+        <div class="atopic-case1-compare__photos">
+          <div class="atopic-case1-compare__photo">
+            <img src="cases/case1/osaka_seitai_atopy_case1_neck_before.webp" alt="大阪 自律神経専門整体院 gene アトピー改善例 首 初回">
+            <span>初回</span>
+          </div>
+          <div class="atopic-case1-compare__photo">
+            <img src="cases/case1/osaka_seitai_atopy_case1_neck_6months.webp" alt="大阪 自律神経専門整体院 gene アトピー改善例 首 6か月目">
+            <span>6か月目</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="atopic-case1-compare__item">
+        <h3>足首まわりの変化</h3>
+        <div class="atopic-case1-compare__photos">
+          <div class="atopic-case1-compare__photo">
+            <img src="cases/case1/osaka_seitai_atopy_case1_ankle_before.webp" alt="大阪 自律神経専門整体院 gene アトピー改善例 足首 初回">
+            <span>初回</span>
+          </div>
+          <div class="atopic-case1-compare__photo">
+            <img src="cases/case1/osaka_seitai_atopy_case1_ankle_6months.webp" alt="大阪 自律神経専門整体院 gene アトピー改善例 足首 6か月目">
+            <span>6か月目</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="atopic-case1-compare__note">※写真は経過の一例です。得られる結果には個人差があります。</p>
+    <div class="atopic-case1-compare__actions">
+      <a href="case1.html">全身アトピーの改善例を見る</a>
+      <a href="#atopic-case-links">他の改善例も見る</a>
+      <a href="https://lin.ee/6bBKc67" class="atopic-case1-compare__line gene-cta-two-line" target="_blank" rel="noopener"><span class="gene-cta-two-line__main">無料で相談する</span><span class="gene-cta-two-line__sub">LINEでお気軽にご相談ください</span></a>
+    </div>
+  </section>
 
 <section class="gene-check-invite dizziness-fade" aria-labelledby="gene-check-invite-title">
   <p class="gene-check-invite__eyebrow">CONDITION CHECK</p>
@@ -134,7 +1062,7 @@ body.symptom-page .menu-card{background:rgba(255,255,255,.055);}
 どの負担と重なりやすいかを<br>
 無料・登録なしで簡易的に確認できます。<br><br>
 
-来院時には82項目の詳細チェックを行い、<br>
+来院時には82項目(3分程度)の詳細チェックを行い、<br>
 現在の状態をより詳しく確認できます。</p>
   <div class="gene-check-invite__actions">
     <a href="check.html?from=atopic.html" class="gene-check-btn" onclick="if(typeof gtag==='function'){gtag('event','quick_check_entry_click',{event_category:'gene_quick_check',source_page:location.pathname.split('/').pop()||'index.html'});}">自律神経チェックを行う</a>
@@ -146,45 +1074,58 @@ body.symptom-page .menu-card{background:rgba(255,255,255,.055);}
       ・睡眠不足で皮膚症状が悪化しやすい<br>
       ・ストレスや疲労でかゆみが強くなる<br>
       ・胃腸の不調や冷えを伴う</p></div>
-  <div class="menu-card dizziness-fade"><h2>東洋医学的な見立て</h2><p>東洋医学では、皮膚は「肺」や「脾胃」、血の巡り、水分代謝と関わると考えます。熱感が強い場合、乾燥が強い場合、疲労で悪化する場合など、同じ皮膚症状でも背景は一つではありません。</p></div>
-  <div class="menu-card dizziness-fade"><h2>医学的な背景</h2><p>近年の研究では、皮膚症状とストレス反応、睡眠、炎症、腸内環境、自律神経の関係が注目されています。かゆみで眠れない状態が続くと、回復力や日中の緊張状態にも影響しやすくなります。<br><br>研究知見はあくまで身体を理解するための参考であり、診断や治癒を保証するものではありません。症状が強い場合や急な変化がある場合は医療機関での確認を優先してください。</p></div>
-  <div class="menu-card dizziness-fade"><h2>当院の見立て</h2><p>症状そのものだけを見るのではなく、首肩の緊張、呼吸、腹部、姿勢、睡眠、生活リズム、自律神経の反応を確認します。<br><br>一つの原因に決めつけず、現在の身体がどこで無理をしているのかを整理します。</p></div>
-  <div class="menu-card dizziness-fade"><h2>施術の考え方</h2><p>皮膚を直接強く刺激するのではなく、呼吸・背中・腹部・首肩・下肢の緊張を見ながら、身体が落ち着きやすい状態を目指します。<br><br>強い刺激や無理な矯正ではなく、身体が防御反応を起こしにくい範囲で調整します。</p></div>
+  <details class="menu-card dizziness-fade gene-content-accordion" data-gene-accordion data-accordion-id="traditional_view" data-accordion-group="symptom_explanation">
+  <summary><h2>東洋医学的な見立て</h2></summary>
+  <div class="gene-content-accordion__body"><p>東洋医学では、皮膚は「肺」や「脾胃」、血の巡り、水分代謝と関わると考えます。熱感が強い場合、乾燥が強い場合、疲労で悪化する場合など、同じ皮膚症状でも背景は一つではありません。</p></div>
+</details>
+  <details class="menu-card dizziness-fade gene-content-accordion" data-gene-accordion data-accordion-id="medical_background" data-accordion-group="symptom_explanation">
+  <summary><h2>医学的な背景</h2></summary>
+  <div class="gene-content-accordion__body"><p>近年の研究では、皮膚症状とストレス反応、睡眠、炎症、腸内環境、自律神経の関係が注目されています。かゆみで眠れない状態が続くと、回復力や日中の緊張状態にも影響しやすくなります。</p></div>
+</details>
+<div class="gene-medical-safety-note dizziness-fade" role="note"><p>研究知見はあくまで身体を理解するための参考であり、診断や治癒を保証するものではありません。症状が強い場合や急な変化がある場合は医療機関での確認を優先してください。</p></div>
+  <details class="menu-card dizziness-fade gene-content-accordion" data-gene-accordion data-accordion-id="clinic_view" data-accordion-group="symptom_explanation">
+  <summary><h2>当院の見立て</h2></summary>
+  <div class="gene-content-accordion__body"><p>症状そのものだけを見るのではなく、首肩の緊張、呼吸、腹部、姿勢、睡眠、生活リズム、自律神経の反応を確認します。<br><br>一つの原因に決めつけず、現在の身体がどこで無理をしているのかを整理します。</p></div>
+</details>
+  <details class="menu-card dizziness-fade gene-content-accordion" data-gene-accordion data-accordion-id="treatment_policy" data-accordion-group="symptom_explanation">
+  <summary><h2>施術の考え方</h2></summary>
+  <div class="gene-content-accordion__body"><p>皮膚を直接強く刺激するのではなく、呼吸・背中・腹部・首肩・下肢の緊張を見ながら、身体が落ち着きやすい状態を目指します。<br><br>強い刺激や無理な矯正ではなく、身体が防御反応を起こしにくい範囲で調整します。</p></div>
+</details>
   <div class="menu-card dizziness-fade"><h2>このような方に</h2><p>・薬だけでは不安が残る<br>
       ・疲労やストレスで皮膚症状が揺れやすい<br>
       ・睡眠の質も整えたい<br>
       ・体質面から見直したい</p></div>
   <div class="menu-card dizziness-fade"><h2>ご案内</h2><p>症状の経過や感じ方には個人差があります。<br>現在の状態を確認した上で、無理のない範囲で進めていきます。</p></div>
   <div class="menu-card dizziness-fade"><h2>アトピー・皮膚症状のよくある質問</h2><p>よくいただくご質問をまとめました。<br>症状の出方には個人差がありますので、現在の状態に合わせて確認していきます。</p></div>
-  <div class="menu-card dizziness-fade">
-    <h2>病院で異常なしと言われたアトピーでも相談できますか？</h2>
-    <p>ご相談いただけます。検査で大きな異常がない場合でも、身体の緊張、自律神経、睡眠、ストレス、姿勢などが重なって不調が続くことがあります。</p>
-  </div>
+  <details class="menu-card dizziness-fade gene-content-accordion" data-gene-accordion data-accordion-id="symptom_faq_01" data-accordion-group="symptom_faq">
+  <summary><h2>病院で異常なしと言われた<br class="atopic-mobile-break"><span class="gene-nowrap">アトピー</span>でも相談できますか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>ご相談いただけます。検査で大きな異常がない場合でも、身体の緊張、自律神経、睡眠、ストレス、姿勢などが重なって不調が続くことがあります。</p></div>
+</details>
 
-  <div class="menu-card dizziness-fade">
-    <h2>アトピーと自律神経は関係ありますか？</h2>
-    <p>関係することがあります。自律神経は呼吸、循環、消化、睡眠、筋緊張などに関わるため、症状の背景として確認することがあります。</p>
-  </div>
+  <details class="menu-card dizziness-fade gene-content-accordion" data-gene-accordion data-accordion-id="symptom_faq_02" data-accordion-group="symptom_faq">
+  <summary><h2>アトピーと自律神経は<br class="atopic-mobile-break">関係ありますか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>関係することがあります。自律神経は呼吸、循環、消化、睡眠、筋緊張などに関わるため、症状の背景として確認することがあります。</p></div>
+</details>
 
-  <div class="menu-card dizziness-fade">
-    <h2>東洋医学ではどのように考えますか？</h2>
-    <p>症状名だけで判断せず、気血水、五臓、冷え・熱、緊張、胃腸の状態などを見ながら、身体全体の偏りとして整理します。</p>
-  </div>
+  <details class="menu-card dizziness-fade gene-content-accordion" data-gene-accordion data-accordion-id="symptom_faq_03" data-accordion-group="symptom_faq">
+  <summary><h2>東洋医学では<br class="atopic-mobile-break">どのように考えますか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>症状名だけで判断せず、気血水、五臓、冷え・熱、緊張、胃腸の状態などを見ながら、身体全体の偏りとして整理します。</p></div>
+</details>
 
-  <div class="menu-card dizziness-fade">
-    <h2>施術は強い刺激ですか？</h2>
-    <p>強い刺激や無理な矯正は行いません。お身体の反応を確認しながら、負担の少ない範囲で調整します。</p>
-  </div>
+  <details class="menu-card dizziness-fade gene-content-accordion" data-gene-accordion data-accordion-id="symptom_faq_04" data-accordion-group="symptom_faq">
+  <summary><h2>施術は強い刺激ですか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>強い刺激や無理な矯正は行いません。お身体の反応を確認しながら、負担の少ない範囲で調整します。</p></div>
+</details>
 
-  <div class="menu-card dizziness-fade">
-    <h2>薬や病院の治療と併用できますか？</h2>
-    <p>併用していただけます。急な悪化や強い症状がある場合は、まず医療機関での確認を優先してください。</p>
-  </div>
+  <details class="menu-card dizziness-fade gene-content-accordion" data-gene-accordion data-accordion-id="symptom_faq_05" data-accordion-group="symptom_faq">
+  <summary><h2>薬や病院の治療と<br class="atopic-mobile-break">併用できますか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>併用していただけます。急な悪化や強い症状がある場合は、まず医療機関での確認を優先してください。</p></div>
+</details>
 
-  <div class="menu-card dizziness-fade">
-    <h2>何回くらい通えばいいですか？</h2>
-    <p>症状の出方や生活習慣によって異なります。初回時に状態を確認し、現実的な見通しをお伝えします。</p>
-  </div>
+  <details class="menu-card dizziness-fade gene-content-accordion" data-gene-accordion data-accordion-id="symptom_faq_06" data-accordion-group="symptom_faq">
+  <summary><h2>何回くらい通えばいいですか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>症状の出方や生活習慣によって異なります。初回時に状態を確認し、現実的な見通しをお伝えします。</p></div>
+</details>
   <div class="menu-card dizziness-fade">
     <h2>関連する症状</h2>
     <p>アトピーとあわせて見られやすい不調をまとめました。<br>症状は一つだけでなく、自律神経・睡眠・呼吸・胃腸・緊張状態などが重なって現れることがあります。</p>
@@ -196,10 +1137,108 @@ body.symptom-page .menu-card{background:rgba(255,255,255,.055);}
       <a href="autonomic.html">自律神経失調症</a>
     </div>
   </div>
+
+  
+  <section class="atopic-case-direct dizziness-fade" id="atopic-case-links" aria-labelledby="atopic-case-direct-title">
+    <p class="atopic-case-direct__eyebrow">CASE PHOTOS</p>
+    <h2 id="atopic-case-direct-title">アトピー・皮膚症状の<br class="atopic-mobile-break"><span>改善例</span>を見る</h2>
+    <p class="atopic-case-direct__lead">
+      写真だけで判断せず、<br class="atopic-mobile-break">どの部位がどの期間で<br class="atopic-mobile-break">どのように変化しているかを確認できるよう、<br class="atopic-mobile-break">改善例ごとの詳細ページへ進める導線を設けています。
+    </p>
+
+    <div class="atopic-case-direct__grid" aria-label="アトピー・皮膚症状の改善例一覧">
+      <a href="case1.html" class="atopic-case-direct__card">
+        <div class="atopic-case-direct__photos" aria-hidden="true">
+          <div class="atopic-case-direct__photo">
+            <img src="cases/case1/osaka_seitai_atopy_case1_face_before.webp" alt="">
+            <span>初回</span>
+          </div>
+          <div class="atopic-case-direct__photo">
+            <img src="cases/case1/osaka_seitai_atopy_case1_face_6months.webp" alt="">
+            <span>6か月目</span>
+          </div>
+        </div>
+        <h3>全身にアトピー症状が出ていた方の改善例</h3>
+        <p class="atopic-case-direct__meta">20代後半男性<br>顔・首・体正面・足首<br>初回〜3か月〜6か月</p>
+        <p class="atopic-case-direct__text">来院前はステロイドを使用。食事指導と整体を併用しながら、複数部位の経過を掲載しています。</p>
+        <span class="atopic-case-direct__more">この改善例を詳しく見る</span>
+      </a>
+
+      <a href="case2.html" class="atopic-case-direct__card">
+        <div class="atopic-case-direct__photos" aria-hidden="true">
+          <div class="atopic-case-direct__photo">
+            <img src="cases/case2/osaka_seitai_atopy_case2_forearm_before.webp" alt="">
+            <span>初回</span>
+          </div>
+          <div class="atopic-case-direct__photo">
+            <img src="cases/case2/osaka_seitai_atopy_case2_forearm_6months.webp" alt="">
+            <span>6か月目</span>
+          </div>
+        </div>
+        <h3>前腕・体幹・脚まわりにアトピー症状が出ていた方の改善例</h3>
+        <p class="atopic-case-direct__meta">20代後半男性<br>前腕・体正面・体背面・脚・足首<br>初回〜3か月〜6か月</p>
+        <p class="atopic-case-direct__text">前腕だけでなく、体幹部や下肢も含めた広い範囲の皮膚状態の経過を確認できます。</p>
+        <span class="atopic-case-direct__more">この改善例を詳しく見る</span>
+      </a>
+
+      <a href="case3.html" class="atopic-case-direct__card">
+        <div class="atopic-case-direct__photos" aria-hidden="true">
+          <div class="atopic-case-direct__photo">
+            <img src="cases/case3/osaka_seitai_atopy_case3_forearm_front_before.webp" alt="">
+            <span>初回</span>
+          </div>
+          <div class="atopic-case-direct__photo">
+            <img src="cases/case3/osaka_seitai_atopy_case3_forearm_front_3months.webp" alt="">
+            <span>3か月目</span>
+          </div>
+        </div>
+        <h3>腕・足首まわりのアトピー症状の改善例</h3>
+        <p class="atopic-case-direct__meta">30代後半男性<br>前腕前面・前腕背面・右足首・左足首<br>来院初期〜3か月目</p>
+        <p class="atopic-case-direct__text">前腕と足首を中心に、左右の部位ごとの状態変化を比較しやすい形で掲載しています。</p>
+        <span class="atopic-case-direct__more">この改善例を詳しく見る</span>
+      </a>
+    </div>
+
+    <p class="atopic-case-direct__note">※写真は経過の一例です。得られる結果には個人差があります。</p>
+  </section>
+
+
+<section class="gene-compact-life-card dizziness-fade" aria-labelledby="gene-compact-life-title">
+    <h2 id="gene-compact-life-title">整体は<span>身体を整えるきっかけ</span>です</h2>
+    <p>症状だけを見るのではなく、生活習慣と身体全体の状態を合わせて確認し、整いやすい状態を目指します。</p>
+
+    <div class="gene-compact-life-flow" aria-label="生活習慣と整体の考え方">
+      <div class="gene-compact-life-box">
+        <strong>生活習慣</strong>
+        <div class="gene-compact-habits">
+          <span>睡眠</span>
+          <span>食事</span>
+          <span>運動</span>
+          <span>ストレス<br>管理</span>
+        </div>
+      </div>
+
+      <div class="gene-compact-life-arrow" aria-hidden="true">▶</div>
+
+      <div class="gene-compact-life-box">
+        <strong>整体</strong>
+        <span>身体を整える<br>きっかけ・補助</span>
+      </div>
+
+      <div class="gene-compact-life-arrow" aria-hidden="true">▶</div>
+
+      <div class="gene-compact-life-box">
+        <strong>健康な身体</strong>
+        <span>自分で自分を整える力を<br>発揮しやすい状態</span>
+      </div>
+    </div>
+  </section>
+
+
   <div class="menu-card dizziness-fade">
-    <h2>ご相談・ご予約はこちら</h2>
-    <p>現在の状態を整理するところからでも大丈夫です。<br>ご相談・ご予約はLINEから承っています。</p>
-    <p style="text-align:center; margin-top:18px;"><a href="https://lin.ee/6bBKc67" class="map-open-btn" target="_blank" rel="noopener">LINEで予約する</a></p>
+    <h2 style="text-align:center !important;">まずは現在の状態を整理しましょう</h2>
+    <p style="text-align:center !important;">かゆみ・赤み・睡眠・ストレスなど、気になることをそのままお送りください。</p>
+    <p style="text-align:center !important; margin-top:18px;"><a href="https://lin.ee/6bBKc67" class="map-open-btn gene-cta-two-line" target="_blank" rel="noopener"><span class="gene-cta-two-line__main">まずは相談してみる</span><span class="gene-cta-two-line__sub">LINEでご相談いただけます</span></a></p>
   </div>
 </div>
 <div class="gene-mobile-symptom-backdrop" id="gene-mobile-symptom-backdrop"></div>
@@ -252,14 +1291,15 @@ body.symptom-page .menu-card{background:rgba(255,255,255,.055);}
       </div>
     </div>
   </div>
-  <div class="gene-mobile-extra-links"><a href="voice.html">院内・改善写真</a><a href="faq.html">よくある質問</a></div>
+  <div class="gene-mobile-extra-links"><a href="voice.html">院内・改善写真</a><a href="faq.html">よくある質問</a>
+</div>
 </div>
 <nav class="gene-mobile-bottom-nav" aria-label="スマホ下部固定メニュー">
   <a href="/"><span class="nav-icon">⌂</span><span class="nav-text">ホーム</span></a>
   <button type="button" id="gene-mobile-symptom-toggle" aria-expanded="false" aria-controls="gene-mobile-symptom-panel"><span class="nav-icon">＋</span><span class="nav-text">症状</span></button>
-  <a href="menu.html"><span class="nav-icon">◇</span><span class="nav-text">施術内容</span></a>
+  <a href="menu.html"><span class="nav-icon">◇</span><span class="nav-text">施術料金</span></a>
   <a href="access.html"><span class="nav-icon">⌖</span><span class="nav-text">アクセス</span></a>
-  <a href="https://lin.ee/6bBKc67" class="line-nav" target="_blank" rel="noopener"><span class="nav-icon">↗</span><span class="nav-text">LINE予約</span></a>
+  <a href="https://lin.ee/6bBKc67" class="line-nav" target="_blank" rel="noopener"><span class="nav-icon">↗</span><span class="nav-text">空き状況</span></a>
 </nav>
 <footer>
   大阪 自律神経専門整体院 gene<br>
@@ -276,12 +1316,14 @@ window.addEventListener("load", () => {
   const bgLogo = document.getElementById("global-logo-bg");
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const menuPanel = document.getElementById("hamburger-menu");
+  const pcSideNav = document.querySelector(".gene-pc-side-nav");
   const fadeItems = document.querySelectorAll(".dizziness-fade");
   setTimeout(() => {
     if (breadcrumb) breadcrumb.classList.add("show");
     if (hamburgerBtn) hamburgerBtn.classList.add("show");
     if (rsvBtn) rsvBtn.classList.add("show");
     if (bgLogo) bgLogo.classList.add("fade-in");
+    if (pcSideNav) pcSideNav.classList.add("show");
     fadeItems.forEach(el=>{el.classList.add("show");});
   }, 450);
   const closeBtn = document.querySelector(".menu-close-btn");
@@ -337,6 +1379,75 @@ window.addEventListener("load", () => {
   window.addEventListener("load", function(){setTimeout(setupGeneToTopPanelAvoidance, 500);});
 })();
 </script>
+
+
+
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+
+  if (params.get("internal") === "true") {
+    localStorage.setItem("internalUser", "true");
+  }
+
+  if (params.get("internal") === "false") {
+    localStorage.removeItem("internalUser");
+  }
+
+
+  function isLocalPreview() {
+    var host = window.location.hostname;
+
+    return (
+      window.location.protocol === "file:" ||
+      host === "localhost" ||
+      host === "127.0.0.1" ||
+      host === "::1" ||
+      /^192\.168\./.test(host) ||
+      /^10\./.test(host) ||
+      /^172\.(1[6-9]|2[0-9]|3[0-1])\./.test(host)
+    );
+  }
+
+  if (isLocalPreview()) {
+    return;
+  }
+
+  var isInternal = localStorage.getItem("internalUser") === "true";
+
+  if (isInternal) {
+    return;
+  }
+
+  var page = window.location.pathname.split("/").pop() || "index.html";
+  var storageKey = page.replace(/[^a-z0-9_-]/gi, "_") + "_notify_last_sent";
+  var now = Date.now();
+  var lastSent = Number(localStorage.getItem(storageKey) || 0);
+  var oneHour = 60 * 60 * 1000;
+
+  if (now - lastSent < oneHour) {
+    return;
+  }
+
+  localStorage.setItem(storageKey, String(now));
+
+  fetch(
+    "https://script.google.com/macros/s/AKfycbyzDrbDgk6Hqkl8n-0PToOPC5oisxZscgAZupO_Gqjm3YLYhvQanuuvtp7leo2RmwLk/exec",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        page: page,
+        url: window.location.href,
+        referrer: document.referrer || "直接アクセス / 不明",
+        userAgent: navigator.userAgent,
+        internal: false
+      })
+    }
+  );
+})();
+</script>
+
+<script src="assets/js/line-click-tracking.js"></script>
 
 </body>
 </html>

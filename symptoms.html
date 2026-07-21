@@ -16,12 +16,12 @@ if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") {
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://gene-seitai.com/headache.html">
-<title>頭痛でお悩みの方へ | 大阪 自律神経専門整体院 gene</title>
-<meta name="description" content="大阪 自律神経専門整体院 gene の頭痛ページ。慢性的な頭痛、首肩の緊張を伴う頭痛について、東洋医学と自律神経の視点からご案内しています。">
-<meta property="og:title" content="頭痛でお悩みの方へ | 大阪 自律神経専門整体院 gene">
-<meta property="og:description" content="大阪 自律神経専門整体院 gene の頭痛ページ。慢性的な頭痛、首肩の緊張を伴う頭痛について、東洋医学と自律神経の視点からご案内しています。">
-<meta property="og:url" content="https://gene-seitai.com/headache.html">
+<link rel="canonical" href="https://gene-seitai.com/symptoms.html">
+<title>症状別に見る | 大阪 自律神経専門整体院 gene</title>
+<meta name="description" content="大阪 自律神経専門整体院 gene の症状別ページ一覧。めまい、不眠、頭痛、動悸、アトピー・皮膚症状、胃腸の不調など、自律神経と関わりやすい不調を症状別に確認できます。">
+<meta property="og:title" content="症状別に見る | 大阪 自律神経専門整体院 gene">
+<meta property="og:description" content="めまい、不眠、頭痛、動悸、アトピー・皮膚症状、胃腸の不調など、自律神経と関わりやすい不調を症状別に確認できます。">
+<meta property="og:url" content="https://gene-seitai.com/symptoms.html">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="assets/css/gene-first-view.css">
@@ -273,53 +273,386 @@ body.symptom-page .menu-card{background:rgba(255,255,255,.055);}
 body.symptom-page .dizziness-intro-card,
 body.symptom-page .gene-check-invite{
   width:90% !important;
-  max-width:760px !important;
+  max-width:980px !important;
 }
 
 body.symptom-page .dizziness-links{
-  max-width:760px !important;
+  max-width:980px !important;
 }
 
 
 
-/* gene CTA wording refinement */
-.gene-cta-two-line{
-  display:inline-flex !important;
+/* symptoms.html page-specific styles */
+.symptoms-page .dizziness-intro-card{
+  max-width:980px !important;
+}
+
+.symptoms-page .menu-container{
+  width:90% !important;
+  max-width:980px !important;
+  margin:0 auto;
+  box-sizing:border-box;
+}
+
+.symptoms-page .symptoms-overview{
+  width:90%;
+  max-width:980px;
+  margin:0 auto 24px;
+  position:relative;
+  z-index:1;
+}
+
+.symptoms-page .symptoms-category{
+  margin:0 0 24px;
+  padding:28px 24px 30px;
+  border-radius:22px;
+  border:1px solid rgba(217,193,126,.32);
+  background:rgba(255,255,255,.055);
+  box-shadow:0 18px 50px rgba(0,0,0,.24), inset 0 0 24px rgba(217,193,126,.025);
+}
+
+.symptoms-page .symptoms-category__head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:18px;
+  margin:0 0 18px;
+  padding-bottom:14px;
+  border-bottom:1px solid rgba(217,193,126,.18);
+}
+
+.symptoms-page .symptoms-category__head h2{
+  margin:0;
+  color:#d9c17e;
+  font-size:clamp(1.18rem,2.1vw,1.5rem);
+  line-height:1.6;
+  letter-spacing:.08em;
+  font-weight:500;
+}
+
+.symptoms-page .symptoms-category__head p{
+  margin:0;
+  color:rgba(255,255,255,.72);
+  font-size:.9rem;
+  line-height:1.8;
+  text-align:right;
+}
+
+.symptoms-page .symptoms-card-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+
+.symptoms-page .symptoms-card,
+.symptoms-page .symptoms-case-link{
+  position:relative;
+  display:flex;
   flex-direction:column;
+  min-height:134px;
+  padding:17px 16px 16px;
+  border-radius:18px;
+  border:1px solid rgba(217,193,126,.46);
+  background:rgba(20,20,20,.9);
+  color:inherit;
+  text-decoration:none;
+  box-shadow:0 10px 26px rgba(0,0,0,.22);
+  transition:transform .25s ease, border-color .25s ease, background .25s ease, box-shadow .25s ease;
+  overflow:hidden;
+}
+
+.symptoms-page .symptoms-card::before,
+.symptoms-page .symptoms-case-link::before{
+  content:"";
+  position:absolute;
+  inset:auto -20% -42% 22%;
+  height:88px;
+  background:radial-gradient(circle, rgba(217,193,126,.12), transparent 66%);
+  pointer-events:none;
+}
+
+.symptoms-page .symptoms-card:hover,
+.symptoms-page .symptoms-case-link:hover{
+  transform:translateY(-2px);
+  border-color:rgba(234,216,147,.78);
+  background:rgba(28,26,20,.96);
+  box-shadow:0 14px 32px rgba(0,0,0,.28), 0 0 18px rgba(217,193,126,.10);
+}
+
+.symptoms-page .symptoms-card:visited,
+.symptoms-page .symptoms-case-link:visited{
+  color:inherit;
+}
+
+.symptoms-page .symptoms-card__name{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin:0 0 10px;
+  color:#d9c17e;
+  font-size:1rem;
+  line-height:1.55;
+  letter-spacing:.06em;
+  font-weight:500;
+}
+
+.symptoms-page .symptoms-card__name::after{
+  content:"›";
+  flex:0 0 auto;
+  color:#d9c17e;
+  font-size:1.2rem;
+  line-height:1;
+  opacity:.9;
+}
+
+.symptoms-page .symptoms-card__text{
+  position:relative;
+  z-index:1;
+  margin:0;
+  color:rgba(255,255,255,.76);
+  font-size:.88rem;
+  line-height:1.85;
+  letter-spacing:.03em;
+}
+
+.symptoms-page .symptoms-case-band{
+  width:90%;
+  max-width:980px;
+  margin:0 auto 24px;
+  padding:28px 24px 30px;
+  box-sizing:border-box;
+  border-radius:22px;
+  border:1px solid rgba(217,193,126,.34);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(217,193,126,.12), transparent 42%),
+    linear-gradient(180deg, rgba(18,16,12,.76), rgba(8,8,8,.74));
+  box-shadow:0 18px 50px rgba(0,0,0,.26), inset 0 0 30px rgba(217,193,126,.025);
+  position:relative;
+  z-index:1;
+}
+
+.symptoms-page .symptoms-case-band h2{
+  margin:0 0 12px;
+  color:#f4ead0;
+  font-size:clamp(1.28rem,2.4vw,1.72rem);
+  line-height:1.65;
+  letter-spacing:.08em;
+  text-align:center;
+  font-weight:400;
+}
+
+.symptoms-page .symptoms-case-band h2 span{
+  color:#d9c17e;
+}
+
+.symptoms-page .symptoms-case-band__lead{
+  max-width:760px;
+  margin:0 auto 22px;
+  color:rgba(255,255,255,.84);
+  line-height:2;
+  text-align:center;
+  letter-spacing:.04em;
+}
+
+.symptoms-page .symptoms-case-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+
+.symptoms-page .symptoms-case-link{
+  min-height:178px;
+  justify-content:space-between;
+}
+
+.symptoms-page .symptoms-case-link strong{
+  position:relative;
+  z-index:1;
+  display:block;
+  margin:0 0 10px;
+  color:#d9c17e;
+  font-size:1rem;
+  line-height:1.55;
+  letter-spacing:.06em;
+  font-weight:500;
+}
+
+.symptoms-page .symptoms-case-link span{
+  position:relative;
+  z-index:1;
+  display:block;
+  color:rgba(255,255,255,.76);
+  font-size:.88rem;
+  line-height:1.85;
+  letter-spacing:.03em;
+}
+
+.symptoms-page .symptoms-case-link__button{
+  position:relative;
+  z-index:1;
+  display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:3px;
-  text-align:center;
+  align-self:flex-start;
+  min-height:38px;
+  margin-top:18px;
+  padding:8px 16px;
+  border-radius:999px;
+  border:1px solid rgba(234,216,147,.68);
+  background:linear-gradient(135deg, rgba(217,193,126,.18), rgba(18,18,18,.88));
+  color:#f3e4ad;
+  font-size:.86rem;
   line-height:1.35;
+  letter-spacing:.06em;
+  box-shadow:0 10px 24px rgba(0,0,0,.22), inset 0 0 0 1px rgba(255,255,255,.035);
+  box-sizing:border-box;
+  max-width:100%;
 }
 
-.gene-cta-two-line__main{
-  display:block;
-  font-weight:700;
-  line-height:1.35;
-  letter-spacing:.05em;
+.symptoms-page .symptoms-case-link__button::after{
+  content:"→";
+  margin-left:8px;
+  color:#d9c17e;
+  font-size:.95rem;
+  line-height:1;
 }
 
-.gene-cta-two-line__sub{
-  display:block;
-  font-size:.78rem;
-  font-weight:500;
-  line-height:1.45;
-  letter-spacing:.03em;
-  opacity:.86;
-}
-
-.reserve-btn-sub{
-  line-height:1.38;
+.symptoms-page .symptoms-note-card{
+  width:90%;
+  max-width:980px;
+  margin:0 auto 24px;
+  padding:22px 24px;
+  border-radius:20px;
+  border:1px solid rgba(217,193,126,.24);
+  background:rgba(255,255,255,.035);
+  color:rgba(255,255,255,.78);
+  line-height:2;
   text-align:center;
+  position:relative;
+  z-index:1;
 }
 
-@media (max-width:640px){
-  .gene-cta-two-line__sub{
-    font-size:.72rem;
+@media (max-width:980px){
+  .symptoms-page .symptoms-card-grid,
+  .symptoms-page .symptoms-case-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
   }
 }
 
+@media (max-width:640px){
+  .symptoms-page .symptoms-overview,
+  .symptoms-page .symptoms-case-band,
+  .symptoms-page .symptoms-note-card,
+  .symptoms-page .menu-container{
+    width:92%;
+  }
+
+  .symptoms-page .symptoms-category,
+  .symptoms-page .symptoms-case-band{
+    padding:22px 18px 24px;
+    border-radius:20px;
+  }
+
+  .symptoms-page .symptoms-category__head{
+    display:block;
+  }
+
+  .symptoms-page .symptoms-category__head p{
+    margin-top:8px;
+    text-align:left;
+  }
+
+  .symptoms-page .symptoms-card-grid,
+  .symptoms-page .symptoms-case-grid{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  .symptoms-page .symptoms-card,
+  .symptoms-page .symptoms-case-link{
+    min-height:auto;
+    padding:15px 14px 14px;
+    border-radius:16px;
+  }
+
+  .symptoms-page .symptoms-case-link__button{
+    width:100%;
+    max-width:100%;
+    justify-content:flex-start;
+    margin-top:14px;
+    padding-left:16px;
+    padding-right:16px;
+  }
+
+  .symptoms-page .symptoms-case-band h2,
+  .symptoms-page .symptoms-case-band__lead,
+  .symptoms-page .symptoms-note-card{
+    text-align:left;
+  }
+}
+
+/* symptoms.html スマホ時：中央カード幅の強制統一 */
+@media (max-width:640px){
+
+  body.symptoms-page .symptoms-note-card,
+  body.symptoms-page .menu-container,
+  body.symptoms-page .menu-container .menu-card,
+  body.symptoms-page .menu-container .gene-compact-life-card{
+    width:calc(100% - 32px) !important;
+    max-width:980px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    box-sizing:border-box !important;
+  }
+
+  body.symptoms-page .symptoms-note-card{
+    padding:22px 18px !important;
+    border-radius:20px !important;
+    text-align:left !important;
+    overflow:hidden !important;
+  }
+
+  body.symptoms-page .menu-container{
+    padding:0 !important;
+  }
+
+  body.symptoms-page .menu-container .menu-card,
+  body.symptoms-page .menu-container .gene-compact-life-card{
+    padding-left:18px !important;
+    padding-right:18px !important;
+    border-radius:20px !important;
+    overflow:hidden !important;
+  }
+}
+
+/* symptoms.html PC表示：下部カード幅を他カードと揃える */
+@media (min-width:641px){
+
+  body.symptoms-page .symptoms-note-card,
+  body.symptoms-page .menu-container{
+    width:72% !important;
+    max-width:860px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    box-sizing:border-box !important;
+  }
+
+  body.symptoms-page .menu-container{
+    padding:0 !important;
+  }
+
+  body.symptoms-page .menu-container .menu-card,
+  body.symptoms-page .menu-container .gene-compact-life-card{
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    box-sizing:border-box !important;
+  }
+}
 
 
 /* reserve button color match */
@@ -346,8 +679,10 @@ body.symptom-page .dizziness-links{
 /* PC fixed CTA / side navigation alignment */
 @media (min-width: 769px){
   .reserve-btn-sub{
+    position:fixed !important;
     top:95px !important;
     right:24px !important;
+    bottom:auto !important;
   }
 }
 
@@ -361,66 +696,154 @@ body.symptom-page .dizziness-links{
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "病院で異常なしと言われた頭痛でも相談できますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "ご相談いただけます。検査で大きな異常がない場合でも、身体の緊張、自律神経、睡眠、ストレス、姿勢などが重なって不調が続くことがあります。"
+  "@type": "CollectionPage",
+  "name": "症状別に見る | 大阪 自律神経専門整体院 gene",
+  "description": "大阪 自律神経専門整体院 gene の症状別ページ一覧。めまい、不眠、頭痛、動悸、アトピー・皮膚症状、胃腸の不調など、自律神経と関わりやすい不調を症状別に確認できます。",
+  "url": "https://gene-seitai.com/symptoms.html",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "めまい",
+        "url": "https://gene-seitai.com/dizziness.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "不眠",
+        "url": "https://gene-seitai.com/insomnia.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "頭痛",
+        "url": "https://gene-seitai.com/headache.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "動悸",
+        "url": "https://gene-seitai.com/palpitations.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "慢性疲労",
+        "url": "https://gene-seitai.com/fatigue.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "パニック症状",
+        "url": "https://gene-seitai.com/panic.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "name": "不安障害",
+        "url": "https://gene-seitai.com/anxiety-disorder.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "name": "吐き気",
+        "url": "https://gene-seitai.com/nausea.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "name": "自律神経失調症",
+        "url": "https://gene-seitai.com/autonomic.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "name": "起立性調節障害",
+        "url": "https://gene-seitai.com/orthostatic-dysregulation.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 11,
+        "name": "息苦しさ",
+        "url": "https://gene-seitai.com/shortness-of-breath.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 12,
+        "name": "喉の違和感",
+        "url": "https://gene-seitai.com/throat-discomfort.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 13,
+        "name": "PMS",
+        "url": "https://gene-seitai.com/pms.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 14,
+        "name": "冷え性",
+        "url": "https://gene-seitai.com/coldness.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 15,
+        "name": "過敏性腸症候群",
+        "url": "https://gene-seitai.com/ibs.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 16,
+        "name": "慢性便秘",
+        "url": "https://gene-seitai.com/chronic-constipation.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 17,
+        "name": "胃の不快感",
+        "url": "https://gene-seitai.com/stomach-discomfort.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 18,
+        "name": "アトピー・皮膚症状",
+        "url": "https://gene-seitai.com/atopic.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 19,
+        "name": "耳鳴り",
+        "url": "https://gene-seitai.com/tinnitus.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 20,
+        "name": "顎関節症",
+        "url": "https://gene-seitai.com/tmj.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 21,
+        "name": "腱鞘炎",
+        "url": "https://gene-seitai.com/tenosynovitis.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 22,
+        "name": "足底筋膜炎",
+        "url": "https://gene-seitai.com/plantar-fasciitis.html"
       }
-    },
-    {
-      "@type": "Question",
-      "name": "頭痛と自律神経は関係ありますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "関係することがあります。自律神経は呼吸、循環、消化、睡眠、筋緊張などに関わるため、症状の背景として確認することがあります。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "東洋医学ではどのように考えますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "症状名だけで判断せず、気血水、五臓、冷え・熱、緊張、胃腸の状態などを見ながら、身体全体の偏りとして整理します。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "施術は強い刺激ですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "強い刺激や無理な矯正は行いません。お身体の反応を確認しながら、負担の少ない範囲で調整します。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "薬や病院の治療と併用できますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "併用していただけます。急な悪化や強い症状がある場合は、まず医療機関での確認を優先してください。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "何回くらい通えばいいですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "症状の出方や生活習慣によって異なります。初回時に状態を確認し、現実的な見通しをお伝えします。"
-      }
-    }
-  ]
+    ]
+  }
 }
 </script>
 <link rel="stylesheet" href="assets/css/gene-text-control.css">
-<link rel="stylesheet" href="assets/css/gene-content-accordion.css">
-<script src="assets/js/gene-content-accordion.js" defer></script>
 </head>
-<body class="subpage symptom-page headache-page">
+<body class="subpage symptom-page symptoms-page">
 <div id="global-logo-bg"><img src="assets/img/logo.svg" alt=""></div>
-<nav class="breadcrumb-fixed hidden"><a href="/">ホーム</a> ＞ <span>頭痛でお悩みの方へ</span></nav>
+<nav class="breadcrumb-fixed hidden"><a href="/">ホーム</a> ＞ <span>症状別に見る</span></nav>
 <a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">空き状況<br>を見る</a>
 <button id="hamburger-btn" class="hamburger-btn">≡</button>
 <div id="hamburger-menu" class="hamburger-menu">
@@ -435,22 +858,22 @@ body.symptom-page .dizziness-links{
 
 <nav class="gene-pc-side-nav" aria-label="PC用サイドナビゲーション">
   <a href="/">ホーム</a>
-  <a href="menu.html">施術内容・料金</a>
   <a href="symptoms.html">症状別に見る</a>
+  <a href="menu.html">施術内容・料金</a>
   <a href="access.html">アクセス</a>
   <a href="faq.html">よくある質問</a>
   <a href="voice.html">院内・改善写真</a>
 </nav>
 
-<h1 class="page-title dizziness-fade">頭痛で<span class="symptom-sp-br"><br></span>お悩みの方へ</h1>
-<p class="dizziness-lead dizziness-fade">頭痛が繰り返される方、首肩の緊張や疲労と一緒に出る方へ。</p>
-<div class="dizziness-intro-card dizziness-fade"><p>頭痛は、頭だけでなく首肩の緊張、目の疲れ、睡眠不足、呼吸の浅さ、ストレス反応が重なって出ることがあります。<br>
+<h1 class="page-title dizziness-fade">症状別に見る</h1>
+<p class="dizziness-lead dizziness-fade">自律神経の乱れと関わりやすい不調を、症状別に確認できるページです。</p>
+<div class="dizziness-intro-card dizziness-fade"><p>同じ症状名でも、背景には睡眠・ストレス・胃腸・呼吸・姿勢・身体の緊張など、複数の負担が重なっていることがあります。<br>
     <br>
-    当院では危険な頭痛の可能性に配慮しながら、慢性的に続く緊張や自律神経の偏りを確認します。</p></div>
+    気になる項目から、現在の状態に近いページをご確認ください。</p></div>
 <div class="dizziness-links dizziness-fade">
-  <a href="menu.html">施術内容・料金を見る</a>
-  <a href="voice.html">院内・改善写真を見る</a>
-  <a href="https://lin.ee/6bBKc67" target="_blank" rel="noopener">まずは相談してみる</a>
+  <a href="check.html?from=symptoms.html">自律神経チェック</a>
+  <a href="atopic.html">アトピー・皮膚症状</a>
+  <a href="https://lin.ee/6bBKc67" target="_blank" rel="noopener">LINEで相談する</a>
 </div>
 
 <section class="gene-check-invite dizziness-fade" aria-labelledby="gene-check-invite-title">
@@ -464,77 +887,149 @@ body.symptom-page .dizziness-links{
 来院時には82項目(3分程度)の詳細チェックを行い、<br>
 現在の状態をより詳しく確認できます。</p>
   <div class="gene-check-invite__actions">
-    <a href="check.html?from=headache.html" class="gene-check-btn" onclick="if(typeof gtag==='function'){gtag('event','quick_check_entry_click',{event_category:'gene_quick_check',source_page:location.pathname.split('/').pop()||'index.html'});}">自律神経チェックを行う</a>
+    <a href="check.html?from=symptoms.html" class="gene-check-btn" onclick="if(typeof gtag==='function'){gtag('event','quick_check_entry_click',{event_category:'gene_quick_check',source_page:location.pathname.split('/').pop()||'index.html'});}">自律神経チェックを行う</a>
   </div>
 </section>
 
-<div class="menu-container">
-  <div class="menu-card dizziness-fade"><h2>来院時によくある状態</h2><p>・首肩こりと一緒に頭痛が出る<br>
-      ・天候や疲労で悪化する<br>
-      ・目の奥が重い<br>
-      ・薬を飲んでも繰り返す</p></div>
-  <details class="menu-card dizziness-fade gene-content-accordion" data-gene-accordion data-accordion-id="traditional_view" data-accordion-group="symptom_explanation">
-  <summary><h2>東洋医学的な見立て</h2></summary>
-  <div class="gene-content-accordion__body"><p>東洋医学では、頭痛は「肝」の高ぶり、気血の滞り、冷え、胃腸の弱り、血の不足など複数の型で考えます。部位や悪化条件も見立ての材料になります。</p></div>
-</details>
-  <details class="menu-card dizziness-fade gene-content-accordion" data-gene-accordion data-accordion-id="medical_background" data-accordion-group="symptom_explanation">
-  <summary><h2>医学的な背景</h2></summary>
-  <div class="gene-content-accordion__body"><p>緊張型頭痛や片頭痛では、筋緊張、睡眠、ストレス、自律神経、痛みの過敏性などが関係するとされています。身体の緊張を下げる介入は補助的な選択肢として検討されています。</p></div>
-</details>
-<div class="gene-medical-safety-note dizziness-fade" role="note"><p>研究知見はあくまで身体を理解するための参考であり、診断や治癒を保証するものではありません。症状が強い場合や急な変化がある場合は医療機関での確認を優先してください。</p></div>
-  <details class="menu-card dizziness-fade gene-content-accordion" data-gene-accordion data-accordion-id="clinic_view" data-accordion-group="symptom_explanation">
-  <summary><h2>当院の見立て</h2></summary>
-  <div class="gene-content-accordion__body"><p>症状そのものだけを見るのではなく、首肩の緊張、呼吸、腹部、姿勢、睡眠、生活リズム、自律神経の反応を確認します。<br><br>一つの原因に決めつけず、現在の身体がどこで無理をしているのかを整理します。</p></div>
-</details>
-  <details class="menu-card dizziness-fade gene-content-accordion" data-gene-accordion data-accordion-id="treatment_policy" data-accordion-group="symptom_explanation">
-  <summary><h2>施術の考え方</h2></summary>
-  <div class="gene-content-accordion__body"><p>首を強く揉むのではなく、背中・胸郭・顎・骨盤まで含めて、頭部へ負担が集まりにくい状態を作ります。<br><br>強い刺激や無理な矯正ではなく、身体が防御反応を起こしにくい範囲で調整します。</p></div>
-</details>
-  <div class="menu-card dizziness-fade"><h2>このような方に</h2><p>・慢性的に頭痛を繰り返す<br>
-      ・首肩のこりが強い<br>
-      ・天候や疲労で悪化する<br>
-      ・自律神経の乱れも気になる</p></div>
-  <div class="menu-card dizziness-fade"><h2>ご案内</h2><p>症状の経過や感じ方には個人差があります。<br>現在の状態を確認した上で、無理のない範囲で進めていきます。</p></div>
-  <div class="menu-card dizziness-fade"><h2>頭痛のよくある質問</h2><p>よくいただくご質問をまとめました。<br>症状の出方には個人差がありますので、現在の状態に合わせて確認していきます。</p></div>
-  <details class="menu-card dizziness-fade gene-content-accordion" data-gene-accordion data-accordion-id="symptom_faq_01" data-accordion-group="symptom_faq">
-  <summary><h2>病院で異常なしと言われた<wbr><span class="gene-nowrap">頭痛</span>でも相談できますか？</h2></summary>
-  <div class="gene-content-accordion__body"><p>ご相談いただけます。検査で大きな異常がない場合でも、身体の緊張、自律神経、睡眠、ストレス、姿勢などが重なって不調が続くことがあります。</p></div>
-</details>
-
-  <details class="menu-card dizziness-fade gene-content-accordion" data-gene-accordion data-accordion-id="symptom_faq_02" data-accordion-group="symptom_faq">
-  <summary><h2>頭痛と自律神経は関係ありますか？</h2></summary>
-  <div class="gene-content-accordion__body"><p>関係することがあります。自律神経は呼吸、循環、消化、睡眠、筋緊張などに関わるため、症状の背景として確認することがあります。</p></div>
-</details>
-
-  <details class="menu-card dizziness-fade gene-content-accordion" data-gene-accordion data-accordion-id="symptom_faq_03" data-accordion-group="symptom_faq">
-  <summary><h2>東洋医学ではどのように考えますか？</h2></summary>
-  <div class="gene-content-accordion__body"><p>症状名だけで判断せず、気血水、五臓、冷え・熱、緊張、胃腸の状態などを見ながら、身体全体の偏りとして整理します。</p></div>
-</details>
-
-  <details class="menu-card dizziness-fade gene-content-accordion" data-gene-accordion data-accordion-id="symptom_faq_04" data-accordion-group="symptom_faq">
-  <summary><h2>施術は強い刺激ですか？</h2></summary>
-  <div class="gene-content-accordion__body"><p>強い刺激や無理な矯正は行いません。お身体の反応を確認しながら、負担の少ない範囲で調整します。</p></div>
-</details>
-
-  <details class="menu-card dizziness-fade gene-content-accordion" data-gene-accordion data-accordion-id="symptom_faq_05" data-accordion-group="symptom_faq">
-  <summary><h2>薬や病院の治療と併用できますか？</h2></summary>
-  <div class="gene-content-accordion__body"><p>併用していただけます。急な悪化や強い症状がある場合は、まず医療機関での確認を優先してください。</p></div>
-</details>
-
-  <details class="menu-card dizziness-fade gene-content-accordion" data-gene-accordion data-accordion-id="symptom_faq_06" data-accordion-group="symptom_faq">
-  <summary><h2>何回くらい通えばいいですか？</h2></summary>
-  <div class="gene-content-accordion__body"><p>症状の出方や生活習慣によって異なります。初回時に状態を確認し、現実的な見通しをお伝えします。</p></div>
-</details>
-  <div class="menu-card dizziness-fade">
-    <h2>関連する症状</h2>
-    <p>頭痛とあわせて見られやすい不調をまとめました。<br>症状は一つだけでなく、自律神経・睡眠・呼吸・胃腸・緊張状態などが重なって現れることがあります。</p>
-    <div class="dizziness-links dizziness-fade" aria-label="関連する症状">
-      <a href="dizziness.html">めまい</a>
-      <a href="tinnitus.html">耳鳴り</a>
-      <a href="insomnia.html">不眠</a>
-      <a href="tmj.html">顎関節症</a>
-      <a href="autonomic.html">自律神経失調症</a>
+<div class="symptoms-overview">
+  <section class="symptoms-category dizziness-fade" aria-labelledby="symptoms-cat-1">
+    <div class="symptoms-category__head">
+      <h2 id="symptoms-cat-1">よく見られる不調</h2>
+      <p>日常生活や仕事に影響しやすい不調</p>
     </div>
+    <div class="symptoms-card-grid">
+        <a href="dizziness.html" class="symptoms-card" data-symptom-name="めまい">
+          <span class="symptoms-card__name">めまい</span>
+          <p class="symptoms-card__text">ふらつき、浮遊感、検査で異常がないめまいなど。</p>
+        </a>
+        <a href="insomnia.html" class="symptoms-card" data-symptom-name="不眠">
+          <span class="symptoms-card__name">不眠</span>
+          <p class="symptoms-card__text">寝つきにくい、途中で目が覚める、眠りが浅い状態。</p>
+        </a>
+        <a href="headache.html" class="symptoms-card" data-symptom-name="頭痛">
+          <span class="symptoms-card__name">頭痛</span>
+          <p class="symptoms-card__text">首肩の緊張や疲労、自律神経の乱れと重なりやすい頭痛。</p>
+        </a>
+        <a href="palpitations.html" class="symptoms-card" data-symptom-name="動悸">
+          <span class="symptoms-card__name">動悸</span>
+          <p class="symptoms-card__text">緊張、不安、呼吸の浅さなどと重なって感じる動悸。</p>
+        </a>
+        <a href="fatigue.html" class="symptoms-card" data-symptom-name="慢性疲労">
+          <span class="symptoms-card__name">慢性疲労</span>
+          <p class="symptoms-card__text">休んでも抜けにくい疲労感、だるさ、回復しにくさ。</p>
+        </a>
+        <a href="panic.html" class="symptoms-card" data-symptom-name="パニック症状">
+          <span class="symptoms-card__name">パニック症状</span>
+          <p class="symptoms-card__text">急な不安感、息苦しさ、動悸などを伴いやすい状態。</p>
+        </a>
+        <a href="anxiety-disorder.html" class="symptoms-card" data-symptom-name="不安障害">
+          <span class="symptoms-card__name">不安障害</span>
+          <p class="symptoms-card__text">緊張が抜けにくい、外出や日常生活で不安が強くなる状態。</p>
+        </a>
+        <a href="nausea.html" class="symptoms-card" data-symptom-name="吐き気">
+          <span class="symptoms-card__name">吐き気</span>
+          <p class="symptoms-card__text">胃腸の緊張、ストレス、呼吸の浅さと重なりやすい吐き気。</p>
+        </a>
+    </div>
+  </section>
+  <section class="symptoms-category dizziness-fade" aria-labelledby="symptoms-cat-2">
+    <div class="symptoms-category__head">
+      <h2 id="symptoms-cat-2">自律神経に関わる不調</h2>
+      <p>睡眠・呼吸・循環・緊張反応と関係しやすい状態</p>
+    </div>
+    <div class="symptoms-card-grid">
+        <a href="autonomic.html" class="symptoms-card" data-symptom-name="自律神経失調症">
+          <span class="symptoms-card__name">自律神経失調症</span>
+          <p class="symptoms-card__text">複数の不調が重なり、原因が一つに絞りにくい状態。</p>
+        </a>
+        <a href="orthostatic-dysregulation.html" class="symptoms-card" data-symptom-name="起立性調節障害">
+          <span class="symptoms-card__name">起立性調節障害</span>
+          <p class="symptoms-card__text">朝のつらさ、立ちくらみ、疲労感などが重なりやすい状態。</p>
+        </a>
+        <a href="shortness-of-breath.html" class="symptoms-card" data-symptom-name="息苦しさ">
+          <span class="symptoms-card__name">息苦しさ</span>
+          <p class="symptoms-card__text">呼吸が浅い、胸が詰まる、深く吸いにくい感覚。</p>
+        </a>
+        <a href="throat-discomfort.html" class="symptoms-card" data-symptom-name="喉の違和感">
+          <span class="symptoms-card__name">喉の違和感</span>
+          <p class="symptoms-card__text">喉の詰まり感、飲み込みにくさ、緊張で強くなる違和感。</p>
+        </a>
+        <a href="pms.html" class="symptoms-card" data-symptom-name="PMS">
+          <span class="symptoms-card__name">PMS</span>
+          <p class="symptoms-card__text">月経前の不調、気分の揺れ、だるさ、頭痛など。</p>
+        </a>
+        <a href="coldness.html" class="symptoms-card" data-symptom-name="冷え性">
+          <span class="symptoms-card__name">冷え性</span>
+          <p class="symptoms-card__text">手足の冷え、巡りの悪さ、緊張や疲労と重なりやすい冷え。</p>
+        </a>
+    </div>
+  </section>
+  <section class="symptoms-category dizziness-fade" aria-labelledby="symptoms-cat-3">
+    <div class="symptoms-category__head">
+      <h2 id="symptoms-cat-3">胃腸・皮膚・その他</h2>
+      <p>内臓の緊張や睡眠・ストレスと重なりやすい不調</p>
+    </div>
+    <div class="symptoms-card-grid">
+        <a href="ibs.html" class="symptoms-card" data-symptom-name="過敏性腸症候群">
+          <span class="symptoms-card__name">過敏性腸症候群</span>
+          <p class="symptoms-card__text">お腹の張り、下痢・便秘、ストレスで揺れやすい胃腸の不調。</p>
+        </a>
+        <a href="chronic-constipation.html" class="symptoms-card" data-symptom-name="慢性便秘">
+          <span class="symptoms-card__name">慢性便秘</span>
+          <p class="symptoms-card__text">便通の乱れ、腹部の緊張、生活リズムの影響を受けやすい状態。</p>
+        </a>
+        <a href="stomach-discomfort.html" class="symptoms-card" data-symptom-name="胃の不快感">
+          <span class="symptoms-card__name">胃の不快感</span>
+          <p class="symptoms-card__text">胃もたれ、みぞおちの違和感、緊張で出やすい胃の不調。</p>
+        </a>
+        <a href="atopic.html" class="symptoms-card" data-symptom-name="アトピー・皮膚症状">
+          <span class="symptoms-card__name">アトピー・皮膚症状</span>
+          <p class="symptoms-card__text">かゆみや赤み、睡眠・ストレス・胃腸と重なりやすい皮膚症状。</p>
+        </a>
+        <a href="tinnitus.html" class="symptoms-card" data-symptom-name="耳鳴り">
+          <span class="symptoms-card__name">耳鳴り</span>
+          <p class="symptoms-card__text">首肩の緊張、疲労、睡眠状態と重なりやすい耳鳴り。</p>
+        </a>
+    </div>
+  </section>
+  <section class="symptoms-category dizziness-fade" aria-labelledby="symptoms-cat-4">
+    <div class="symptoms-category__head">
+      <h2 id="symptoms-cat-4">痛み・身体の不調</h2>
+      <p>姿勢・使い方・緊張の偏りと関わりやすい不調</p>
+    </div>
+    <div class="symptoms-card-grid">
+        <a href="tmj.html" class="symptoms-card" data-symptom-name="顎関節症">
+          <span class="symptoms-card__name">顎関節症</span>
+          <p class="symptoms-card__text">顎の違和感、噛みしめ、首肩の緊張と重なりやすい状態。</p>
+        </a>
+        <a href="tenosynovitis.html" class="symptoms-card" data-symptom-name="腱鞘炎">
+          <span class="symptoms-card__name">腱鞘炎</span>
+          <p class="symptoms-card__text">手首や指の使いすぎ、前腕の緊張と関係しやすい痛み。</p>
+        </a>
+        <a href="plantar-fasciitis.html" class="symptoms-card" data-symptom-name="足底筋膜炎">
+          <span class="symptoms-card__name">足底筋膜炎</span>
+          <p class="symptoms-card__text">足裏の痛み、立ち仕事、足首や姿勢の負担と重なりやすい状態。</p>
+        </a>
+    </div>
+  </section>
+</div>
+
+<section class="symptoms-case-band dizziness-fade" aria-labelledby="symptoms-case-title">
+  <h2 id="symptoms-case-title">アトピー・皮膚症状の<span>改善例</span>を見る</h2>
+  <p class="symptoms-case-band__lead">症状ページだけでなく、実際の改善例と経過写真を確認したい方はこちらをご覧ください。写真は経過の一例であり、得られる結果には個人差があります。</p>
+  <div class="symptoms-case-grid" aria-label="アトピー・皮膚症状の改善例一覧">
+    <a href="case1.html" class="symptoms-case-link"><strong>全身にアトピー症状が出ていた方の改善例</strong><span>20代後半男性。顔・首・体正面・足首など、初回から6か月目までの経過。</span><span class="symptoms-case-link__button">改善例を見る</span></a>
+    <a href="case2.html" class="symptoms-case-link"><strong>前腕・体幹・脚まわりにアトピー症状が出ていた方の改善例</strong><span>20代後半男性。前腕・体幹部・脚・足首など、広い範囲の皮膚状態の経過。</span><span class="symptoms-case-link__button">改善例を見る</span></a>
+    <a href="case3.html" class="symptoms-case-link"><strong>腕・足首まわりのアトピー症状の改善例</strong><span>前腕前面・前腕背面・右足首・左足首の変化を確認できます。</span><span class="symptoms-case-link__button">改善例を見る</span></a>
+  </div>
+</section>
+
+<div class="symptoms-note-card dizziness-fade">症状が強い場合や急な変化がある場合は、医療機関での確認を優先してください。<br>整体では、現在の身体の状態を確認しながら、無理のない範囲で整えていきます。</div>
+
+<div class="menu-container">
+  <div class="menu-card dizziness-fade">
+    <h2>どのページを見れば良いか迷う方へ</h2>
+    <p>不調が一つに絞れない場合は、最も気になる症状からご確認ください。<br><br>複数の症状が重なっている場合でも、来院時には症状名だけで判断せず、睡眠・呼吸・胃腸・姿勢・生活リズムなどを合わせて確認します。</p>
   </div>
 
   <section class="gene-compact-life-card dizziness-fade" aria-labelledby="gene-compact-life-title">
@@ -568,11 +1063,10 @@ body.symptom-page .dizziness-links{
     </div>
   </section>
 
-
   <div class="menu-card dizziness-fade">
-    <h2>どの症状として相談すればいいか迷う方へ</h2>
-    <p>現在の状態を整理するところからでも大丈夫です。<br>症状名がはっきりしなくてもご相談いただけます。</p>
-    <p style="text-align:center; margin-top:18px;"><a href="https://lin.ee/6bBKc67" class="map-open-btn gene-cta-two-line" target="_blank" rel="noopener"><span class="gene-cta-two-line__main">まずは相談してみる</span><span class="gene-cta-two-line__sub">LINEでご相談いただけます</span></a></p>
+    <h2 style="text-align:center !important;">ご相談・ご予約はこちら</h2>
+    <p style="text-align:center !important;">現在の状態を整理するところからでも大丈夫です。<br>ご相談・ご予約はLINEから承っています。</p>
+    <p style="text-align:center !important; margin-top:18px;"><a href="https://lin.ee/6bBKc67" class="map-open-btn" target="_blank" rel="noopener">LINEで予約する</a></p>
   </div>
 </div>
 <div class="gene-mobile-symptom-backdrop" id="gene-mobile-symptom-backdrop"></div>
@@ -633,7 +1127,7 @@ body.symptom-page .dizziness-links{
   <button type="button" id="gene-mobile-symptom-toggle" aria-expanded="false" aria-controls="gene-mobile-symptom-panel"><span class="nav-icon">＋</span><span class="nav-text">症状</span></button>
   <a href="menu.html"><span class="nav-icon">◇</span><span class="nav-text">施術料金</span></a>
   <a href="access.html"><span class="nav-icon">⌖</span><span class="nav-text">アクセス</span></a>
-  <a href="https://lin.ee/6bBKc67" class="line-nav" target="_blank" rel="noopener"><span class="nav-icon">↗</span><span class="nav-text">空き状況</span></a>
+  <a href="https://lin.ee/6bBKc67" class="line-nav" target="_blank" rel="noopener"><span class="nav-icon">↗</span><span class="nav-text">LINE予約</span></a>
 </nav>
 <footer>
   大阪 自律神経専門整体院 gene<br>
@@ -714,6 +1208,72 @@ window.addEventListener("load", () => {
 })();
 </script>
 
+
+
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+
+  if (params.get("internal") === "true") {
+    localStorage.setItem("internalUser", "true");
+  }
+
+  if (params.get("internal") === "false") {
+    localStorage.removeItem("internalUser");
+  }
+
+
+  function isLocalPreview() {
+    var host = window.location.hostname;
+
+    return (
+      window.location.protocol === "file:" ||
+      host === "localhost" ||
+      host === "127.0.0.1" ||
+      host === "::1" ||
+      /^192\.168\./.test(host) ||
+      /^10\./.test(host) ||
+      /^172\.(1[6-9]|2[0-9]|3[0-1])\./.test(host)
+    );
+  }
+
+  if (isLocalPreview()) {
+    return;
+  }
+
+  var isInternal = localStorage.getItem("internalUser") === "true";
+
+  if (isInternal) {
+    return;
+  }
+
+  var page = window.location.pathname.split("/").pop() || "index.html";
+  var storageKey = page.replace(/[^a-z0-9_-]/gi, "_") + "_notify_last_sent";
+  var now = Date.now();
+  var lastSent = Number(localStorage.getItem(storageKey) || 0);
+  var oneHour = 60 * 60 * 1000;
+
+  if (now - lastSent < oneHour) {
+    return;
+  }
+
+  localStorage.setItem(storageKey, String(now));
+
+  fetch(
+    "https://script.google.com/macros/s/AKfycbyzDrbDgk6Hqkl8n-0PToOPC5oisxZscgAZupO_Gqjm3YLYhvQanuuvtp7leo2RmwLk/exec",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        page: page,
+        url: window.location.href,
+        referrer: document.referrer || "直接アクセス / 不明",
+        userAgent: navigator.userAgent,
+        internal: false
+      })
+    }
+  );
+})();
+</script>
 
 <script src="assets/js/line-click-tracking.js"></script>
 

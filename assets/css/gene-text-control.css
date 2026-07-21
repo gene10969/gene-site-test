@@ -1,0 +1,324 @@
+/* =========================================================
+   gene text control
+   画面幅・フォントサイズ差による文章崩れを抑えるための
+   共通テキスト制御CSS
+   ========================================================= */
+
+/* 読ませる文章エリアだけを対象にする */
+:where(
+  .top-hero-card,
+  .info-card,
+  .menu-hero-card,
+  .menu-container,
+  .menu-card,
+  .gene-lifestyle-figure,
+  .gene-compact-life-card,
+  .gene-check-invite,
+  .dizziness-intro-card,
+  .dizziness-links,
+  .symptoms-overview,
+  .symptoms-category,
+  .symptoms-case-band,
+  .symptoms-note-card,
+  .atopic-case1-compare,
+  .voice-wrap,
+  .case,
+  .case-detail-wrap,
+  .gene-check-page-wrap,
+  .gene-check-card
+) :where(p, li, dd, figcaption, .voice-page-title-sub, .case-note){
+  font-size:clamp(.96rem, 2.7vw, 1.05rem) !important;
+  line-height:2.02 !important;
+  letter-spacing:.04em !important;
+  line-break:strict !important;
+  word-break:normal !important;
+  overflow-wrap:anywhere !important;
+  text-wrap:pretty !important;
+}
+
+/* 見出しの行割れを自然に整える */
+:where(
+  .top-hero-card,
+  .info-card,
+  .menu-hero-card,
+  .menu-container,
+  .menu-card,
+  .gene-lifestyle-figure,
+  .gene-compact-life-card,
+  .gene-check-invite,
+  .dizziness-intro-card,
+  .symptoms-category,
+  .symptoms-case-band,
+  .symptoms-note-card,
+  .atopic-case1-compare,
+  .voice-wrap,
+  .case,
+  .case-detail-wrap,
+  .gene-check-page-wrap,
+  .gene-check-card
+) :where(h1, h2, h3, h4):not(.main-title){
+  line-height:1.55 !important;
+  letter-spacing:.05em !important;
+  line-break:strict !important;
+  word-break:normal !important;
+  overflow-wrap:anywhere !important;
+  text-wrap:balance !important;
+}
+
+/* ページタイトル */
+:where(
+  .dizziness-intro-card,
+  .menu-container,
+  .voice-wrap,
+  .case-detail-wrap,
+  .gene-check-page-wrap
+) :where(h1, .page-title, .voice-page-title):not(.main-title){
+  font-size:clamp(1.85rem, 5.8vw, 2.8rem) !important;
+}
+
+/* セクション見出し */
+:where(
+  .top-hero-card,
+  .info-card,
+  .menu-hero-card,
+  .menu-container,
+  .menu-card,
+  .gene-lifestyle-figure,
+  .gene-compact-life-card,
+  .gene-check-invite,
+  .dizziness-intro-card,
+  .symptoms-category,
+  .symptoms-case-band,
+  .symptoms-note-card,
+  .atopic-case1-compare,
+  .voice-wrap,
+  .case,
+  .case-detail-wrap,
+  .gene-check-page-wrap,
+  .gene-check-card
+) h2:not(.main-title){
+  font-size:clamp(1.34rem, 4.4vw, 2rem) !important;
+}
+
+/* 小見出し */
+:where(
+  .top-hero-card,
+  .info-card,
+  .menu-hero-card,
+  .menu-container,
+  .menu-card,
+  .gene-lifestyle-figure,
+  .gene-compact-life-card,
+  .gene-check-invite,
+  .dizziness-intro-card,
+  .symptoms-category,
+  .symptoms-case-band,
+  .symptoms-note-card,
+  .atopic-case1-compare,
+  .voice-wrap,
+  .case,
+  .case-detail-wrap,
+  .gene-check-page-wrap,
+  .gene-check-card
+) h3:not(.main-title){
+  font-size:clamp(1.08rem, 3.6vw, 1.42rem) !important;
+}
+
+/* 読みやすい横幅の上限。カード・グリッド自体の幅は変えない */
+:where(
+  .info-card,
+  .menu-card,
+  .gene-check-invite,
+  .dizziness-intro-card,
+  .symptoms-note-card,
+  .voice-cta,
+  .case-detail-wrap
+) > p,
+:where(
+  .info-card,
+  .menu-card,
+  .gene-check-invite,
+  .dizziness-intro-card,
+  .symptoms-note-card,
+  .voice-cta,
+  .case-detail-wrap
+) :where(.card-content, .menu-split-content, .dizziness-text, .gene-check-result-text) > p{
+  max-width:min(100%, 42em) !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+/* ボタン・固定ナビ・料金・フッターなどは巻き込まない */
+:where(
+  .reserve-btn-sub,
+  .hamburger-btn,
+  .hamburger-menu,
+  .breadcrumb,
+  .breadcrumb-fixed,
+  .gene-pc-side-nav,
+  .gene-mobile-bottom-nav,
+  .gene-mobile-symptom-panel,
+  .voice-cta-btn,
+  .case-cta-btn,
+  .top-cta-link,
+  .menu-cta-link,
+  .map-open-btn,
+  .gene-check-btn,
+  .menu-price-wrap,
+  footer
+),
+:where(
+  .reserve-btn-sub,
+  .hamburger-btn,
+  .hamburger-menu,
+  .breadcrumb,
+  .breadcrumb-fixed,
+  .gene-pc-side-nav,
+  .gene-mobile-bottom-nav,
+  .gene-mobile-symptom-panel,
+  .voice-cta-btn,
+  .case-cta-btn,
+  .top-cta-link,
+  .menu-cta-link,
+  .map-open-btn,
+  .gene-check-btn,
+  .menu-price-wrap,
+  footer
+) *{
+  text-wrap:initial !important;
+  overflow-wrap:normal !important;
+}
+
+/* スマホ時は本文の詰まりをやや緩める */
+@media (max-width:768px){
+  :where(
+    .top-hero-card,
+    .info-card,
+    .menu-hero-card,
+    .menu-container,
+    .menu-card,
+    .gene-lifestyle-figure,
+    .gene-compact-life-card,
+    .gene-check-invite,
+    .dizziness-intro-card,
+    .dizziness-links,
+    .symptoms-overview,
+    .symptoms-category,
+    .symptoms-case-band,
+    .symptoms-note-card,
+    .atopic-case1-compare,
+    .voice-wrap,
+    .case,
+    .case-detail-wrap,
+    .gene-check-page-wrap,
+    .gene-check-card
+  ) :where(p, li, dd, figcaption, .voice-page-title-sub, .case-note){
+    font-size:clamp(.95rem, 3.7vw, 1.04rem) !important;
+    line-height:2.08 !important;
+    letter-spacing:.035em !important;
+  }
+
+  :where(
+    .info-card,
+    .menu-card,
+    .gene-check-invite,
+    .dizziness-intro-card,
+    .symptoms-note-card,
+    .voice-cta,
+    .case-detail-wrap
+  ) > p,
+  :where(
+    .info-card,
+    .menu-card,
+    .gene-check-invite,
+    .dizziness-intro-card,
+    .symptoms-note-card,
+    .voice-cta,
+    .case-detail-wrap
+  ) :where(.card-content, .menu-split-content, .dizziness-text, .gene-check-result-text) > p{
+    max-width:100% !important;
+  }
+}
+
+/* text-wrap非対応ブラウザでも崩れにくい最低限の保険 */
+@supports not (text-wrap:balance){
+  :where(
+    .top-hero-card,
+    .info-card,
+    .menu-hero-card,
+    .menu-container,
+    .menu-card,
+    .gene-lifestyle-figure,
+    .gene-compact-life-card,
+    .gene-check-invite,
+    .dizziness-intro-card,
+    .dizziness-links,
+    .symptoms-overview,
+    .symptoms-category,
+    .symptoms-case-band,
+    .symptoms-note-card,
+    .atopic-case1-compare,
+    .voice-wrap,
+    .case,
+    .case-detail-wrap,
+    .gene-check-page-wrap,
+    .gene-check-card
+  ) :where(p, li, dd, figcaption, h1, h2, h3, h4){
+    overflow-wrap:anywhere !important;
+  }
+}
+/* =========================================================
+   menu price card typography adjustment
+   料金カードだけ文字の圧を少し抑える
+   ========================================================= */
+
+.menu-price-wrap{
+  font-size:.94rem !important;
+  line-height:1.9 !important;
+}
+
+.menu-price-title{
+  font-size:.96rem !important;
+  line-height:1.6 !important;
+  letter-spacing:.08em !important;
+  margin-bottom:12px !important;
+}
+
+.menu-price-main{
+  font-size:clamp(1.12rem, 2.4vw, 1.34rem) !important;
+  line-height:1.55 !important;
+  letter-spacing:.035em !important;
+  margin-bottom:8px !important;
+}
+
+.menu-price-main .price-gold{
+  font-size:1.08em !important;
+  letter-spacing:.03em !important;
+}
+
+.menu-price-sub{
+  font-size:clamp(.9rem, 2.1vw, .98rem) !important;
+  line-height:1.9 !important;
+  letter-spacing:.035em !important;
+  color:rgba(255,255,255,.78) !important;
+}
+
+@media (max-width:768px){
+  .menu-price-wrap{
+    font-size:.92rem !important;
+  }
+
+  .menu-price-title{
+    font-size:.92rem !important;
+  }
+
+  .menu-price-main{
+    font-size:clamp(1.06rem, 4.2vw, 1.22rem) !important;
+    line-height:1.55 !important;
+  }
+
+  .menu-price-sub{
+    font-size:clamp(.86rem, 3.45vw, .94rem) !important;
+    line-height:1.88 !important;
+  }
+}

@@ -17,7 +17,15 @@ if (
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-8KPJ55NQMT');
+  (function(){
+const params=new URLSearchParams(location.search);
+if(params.get('internal')==='true'){localStorage.setItem('internalUser','true');}
+if(params.get('internal')==='false'){localStorage.removeItem('internalUser');}
+const isInternal=localStorage.getItem('internalUser')==='true';
+if(!isInternal){
+gtag('config','G-8KPJ55NQMT');
+}
+})();
 }
 </script>
   
@@ -34,6 +42,75 @@ if (
 <style>
 
 /* gene mobile bottom navigation */
+
+.gene-pc-side-nav{
+  display:none;
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+    position:fixed;
+    right:60px;
+    top:50%;
+    z-index:900;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:18px;
+    transform:translateY(-50%);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .75s ease;
+  }
+
+  .gene-pc-side-nav.show{
+    opacity:1;
+    pointer-events:auto;
+  }
+
+  .gene-pc-side-nav a{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:flex-end;
+    min-height:22px;
+    padding:0 0 0 28px;
+    color:rgba(244,234,208,.82);
+    font-size:.9rem;
+    line-height:1;
+    letter-spacing:.08em;
+    text-decoration:none;
+    writing-mode:horizontal-tb;
+    transition:color .28s ease, transform .28s ease;
+  }
+
+  .gene-pc-side-nav a::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:50%;
+    width:0;
+    height:1px;
+    background:linear-gradient(90deg, rgba(217,193,126,0), rgba(217,193,126,.86));
+    transform:translateY(-50%);
+    transition:width .28s ease;
+  }
+
+  .gene-pc-side-nav a:hover{
+    color:#d9c17e;
+    transform:translateX(-3px);
+  }
+
+  .gene-pc-side-nav a:hover::before{
+    width:18px;
+  }
+
+  .hamburger-btn,
+  #hamburger-btn{
+    display:none !important;
+  }
+}
+
 .gene-mobile-bottom-nav,
 .gene-mobile-symptom-panel,
 .gene-mobile-symptom-backdrop{
@@ -588,6 +665,98 @@ if (
   transform:translateY(-2px);
   box-shadow:0 16px 36px rgba(217,193,126,.36), 0 0 28px rgba(217,193,126,.28) !important;
 }
+
+
+/* gene CTA wording refinement */
+.gene-cta-two-line{
+  display:inline-flex !important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  text-align:center;
+  line-height:1.35;
+}
+
+.gene-cta-two-line__main{
+  display:block;
+  font-weight:700;
+  line-height:1.35;
+  letter-spacing:.05em;
+}
+
+.gene-cta-two-line__sub{
+  display:block;
+  font-size:.78rem;
+  font-weight:500;
+  line-height:1.45;
+  letter-spacing:.03em;
+  opacity:.86;
+}
+
+.reserve-btn-sub{
+  line-height:1.38;
+  text-align:center;
+}
+
+@media (max-width:640px){
+  .gene-cta-two-line__sub{
+    font-size:.72rem;
+  }
+}
+
+
+
+/* PC fixed CTA / side navigation alignment */
+@media (min-width: 769px){
+  .reserve-btn-sub{
+    top:95px !important;
+    right:24px !important;
+  }
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+    right:24px !important;
+  }
+}
+
+
+/* reserve button color match */
+.reserve-btn-sub,
+.reserve-btn-sub:visited{
+  background:linear-gradient(180deg,#fff0a8 0%,#ead893 42%,#d9c17e 100%) !important;
+  border:1px solid rgba(255,238,170,.88) !important;
+  color:#111 !important;
+  font-weight:700 !important;
+  box-shadow:0 12px 30px rgba(217,193,126,.28), 0 0 22px rgba(217,193,126,.22) !important;
+}
+
+.reserve-btn-sub *{
+  color:#111 !important;
+}
+
+.reserve-btn-sub:hover{
+  background:linear-gradient(180deg,#fff4ba 0%,#eedf9e 45%,#dcc47f 100%) !important;
+  border-color:rgba(255,244,186,.98) !important;
+  color:#111 !important;
+  box-shadow:0 16px 36px rgba(217,193,126,.36), 0 0 28px rgba(217,193,126,.28) !important;
+}
+
+/* PC fixed CTA / side navigation alignment */
+@media (min-width: 769px){
+  .reserve-btn-sub{
+    top:95px !important;
+    right:24px !important;
+  }
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+    right:24px !important;
+  }
+}
+
 </style>
 
 <script type="application/ld+json">
@@ -608,7 +777,7 @@ if (
       "name": "病院で異常なしと言われた症状でも大丈夫ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "大丈夫です。多くの方が通われており、良くなったと喜ばれております。"
+        "text": "ご相談いただけます。検査で大きな異常がない場合でも、身体の緊張・自律神経・睡眠・ストレス・姿勢などが重なって不調が続くことがあります。まずは現在の状態を整理する目的でご相談ください。"
       }
     },
     {
@@ -766,6 +935,9 @@ if (
   ]
 }
 </script>
+<link rel="stylesheet" href="assets/css/gene-text-control.css">
+<link rel="stylesheet" href="assets/css/gene-content-accordion.css">
+<script src="assets/js/gene-content-accordion.js" defer></script>
 </head>
 <body class="subpage">
 
@@ -778,9 +950,7 @@ if (
   <a href="/">ホーム</a> ＞ <span>よくある質問</span>
 </nav>
 
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">
-  LINE<br>予約
-</a>
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">空き状況<br>を見る</a>
 
 <!-- ハンバーガーアイコン -->
 <button id="hamburger-btn" class="hamburger-btn">≡</button>
@@ -792,122 +962,132 @@ if (
   <button class="menu-close-btn">×</button>
 
   <a href="/">ホーム</a>
-<a href="menu.html">施術内容</a>
+<a href="menu.html">施術内容・料金</a>
+<a href="symptoms.html">症状別に見る</a>
 <a href="access.html">アクセス</a>
 <a href="faq.html">よくある質問</a>
 <!-- <a href="news.html">お知らせ</a> -->
 <a href="voice.html">院内・改善写真</a>
-
 </div>
+
+<nav class="gene-pc-side-nav" aria-label="PC用サイドナビゲーション">
+  <a href="/">ホーム</a>
+  <a href="menu.html">施術内容・料金</a>
+  <a href="symptoms.html">症状別に見る</a>
+  <a href="access.html">アクセス</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="voice.html">院内・改善写真</a>
+</nav>
+
 
 <h1 class="page-title faq-fade">よくある質問</h1>
 
 <div class="menu-container">
 
-  <div class="menu-card faq-fade">
-    <h2>どのような症状に対応していますか？</h2>
-    <p>アトピー、めまい、不眠、頭痛、耳鳴り、動悸、慢性疲労、起立性調節障害、過敏性腸症候群など、自律神経の乱れと関わる様々なお悩みに対応しています。</p>
-  </div>
+  <details class="menu-card faq-fade gene-content-accordion" data-gene-accordion data-accordion-id="faq_01" data-accordion-group="faq">
+  <summary><h2>どのような症状に対応していますか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>アトピー、めまい、不眠、頭痛、耳鳴り、動悸、慢性疲労、起立性調節障害、過敏性腸症候群など、自律神経の乱れと関わる様々なお悩みに対応しています。</p></div>
+</details>
 
-  <div class="menu-card faq-fade">
-    <h2>病院で異常なしと言われた症状でも大丈夫ですか？</h2>
-    <p>大丈夫です。多くの方が通われており、良くなったと喜ばれております。</p>
-  </div>
+  <details class="menu-card faq-fade gene-content-accordion" data-gene-accordion data-accordion-id="faq_02" data-accordion-group="faq">
+  <summary><h2>病院で異常なしと言われた<wbr><span class="gene-nowrap">症状</span>でも大丈夫ですか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>ご相談いただけます。検査で大きな異常がない場合でも、身体の緊張・自律神経・睡眠・ストレス・姿勢などが重なって不調が続くことがあります。まずは現在の状態を整理する目的でご相談ください。</p></div>
+</details>
 
-  <div class="menu-card faq-fade">
-    <h2>子どもでも施術を受けられますか？</h2>
-    <p>当院の施術は乳幼児からご高齢の方まで幅広く対応しております。</p>
-  </div>
+  <details class="menu-card faq-fade gene-content-accordion" data-gene-accordion data-accordion-id="faq_03" data-accordion-group="faq">
+  <summary><h2>子どもでも施術を受けられますか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>当院の施術は乳幼児からご高齢の方まで幅広く対応しております。</p></div>
+</details>
 
-  <div class="menu-card faq-fade">
-    <h2>妊娠中でも施術を受けられますか？</h2>
-    <p>問題ありません。お体の状態に合わせて施術方法を提案させていただきますのでご安心ください。</p>
-  </div>
+  <details class="menu-card faq-fade gene-content-accordion" data-gene-accordion data-accordion-id="faq_04" data-accordion-group="faq">
+  <summary><h2>妊娠中でも施術を受けられますか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>問題ありません。お体の状態に合わせて施術方法を提案させていただきますのでご安心ください。</p></div>
+</details>
 
-  <div class="menu-card faq-fade">
-    <h2>来ている方の年齢層はどのくらいですか？</h2>
-    <p>10代から70代まで幅広い年代の方が来院されています。</p>
-  </div>
+  <details class="menu-card faq-fade gene-content-accordion" data-gene-accordion data-accordion-id="faq_05" data-accordion-group="faq">
+  <summary><h2>来ている方の年齢層はどのくらいですか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>10代から70代まで幅広い年代の方が来院されています。</p></div>
+</details>
 
-  <div class="menu-card faq-fade">
-    <h2>男性でも利用できますか？</h2>
-    <p>男性・女性ともにご利用いただけます。</p>
-  </div>
+  <details class="menu-card faq-fade gene-content-accordion" data-gene-accordion data-accordion-id="faq_06" data-accordion-group="faq">
+  <summary><h2>男性でも利用できますか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>男性・女性ともにご利用いただけます。</p></div>
+</details>
 
-  <div class="menu-card faq-fade">
-    <h2>どんな施術ですか？</h2>
-    <p>過剰な刺激を行わず、自律神経のバランスを整える施術です。ただし、症状の内容によっては刺激のある施術を行う場合がありますがお声がけをいたします。</p>
-  </div>
+  <details class="menu-card faq-fade gene-content-accordion" data-gene-accordion data-accordion-id="faq_07" data-accordion-group="faq">
+  <summary><h2>どんな施術ですか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>過剰な刺激を行わず、自律神経のバランスを整える施術です。ただし、症状の内容によっては刺激のある施術を行う場合がありますがお声がけをいたします。</p></div>
+</details>
 
-  <div class="menu-card faq-fade">
-    <h2>強い矯正やボキボキする施術はありますか？</h2>
-    <p>基本的には過度な刺激を避け、身体の状態に合わせて施術を行います。</p>
-  </div>
+  <details class="menu-card faq-fade gene-content-accordion" data-gene-accordion data-accordion-id="faq_08" data-accordion-group="faq">
+  <summary><h2>強い矯正やボキボキする施術はありますか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>基本的には過度な刺激を避け、身体の状態に合わせて施術を行います。</p></div>
+</details>
 
-  <div class="menu-card faq-fade">
-    <h2>施術は痛くありませんか？</h2>
-    <p>できるだけ負担の少ない施術を心がけています。不安なことがあれば遠慮なくお伝えください。</p>
-  </div>
+  <details class="menu-card faq-fade gene-content-accordion" data-gene-accordion data-accordion-id="faq_09" data-accordion-group="faq">
+  <summary><h2>施術は痛くありませんか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>できるだけ負担の少ない施術を心がけています。不安なことがあれば遠慮なくお伝えください。</p></div>
+</details>
 
-  <div class="menu-card faq-fade">
-    <h2>薬を飲みながらでも施術を受けられますか？</h2>
-    <p>服薬中の方も施術を受けていただけます。ご不安な場合は事前にご相談ください。</p>
-  </div>
+  <details class="menu-card faq-fade gene-content-accordion" data-gene-accordion data-accordion-id="faq_10" data-accordion-group="faq">
+  <summary><h2>薬を飲みながらでも施術を受けられますか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>服薬中の方も施術を受けていただけます。ご不安な場合は事前にご相談ください。</p></div>
+</details>
 
-  <div class="menu-card faq-fade">
-    <h2>初回はどのくらい時間がかかりますか？</h2>
-    <p>初回はカウンセリングやお身体の状態確認を行うため、約60分程度お時間をいただいております。</p>
-  </div>
+  <details class="menu-card faq-fade gene-content-accordion" data-gene-accordion data-accordion-id="faq_11" data-accordion-group="faq">
+  <summary><h2>初回はどのくらい時間がかかりますか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>初回はカウンセリングやお身体の状態確認を行うため、約60分程度お時間をいただいております。</p></div>
+</details>
 
-  <div class="menu-card faq-fade">
-    <h2>2回目以降はどのくらい時間がかかりますか？</h2>
-    <p>状態に合わせて施術を行うため、約30分程度が目安となります。</p>
-  </div>
+  <details class="menu-card faq-fade gene-content-accordion" data-gene-accordion data-accordion-id="faq_12" data-accordion-group="faq">
+  <summary><h2>2回目以降はどのくらい時間がかかりますか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>状態に合わせて施術を行うため、約30分程度が目安となります。</p></div>
+</details>
 
-  <div class="menu-card faq-fade">
-    <h2>何回くらい通えばいいですか？</h2>
-    <p>お身体の状態によって異なります。初回時に現在の状態を確認しながらご説明いたします。</p>
-  </div>
+  <details class="menu-card faq-fade gene-content-accordion" data-gene-accordion data-accordion-id="faq_13" data-accordion-group="faq">
+  <summary><h2>何回くらい通えばいいですか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>お身体の状態によって異なります。初回時に現在の状態を確認しながらご説明いたします。</p></div>
+</details>
 
-  <div class="menu-card faq-fade">
-    <h2>当日予約は可能ですか？</h2>
-    <p>空き状況によっては当日予約も可能です。LINEよりお問い合わせください。</p>
-  </div>
+  <details class="menu-card faq-fade gene-content-accordion" data-gene-accordion data-accordion-id="faq_14" data-accordion-group="faq">
+  <summary><h2>当日予約は可能ですか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>空き状況によっては当日予約も可能です。LINEよりお問い合わせください。</p></div>
+</details>
 
-  <div class="menu-card faq-fade">
-    <h2>予約なしでも大丈夫ですか？</h2>
-    <p>当院は男性院長1人で施術しておりますので、完全予約制になります。</p>
-  </div>
+  <details class="menu-card faq-fade gene-content-accordion" data-gene-accordion data-accordion-id="faq_15" data-accordion-group="faq">
+  <summary><h2>予約なしでも大丈夫ですか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>当院は男性院長1人で施術しておりますので、完全予約制になります。</p></div>
+</details>
 
-  <div class="menu-card faq-fade">
-    <h2>キャンセルや予約変更はできますか？</h2>
-    <p>ご都合が悪くなった場合は、できるだけ早めにご連絡をお願いいたします。</p>
-  </div>
+  <details class="menu-card faq-fade gene-content-accordion" data-gene-accordion data-accordion-id="faq_16" data-accordion-group="faq">
+  <summary><h2>キャンセルや予約変更はできますか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>ご都合が悪くなった場合は、できるだけ早めにご連絡をお願いいたします。</p></div>
+</details>
 
-  <div class="menu-card faq-fade">
-    <h2>服装に指定はありますか？</h2>
-    <p>なるべくリラックスできる動きやすい服装でお越しください。</p>
-  </div>
+  <details class="menu-card faq-fade gene-content-accordion" data-gene-accordion data-accordion-id="faq_17" data-accordion-group="faq">
+  <summary><h2>服装に指定はありますか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>なるべくリラックスできる動きやすい服装でお越しください。</p></div>
+</details>
 
-  <div class="menu-card faq-fade">
-    <h2>着替えはありますか？</h2>
-    <p>お着替えをご用意しておりますので、お仕事帰りでもご来院いただけます。</p>
-  </div>
+  <details class="menu-card faq-fade gene-content-accordion" data-gene-accordion data-accordion-id="faq_18" data-accordion-group="faq">
+  <summary><h2>着替えはありますか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>お着替えをご用意しておりますので、お仕事帰りでもご来院いただけます。</p></div>
+</details>
 
-  <div class="menu-card faq-fade">
-    <h2>健康保険は使えますか？</h2>
-    <p>完全実費施術となりますので、各種健康保険は適用外となります。</p>
-  </div>
+  <details class="menu-card faq-fade gene-content-accordion" data-gene-accordion data-accordion-id="faq_19" data-accordion-group="faq">
+  <summary><h2>健康保険は使えますか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>完全実費施術となりますので、各種健康保険は適用外となります。</p></div>
+</details>
 
-  <div class="menu-card faq-fade">
-    <h2>支払い方法は何がありますか？</h2>
-    <p>現金・クレジットカード・電子マネー・QR決済に対応しています。</p>
-  </div>
+  <details class="menu-card faq-fade gene-content-accordion" data-gene-accordion data-accordion-id="faq_20" data-accordion-group="faq">
+  <summary><h2>支払い方法は何がありますか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>現金・クレジットカード・電子マネー・QR決済に対応しています。</p></div>
+</details>
 
-  <div class="menu-card faq-fade">
-    <h2>駐車場や駐輪場はありますか？</h2>
-    <p>近隣のコインパーキングをご利用ください。駐輪場も建物敷地内にはございません。</p>
-  </div>
+  <details class="menu-card faq-fade gene-content-accordion" data-gene-accordion data-accordion-id="faq_21" data-accordion-group="faq">
+  <summary><h2>駐車場や駐輪場はありますか？</h2></summary>
+  <div class="gene-content-accordion__body"><p>近隣のコインパーキングをご利用ください。駐輪場も建物敷地内にはございません。</p></div>
+</details>
 
 </div>
 
@@ -983,7 +1163,7 @@ if (
   </button>
   <a href="menu.html">
     <span class="nav-icon">◇</span>
-    <span class="nav-text">施術内容</span>
+    <span class="nav-text">施術料金</span>
   </a>
   <a href="access.html">
     <span class="nav-icon">⌖</span>
@@ -991,7 +1171,7 @@ if (
   </a>
   <a href="https://lin.ee/6bBKc67" class="line-nav" target="_blank" rel="noopener">
     <span class="nav-icon">↗</span>
-    <span class="nav-text">LINE予約</span>
+    <span class="nav-text">空き状況</span>
   </a>
 </nav>
 
@@ -1005,7 +1185,7 @@ if (
 どの負担と重なりやすいかを<br>
 無料・登録なしで簡易的に確認できます。<br><br>
 
-来院時には82項目の詳細チェックを行い、<br>
+来院時には82項目(3分程度)の詳細チェックを行い、<br>
 現在の状態をより詳しく確認できます。</p>
   <div class="gene-check-invite__actions">
     <a href="check.html?from=faq.html" class="gene-check-btn" onclick="if(typeof gtag==='function'){gtag('event','quick_check_entry_click',{event_category:'gene_quick_check',source_page:location.pathname.split('/').pop()||'faq.html'});}">自律神経チェックを行う</a>
@@ -1036,6 +1216,7 @@ window.addEventListener("load", () => {
   const rsvBtn  = document.querySelector(".reserve-btn-sub");
   const bgLogo  = document.getElementById("global-logo-bg");
   const hamburgerBtn = document.getElementById("hamburger-btn");
+  const pcSideNav = document.querySelector(".gene-pc-side-nav");
   const menuPanel = document.getElementById("hamburger-menu");
 
   const fadeItems = document.querySelectorAll(".faq-fade");
@@ -1263,6 +1444,85 @@ window.addEventListener("load", () => {
   });
 })();
 </script>
+
+
+<script>
+window.addEventListener("load", function(){
+  const pcSideNav = document.querySelector(".gene-pc-side-nav");
+  setTimeout(function(){
+    if (pcSideNav) pcSideNav.classList.add("show");
+  }, 500);
+});
+</script>
+
+
+
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+
+  if (params.get("internal") === "true") {
+    localStorage.setItem("internalUser", "true");
+  }
+
+  if (params.get("internal") === "false") {
+    localStorage.removeItem("internalUser");
+  }
+
+
+  function isLocalPreview() {
+    var host = window.location.hostname;
+
+    return (
+      window.location.protocol === "file:" ||
+      host === "localhost" ||
+      host === "127.0.0.1" ||
+      host === "::1" ||
+      /^192\.168\./.test(host) ||
+      /^10\./.test(host) ||
+      /^172\.(1[6-9]|2[0-9]|3[0-1])\./.test(host)
+    );
+  }
+
+  if (isLocalPreview()) {
+    return;
+  }
+
+  var isInternal = localStorage.getItem("internalUser") === "true";
+
+  if (isInternal) {
+    return;
+  }
+
+  var page = window.location.pathname.split("/").pop() || "index.html";
+  var storageKey = page.replace(/[^a-z0-9_-]/gi, "_") + "_notify_last_sent";
+  var now = Date.now();
+  var lastSent = Number(localStorage.getItem(storageKey) || 0);
+  var oneHour = 60 * 60 * 1000;
+
+  if (now - lastSent < oneHour) {
+    return;
+  }
+
+  localStorage.setItem(storageKey, String(now));
+
+  fetch(
+    "https://script.google.com/macros/s/AKfycbyzDrbDgk6Hqkl8n-0PToOPC5oisxZscgAZupO_Gqjm3YLYhvQanuuvtp7leo2RmwLk/exec",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        page: page,
+        url: window.location.href,
+        referrer: document.referrer || "直接アクセス / 不明",
+        userAgent: navigator.userAgent,
+        internal: false
+      })
+    }
+  );
+})();
+</script>
+
+<script src="assets/js/line-click-tracking.js"></script>
 
 </body>
 </html>

@@ -19,6 +19,7 @@ body.gene-drawer-open{
 
 #hamburger-btn,
 #hamburger-menu,
+.gene-pc-side-nav,
 .reserve-btn-sub{
   display:none !important;
 }
@@ -276,7 +277,7 @@ body.gene-drawer-open{
 /* ---------- Feeling-first symptom guide ---------- */
 .gene-sensation-guide{
   width:min(1220px, 90%);
-  margin:0 auto 68px;
+  margin:24px auto 68px;
   padding:clamp(30px, 4.6vw, 58px);
   border:1px solid var(--gene-line);
   border-radius:28px;
@@ -495,6 +496,40 @@ body.gene-drawer-open{
 }
 .gene-faq-details[open] summary::after{content:"−";}
 .gene-faq-answer{padding:0 0 20px;color:#c9c3b8;}
+
+/* ---------- Existing production accordions ---------- */
+#index-cards details.gene-index-accordion > summary{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  align-content:center;
+  align-items:start;
+  gap:6px;
+}
+
+#index-cards details.gene-index-accordion > summary h3{
+  width:auto;
+}
+
+.gene-native-accordion-sub{
+  max-width:760px;
+  padding-right:12px;
+  color:#bdb7ab;
+  font-size:.86rem;
+  font-weight:400;
+  line-height:1.7;
+  letter-spacing:.025em;
+}
+
+.gene-native-accordion-action{
+  width:max-content;
+  margin-top:2px;
+  padding-bottom:2px;
+  border-bottom:1px solid rgba(217,193,126,.48);
+  color:var(--gene-gold);
+  font-size:.72rem;
+  line-height:1.4;
+  letter-spacing:.08em;
+}
 
 /* ---------- Mid-page CTA ---------- */
 .gene-mid-cta{
@@ -764,7 +799,7 @@ body.gene-drawer-open{
 
   .gene-sensation-guide{
     width:90%;
-    margin-bottom:48px;
+    margin:20px auto 48px;
     padding:25px 17px;
     border-radius:22px;
   }
@@ -801,6 +836,16 @@ body.gene-drawer-open{
   .gene-detail-heading{font-size:1.22rem;}
   .gene-detail-summary{font-size:.84rem;line-height:1.72;}
   .gene-detail-body{padding-top:20px;}
+
+  .gene-native-accordion-sub{
+    padding-right:2px;
+    font-size:.78rem;
+    line-height:1.65;
+  }
+
+  .gene-native-accordion-action{
+    font-size:.68rem;
+  }
 
   .gene-mid-cta{
     width:88%;

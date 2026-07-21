@@ -71,11 +71,15 @@ h1, h2, h3 {
   width: 190px;
   height: 190px;
   opacity: 0;
-  transition: opacity 1.5s ease;
+  pointer-events: none;
+  transition: opacity .3s ease-out;
   z-index: 40;
 }
 #opening-ring.show { opacity: 1; }
-#opening-ring.fadeout { opacity: 0; }
+#opening-ring.fadeout {
+  opacity: 0;
+  transition: opacity .6s ease;
+}
 
 #opening-ring .ring-blur {
   width: 100%;
@@ -83,7 +87,7 @@ h1, h2, h3 {
   border: 3px solid #d9c17e;
   border-radius: 50%;
   opacity: 0.65;
-  animation: pulse 3.6s ease-in-out infinite;
+  animation: pulse 1.8s ease-in-out infinite;
   box-shadow:
     0 0 25px rgba(217,193,126,0.35),
     0 0 60px rgba(217,193,126,0.25),
@@ -1494,6 +1498,7 @@ body.voice-page footer{
 
 #global-logo-bg img{
   width:78vw;
+  height:auto;
   max-width:760px;
   opacity:.11;
 }

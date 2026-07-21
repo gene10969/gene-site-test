@@ -32,25 +32,92 @@ if (
   document.head.appendChild(script);
 
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-8KPJ55NQMT');
+  window.gtag = window.gtag || function(){
+    window.dataLayer.push(arguments);
+  };
+  window.gtag('js', new Date());
+  window.gtag('config', 'G-8KPJ55NQMT');
 }
 </script>
   
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preload" as="image" href="assets/img/gene-profile.webp?v=20260708" type="image/webp">
 
 
 <link rel="canonical" href="https://gene-seitai.com/">
-<title>大阪 自律神経専門整体院 gene｜南船場の自律神経専門整体</title>
-<meta name="description" content="大阪・南船場の自律神経専門整体院 gene。アトピー・めまい・耳鳴り・不眠・動悸・慢性的な不調など、自律神経の乱れによるお悩みに対し、身体全体のバランスから丁寧に整えます。">
+<title>大阪・心斎橋の自律神経専門整体｜アトピー・不眠・めまい相談｜gene</title>
+<meta name="description" content="大阪・心斎橋の自律神経専門整体院gene。薬だけでは波があるアトピー、原因不明の不調、不眠・めまい・慢性疲労などを、呼吸・姿勢・身体の緊張状態から確認。まずはLINEでご相談ください。">
 
-<meta property="og:title" content="大阪 自律神経専門整体院 gene">
-<meta property="og:description" content="自律神経の乱れによる不調を、身体全体のバランスから丁寧に整える整体院。初めての方も安心してご相談ください。">
+<meta property="og:title" content="大阪・心斎橋の自律神経専門整体｜アトピー・不眠・めまい相談｜gene">
+<meta property="og:description" content="大阪・心斎橋の自律神経専門整体院gene。薬だけでは波があるアトピー、原因不明の不調、不眠・めまい・慢性疲労などを、呼吸・姿勢・身体の緊張状態から確認。まずはLINEでご相談ください。">
 <meta property="og:url" content="https://gene-seitai.com/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://gene-seitai.com/assets/img/gene-profile.webp">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "@id": "https://gene-seitai.com/#localbusiness",
+  "name": "大阪 自律神経専門整体院 gene",
+  "alternateName": "gene",
+  "url": "https://gene-seitai.com/",
+  "logo": "https://gene-seitai.com/assets/img/logo.svg",
+  "image": [
+    "https://gene-seitai.com/assets/img/gene-profile.webp",
+    "https://gene-seitai.com/assets/img/gene-room.webp",
+    "https://gene-seitai.com/assets/img/gene-treatment-room.webp"
+  ],
+  "description": "大阪・心斎橋の自律神経専門整体院gene。薬だけでは波があるアトピー、原因不明の不調、不眠・めまい・慢性疲労などを、呼吸・姿勢・身体の緊張状態から確認します。",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "南船場1-10-12 ラインビルド南船場703",
+    "addressLocality": "大阪市中央区",
+    "addressRegion": "大阪府",
+    "addressCountry": "JP"
+  },
+  "areaServed": [
+    {
+      "@type": "Place",
+      "name": "大阪市中央区"
+    },
+    {
+      "@type": "Place",
+      "name": "南船場"
+    },
+    {
+      "@type": "Place",
+      "name": "長堀橋"
+    },
+    {
+      "@type": "Place",
+      "name": "心斎橋"
+    }
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "11:00",
+      "closes": "21:00"
+    }
+  ],
+  "priceRange": "初回3,300円、2回目以降5,500円",
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E5%8D%97%E8%88%B9%E5%A0%B41-10-12%20%E3%83%A9%E3%82%A4%E3%83%B3%E3%83%93%E3%83%AB%E3%83%89%E5%8D%97%E8%88%B9%E5%A0%B4703",
+  "sameAs": [
+    "https://maps.app.goo.gl/irwV21CuNiJU9jrZ7"
+  ]
+}
+</script>
 
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="assets/css/gene-first-view.css">
@@ -88,6 +155,186 @@ if (
   border-radius:18px;
   display:block;
   border:1px solid rgba(217,193,126,.24);
+}
+.top-photo-wrap{
+  min-width:0;
+}
+.gene-hero-slideshow{
+  position:relative;
+  width:100%;
+}
+.gene-hero-stage{
+  position:relative;
+  width:100%;
+  aspect-ratio:1 / 1;
+  overflow:hidden;
+  border:1px solid rgba(217,193,126,.24);
+  border-radius:18px;
+  background:#0b0b0b;
+  box-shadow:0 14px 34px rgba(0,0,0,.24);
+  touch-action:pan-y;
+}
+.gene-hero-slide{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  display:block;
+  margin:0;
+  color:#fff;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity 1.2s ease, visibility 1.2s ease;
+}
+.gene-hero-slide.is-active{
+  z-index:2;
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+.gene-hero-slide > .top-main-photo{
+  width:100%;
+  height:100%;
+  border:0;
+  border-radius:0;
+  object-fit:cover;
+}
+.gene-hero-slide--profile > .top-main-photo{
+  object-position:center;
+}
+.gene-hero-slide--room > .top-main-photo{
+  object-position:center;
+}
+.gene-hero-slide--building > .top-main-photo{
+  object-position:center 48%;
+}
+.gene-hero-caption{
+  position:absolute;
+  right:0;
+  bottom:0;
+  left:0;
+  z-index:3;
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+  padding:34px 18px 15px;
+  background:linear-gradient(180deg, transparent 0%, rgba(0,0,0,.78) 72%);
+  color:#f8f1dc;
+  font-size:.92rem;
+  line-height:1.55;
+  letter-spacing:.05em;
+  text-shadow:0 1px 8px rgba(0,0,0,.9);
+}
+.gene-hero-caption small{
+  color:rgba(255,255,255,.78);
+  font-size:.72rem;
+  letter-spacing:.02em;
+}
+.gene-hero-case-grid{
+  display:grid;
+  grid-template-rows:1fr 1fr;
+  width:100%;
+  height:100%;
+}
+.gene-hero-case-item{
+  position:relative;
+  min-height:0;
+  overflow:hidden;
+}
+.gene-hero-case-item:first-child{
+  border-bottom:1px solid rgba(217,193,126,.72);
+}
+.gene-hero-case-item img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center 55%;
+}
+.gene-hero-case-label{
+  position:absolute;
+  top:10px;
+  left:10px;
+  z-index:2;
+  padding:5px 10px;
+  border:1px solid rgba(217,193,126,.56);
+  border-radius:999px;
+  background:rgba(9,9,9,.78);
+  color:#f4e7bd;
+  font-size:.72rem;
+  line-height:1.3;
+  letter-spacing:.06em;
+}
+.gene-hero-slide--case .gene-hero-caption{
+  padding-top:38px;
+}
+.gene-hero-controls{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:11px;
+  min-height:44px;
+  margin-top:10px;
+}
+.gene-hero-arrow,
+.gene-hero-dot{
+  appearance:none;
+  -webkit-appearance:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin:0;
+  padding:0;
+  border:1px solid rgba(217,193,126,.34);
+  background:rgba(12,12,12,.76);
+  color:#e6d39a;
+  cursor:pointer;
+  transition:background .25s ease, border-color .25s ease, transform .25s ease;
+}
+.gene-hero-arrow{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  font-size:1.25rem;
+  line-height:1;
+}
+.gene-hero-dots{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+.gene-hero-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+}
+.gene-hero-dot[aria-pressed="true"]{
+  background:#d9c17e;
+  border-color:#eadb9e;
+  box-shadow:0 0 0 3px rgba(217,193,126,.12);
+}
+.gene-hero-arrow:hover,
+.gene-hero-arrow:focus-visible,
+.gene-hero-dot:hover,
+.gene-hero-dot:focus-visible{
+  background:rgba(217,193,126,.2);
+  border-color:rgba(234,216,147,.78);
+  outline:none;
+}
+.gene-hero-arrow:active{
+  transform:scale(.94);
+}
+.gene-hero-sr-only{
+  position:absolute !important;
+  width:1px !important;
+  height:1px !important;
+  padding:0 !important;
+  margin:-1px !important;
+  overflow:hidden !important;
+  clip:rect(0,0,0,0) !important;
+  white-space:nowrap !important;
+  border:0 !important;
 }
 .top-copy h2{
   font-size:clamp(1.7rem, 3vw, 2.4rem);
@@ -169,6 +416,7 @@ if (
 }
 .card-media img{
   width:100%;
+  height:auto;
   display:block;
   border-radius:18px;
   border:1px solid rgba(217,193,126,.22);
@@ -375,6 +623,17 @@ if (
   .top-main-photo{
     border-radius:14px;
   }
+  .gene-hero-stage{
+    border-radius:14px;
+  }
+  .gene-hero-caption{
+    padding:30px 14px 12px;
+    font-size:.84rem;
+  }
+  .gene-hero-arrow{
+    width:40px;
+    height:40px;
+  }
   .top-lead{
     line-height:1.95;
   }
@@ -387,8 +646,85 @@ if (
   }
 }
 
+@media (prefers-reduced-motion:reduce){
+  .gene-hero-slide,
+  .gene-hero-arrow,
+  .gene-hero-dot{
+    transition:none !important;
+  }
+}
+
 
 /* gene mobile bottom navigation */
+
+.gene-pc-side-nav{
+  display:none;
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+    position:fixed;
+    right:60px;
+    top:50%;
+    z-index:900;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:18px;
+    transform:translateY(-50%);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .75s ease;
+  }
+
+  .gene-pc-side-nav.show{
+    opacity:1;
+    pointer-events:auto;
+  }
+
+  .gene-pc-side-nav a{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:flex-end;
+    min-height:22px;
+    padding:0 0 0 28px;
+    color:rgba(244,234,208,.82);
+    font-size:.9rem;
+    line-height:1;
+    letter-spacing:.08em;
+    text-decoration:none;
+    writing-mode:horizontal-tb;
+    transition:color .28s ease, transform .28s ease;
+  }
+
+  .gene-pc-side-nav a::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:50%;
+    width:0;
+    height:1px;
+    background:linear-gradient(90deg, rgba(217,193,126,0), rgba(217,193,126,.86));
+    transform:translateY(-50%);
+    transition:width .28s ease;
+  }
+
+  .gene-pc-side-nav a:hover{
+    color:#d9c17e;
+    transform:translateX(-3px);
+  }
+
+  .gene-pc-side-nav a:hover::before{
+    width:18px;
+  }
+
+  .hamburger-btn,
+  #hamburger-btn{
+    display:none !important;
+  }
+}
+
 .gene-mobile-bottom-nav,
 .gene-mobile-symptom-panel,
 .gene-mobile-symptom-backdrop{
@@ -632,6 +968,8 @@ if (
     pointer-events:auto;
   }
 }
+
+
 
 
 
@@ -1005,8 +1343,2115 @@ if (
   transform:translateY(-1px);
 }
 
+
+/* gene lifestyle figure card - added section */
+.gene-lifestyle-figure {
+  position: relative;
+  max-width: 980px;
+  margin: 24px auto 0;
+  padding: 34px 24px 38px;
+  box-sizing: border-box;
+  overflow: visible;
+  border-radius: 24px;
+  border: 1px solid rgba(217, 193, 126, 0.34);
+  background:
+    radial-gradient(circle at 50% 18%, rgba(217, 193, 126, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(20, 18, 13, 0.97), rgba(5, 5, 5, 0.98));
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.42),
+    inset 0 0 30px rgba(217, 193, 126, 0.045);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "HGS明朝E", serif;
+}
+
+.gene-lifestyle-figure,
+.gene-lifestyle-figure * {
+  box-sizing: border-box;
+}
+
+.gene-lifestyle-title {
+  margin: 0 0 16px;
+  color: #f4ead0;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  line-height: 1.65;
+  letter-spacing: 0.1em;
+  text-align: center;
+  font-weight: 400;
+}
+
+.gene-lifestyle-title span {
+  color: #d9c17e;
+}
+
+.gene-lifestyle-lead {
+  max-width: 760px;
+  margin: 0 auto 34px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.98rem;
+  line-height: 2.05;
+  letter-spacing: 0.045em;
+  text-align: center;
+  white-space: normal !important;
+}
+
+.gene-house-diagram {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 106px 28px 28px;
+  border-left: 1px solid rgba(217, 193, 126, 0.22);
+  border-right: 1px solid rgba(217, 193, 126, 0.22);
+  overflow: visible;
+}
+
+.gene-house-roof {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: min(94%, 800px);
+  height: 150px;
+  transform: translateX(-50%);
+  clip-path: polygon(50% 0%, 100% 74%, 96% 82%, 50% 20%, 4% 82%, 0% 74%);
+  background:
+    linear-gradient(135deg, rgba(255, 239, 170, 0.48), rgba(217, 193, 126, 0.12) 36%, rgba(8, 8, 8, 0.96) 64%);
+  border: 1px solid rgba(217, 193, 126, 0.58);
+  filter: drop-shadow(0 0 18px rgba(217, 193, 126, 0.16));
+}
+
+.gene-house-head {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto 22px;
+  text-align: center;
+}
+
+.gene-house-head strong {
+  display: block;
+  color: #f4ead0;
+  font-size: clamp(1.45rem, 4vw, 2.05rem);
+  letter-spacing: 0.18em;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.gene-house-head span {
+  display: block;
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+}
+
+.gene-treatment-bar {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 0 auto;
+  padding: 18px 20px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(217, 193, 126, 0.52);
+  background:
+    linear-gradient(180deg, rgba(217, 193, 126, 0.15), rgba(217, 193, 126, 0.045)),
+    rgba(8, 8, 8, 0.9);
+  text-align: center;
+}
+
+.gene-treatment-bar strong {
+  display: block;
+  color: #d9c17e;
+  font-size: 1.45rem;
+  letter-spacing: 0.22em;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.gene-treatment-bar span {
+  display: block;
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.92rem;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+}
+
+.gene-house-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 14px 0 16px;
+  color: #d9c17e;
+  font-size: 1.4rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.gene-habit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.gene-habit-card {
+  position: relative;
+  min-width: 0;
+  min-height: 214px;
+  padding: 22px 10px 18px;
+  border-radius: 16px 16px 8px 8px;
+  border: 1px solid rgba(217, 193, 126, 0.42);
+  background:
+    radial-gradient(circle at 50% 18%, rgba(217, 193, 126, 0.09), transparent 42%),
+    linear-gradient(180deg, rgba(217, 193, 126, 0.09), rgba(255, 255, 255, 0.018)),
+    rgba(8, 8, 8, 0.78);
+  text-align: center;
+  overflow: visible;
+}
+
+.gene-habit-card::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -16px;
+  width: 1px;
+  height: 16px;
+  background: rgba(217, 193, 126, 0.34);
+  transform: translateX(-50%);
+}
+
+.gene-habit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 66px;
+  height: 66px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  border: 1px solid rgba(217, 193, 126, 0.48);
+  color: #d9c17e;
+  background: rgba(217, 193, 126, 0.06);
+  box-shadow:
+    inset 0 0 14px rgba(217, 193, 126, 0.05),
+    0 0 18px rgba(217, 193, 126, 0.08);
+}
+
+.gene-habit-icon svg {
+  display: block;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+}
+
+.gene-habit-card strong {
+  display: block;
+  width: 100%;
+  color: #f3e6bf;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  font-weight: 400;
+  line-height: 1.6;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.gene-habit-card span {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.82rem;
+  line-height: 1.85;
+  letter-spacing: 0.03em;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.gene-foundation-bar {
+  width: 100%;
+  margin: 16px auto 0;
+  padding: 20px 18px;
+  border-radius: 8px 8px 18px 18px;
+  border: 1px solid rgba(217, 193, 126, 0.52);
+  background:
+    linear-gradient(180deg, rgba(217, 193, 126, 0.20), rgba(217, 193, 126, 0.07)),
+    rgba(8, 8, 8, 0.94);
+  text-align: center;
+  overflow: visible;
+}
+
+.gene-foundation-bar strong {
+  display: block;
+  color: #d9c17e;
+  font-size: 1.45rem;
+  letter-spacing: 0.16em;
+  font-weight: 400;
+  line-height: 1.5;
+  white-space: normal;
+}
+
+.gene-foundation-bar span {
+  display: block;
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.92rem;
+  line-height: 1.8;
+  letter-spacing: 0.06em;
+  white-space: normal;
+}
+
+@media (max-width: 700px) {
+  .gene-lifestyle-figure {
+    padding: 26px 16px 30px;
+    border-radius: 22px;
+  }
+
+  .gene-lifestyle-title,
+  .gene-lifestyle-lead {
+    text-align: left;
+  }
+
+  .gene-lifestyle-lead {
+    line-height: 1.95;
+  }
+
+  .gene-house-diagram {
+    padding: 86px 10px 18px;
+  }
+
+  .gene-house-roof {
+    width: 100%;
+    height: 122px;
+  }
+
+  .gene-house-head {
+    margin-bottom: 18px;
+  }
+
+  .gene-house-head strong {
+    font-size: 1.28rem;
+    letter-spacing: 0.12em;
+  }
+
+  .gene-house-head span {
+    font-size: 0.74rem;
+    letter-spacing: 0.04em;
+  }
+
+  .gene-treatment-bar {
+    padding: 15px 12px;
+  }
+
+  .gene-treatment-bar strong,
+  .gene-foundation-bar strong {
+    font-size: 1.18rem;
+    letter-spacing: 0.12em;
+  }
+
+  .gene-habit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .gene-habit-card {
+    min-height: 176px;
+    padding: 18px 8px 15px;
+  }
+
+  .gene-habit-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 12px;
+  }
+
+  .gene-habit-icon svg {
+    width: 29px;
+    height: 29px;
+  }
+
+  .gene-habit-card strong {
+    font-size: 0.98rem;
+    letter-spacing: 0.06em;
+  }
+
+  .gene-habit-card span {
+    font-size: 0.78rem;
+    line-height: 1.75;
+    letter-spacing: 0.02em;
+  }
+}
+
+@media (max-width: 390px) {
+  .gene-habit-card {
+    min-height: 168px;
+    padding: 16px 7px 14px;
+  }
+
+  .gene-habit-card strong {
+    font-size: 0.92rem;
+    letter-spacing: 0.04em;
+  }
+
+  .gene-habit-card span {
+    font-size: 0.74rem;
+  }
+}
+@media (max-width:700px){
+
+  .gene-lifestyle-title{
+    text-align:center !important;
+  }
+
+  .gene-lifestyle-lead{
+    text-align:center !important;
+    line-height:2.1;
+  }
+
+}
+.gene-treatment-bar {
+  position: relative;
+  z-index: 2;
+  width: calc(100% - 56px);
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 18px 20px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(217, 193, 126, 0.52);
+  background:
+    linear-gradient(180deg, rgba(217, 193, 126, 0.15), rgba(217, 193, 126, 0.045)),
+    rgba(8, 8, 8, 0.9);
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .gene-lifestyle-title {
+    text-align: center;
+  }
+
+  .gene-lifestyle-title span {
+    display: block;
+    margin: 4px 0;
+  }
+
+  .gene-treatment-bar {
+    width: calc(100% - 24px);
+    max-width: none;
+    padding: 15px 12px;
+  }
+}
+/* PC：文章を1行寄りに戻す */
+.gene-lifestyle-title {
+  text-align: center !important;
+}
+
+.gene-lifestyle-title span {
+  display: inline !important;
+}
+
+.gene-lifestyle-lead {
+  max-width: 860px !important;
+  text-align: center !important;
+}
+
+@media (min-width:701px){
+
+  .gene-lifestyle-lead br{
+    display:block;
+    content:"";
+  }
+
+}
+
+/* 整体・生活習慣バーのはみ出し防止 */
+.gene-treatment-bar,
+.gene-foundation-bar {
+  width: calc(100% - 56px) !important;
+  max-width: 760px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* スマホだけ中央揃え＋改行表示 */
+@media (max-width: 700px) {
+  .gene-lifestyle-title {
+    text-align: center !important;
+  }
+
+  .gene-lifestyle-title span {
+    display: block !important;
+    margin: 4px 0;
+  }
+
+  .gene-lifestyle-lead {
+    text-align: center !important;
+    line-height: 2.1 !important;
+  }
+
+  .gene-lifestyle-lead br {
+    display: block;
+  }
+
+  .gene-treatment-bar,
+  .gene-foundation-bar {
+    width: calc(100% - 24px) !important;
+    max-width: none !important;
+  }
+}
+.pc-only{
+  display:block;
+}
+
+.sp-only{
+  display:none;
+}
+
+@media (max-width:700px){
+
+  .pc-only{
+    display:none;
+  }
+
+  .sp-only{
+    display:block;
+  }
+
+}
+
+.top-symptom-nav{
+  display:grid;
+  gap:22px;
+  margin-top:28px;
+}
+
+.top-symptom-group{
+  padding:18px;
+  border-radius:18px;
+  border:1px solid rgba(217,193,126,.18);
+  background:rgba(255,255,255,.018);
+}
+
+.top-symptom-group h4{
+  margin:0 0 14px;
+  color:#f4ead0;
+  font-size:1rem;
+  line-height:1.7;
+  letter-spacing:.06em;
+  font-weight:500;
+}
+
+.top-symptom-group .top-symptom-links{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.top-symptom-group .top-symptom-links li{
+  min-width:0;
+}
+
+.top-symptom-group .top-symptom-links a{
+  min-height:50px;
+  white-space:normal;
+  line-height:1.45;
+}
+
+.top-symptom-all-wrap{
+  display:flex;
+  justify-content:center;
+  margin-top:26px;
+}
+
+.top-symptom-all-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:12px 26px;
+  border-radius:999px;
+  border:1px solid rgba(217,193,126,.56);
+  background:rgba(20,20,20,.9);
+  color:#d9c17e;
+  text-decoration:none;
+  letter-spacing:.05em;
+  box-shadow:0 10px 26px rgba(0,0,0,.22);
+  transition:transform .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.top-symptom-all-link::after{
+  content:"›";
+  margin-left:10px;
+  font-size:1.15em;
+  line-height:1;
+}
+
+.top-symptom-all-link:hover{
+  background:rgba(28,26,20,.96);
+  border-color:rgba(234,216,147,.78);
+  transform:translateY(-2px);
+}
+
+@media (max-width:860px){
+  .top-symptom-group .top-symptom-links{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media (max-width:480px){
+  .top-symptom-group{
+    padding:16px;
+  }
+
+  .top-symptom-group .top-symptom-links{
+    grid-template-columns:1fr;
+  }
+
+  .top-symptom-group .top-symptom-links a{
+    min-height:46px;
+  }
+}
+
+
+/* top case / improvement photo links - improved readability */
+.top-case-card{
+  position:relative;
+  overflow:hidden;
+}
+
+.top-case-card::before{
+  opacity:.055 !important;
+}
+
+.top-case-card .card-content{
+  position:relative;
+  z-index:1;
+}
+
+.top-case-card .card-content p{
+  max-width:none;
+}
+
+.top-case-card h3{
+  margin-bottom:18px;
+}
+
+.top-case-lead{
+  max-width:760px !important;
+}
+
+.top-case-links{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  margin-top:26px;
+}
+
+.top-case-link{
+  display:grid;
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  align-items:center;
+  gap:16px;
+  min-height:82px;
+  padding:17px 20px;
+  box-sizing:border-box;
+  border-radius:18px;
+  border:1px solid rgba(217,193,126,.58);
+  background:
+    linear-gradient(90deg, rgba(217,193,126,.12), rgba(255,255,255,.018) 46%, rgba(0,0,0,.16)),
+    rgba(13,13,13,.94);
+  color:#d9c17e;
+  text-decoration:none;
+  box-shadow:0 12px 28px rgba(0,0,0,.24);
+  transition:transform .25s ease, border-color .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+.top-case-number{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:72px;
+  min-height:42px;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(217,193,126,.42);
+  background:rgba(217,193,126,.08);
+  color:#d9c17e;
+  font-size:.88rem;
+  line-height:1;
+  letter-spacing:.08em;
+  white-space:nowrap;
+}
+
+.top-case-body{
+  display:block;
+  min-width:0;
+}
+
+.top-case-body strong{
+  display:block;
+  color:#f4ead0;
+  font-size:1.04rem;
+  line-height:1.65;
+  letter-spacing:.04em;
+  font-weight:500;
+  overflow-wrap:anywhere;
+}
+
+.top-case-body small{
+  display:block;
+  margin-top:4px;
+  color:rgba(255,255,255,.76);
+  font-size:.84rem;
+  line-height:1.65;
+  letter-spacing:.03em;
+  overflow-wrap:anywhere;
+}
+
+.top-case-action{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:106px;
+  min-height:40px;
+  padding:9px 14px;
+  border-radius:999px;
+  background:linear-gradient(180deg,#fff0a8 0%,#ead893 42%,#d9c17e 100%);
+  color:#111;
+  font-size:.86rem;
+  line-height:1;
+  letter-spacing:.04em;
+  font-weight:700;
+  box-shadow:0 8px 20px rgba(217,193,126,.18);
+  white-space:nowrap;
+  box-sizing:border-box;
+}
+
+.top-case-action::after{
+  content:"›";
+  margin-left:8px;
+  font-size:1.15em;
+  line-height:1;
+}
+
+.top-case-link:hover{
+  background:
+    linear-gradient(90deg, rgba(217,193,126,.17), rgba(255,255,255,.026) 48%, rgba(0,0,0,.18)),
+    rgba(20,20,20,.96);
+  border-color:rgba(234,216,147,.78);
+  transform:translateY(-2px);
+  box-shadow:0 16px 34px rgba(0,0,0,.30), 0 0 18px rgba(217,193,126,.10);
+}
+
+.top-case-related{
+  margin-top:20px !important;
+  color:rgba(255,255,255,.82) !important;
+  font-size:.94rem;
+  line-height:1.9 !important;
+}
+
+.top-case-related a,
+.top-case-related a:visited{
+  color:#d9c17e;
+  text-decoration:none;
+  border-bottom:1px solid rgba(217,193,126,.38);
+}
+
+.top-case-related a:hover{
+  border-bottom-color:rgba(234,216,147,.78);
+}
+
+.top-case-note{
+  margin-top:18px !important;
+  padding-top:16px;
+  border-top:1px solid rgba(217,193,126,.16);
+  color:rgba(255,255,255,.72) !important;
+  font-size:.9rem;
+  line-height:1.9 !important;
+}
+
+@media (max-width:760px){
+  .top-case-link{
+    grid-template-columns:1fr;
+    gap:10px;
+    min-height:0;
+    padding:16px;
+  }
+
+  .top-case-number{
+    width:max-content;
+    min-width:64px;
+    min-height:36px;
+    font-size:.82rem;
+  }
+
+  .top-case-body strong{
+    font-size:1rem;
+    line-height:1.65;
+  }
+
+  .top-case-action{
+    width:100%;
+    max-width:100%;
+    min-height:42px;
+    margin-top:2px;
+    box-sizing:border-box;
+  }
+}
+
+@media (max-width:420px){
+  .top-case-link{
+    padding:16px 14px;
+    border-radius:17px;
+  }
+
+  .top-case-body strong{
+    font-size:.96rem;
+    line-height:1.6;
+  }
+
+  .top-case-body small{
+    font-size:.8rem;
+    line-height:1.65;
+  }
+
+  .top-case-action{
+    min-height:40px;
+    padding:9px 12px;
+  }
+}
+
+/* top access / business hours card */
+.top-access-card .card-content p{
+  max-width:none;
+}
+
+.top-access-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  margin-top:24px;
+}
+
+.top-access-item{
+  margin:0;
+  padding:18px 20px;
+  border-radius:18px;
+  border:1px solid rgba(217,193,126,.22);
+  background:rgba(255,255,255,.022);
+}
+
+.top-access-item dt{
+  margin:0 0 8px;
+  color:#d9c17e;
+  font-size:.92rem;
+  line-height:1.6;
+  letter-spacing:.08em;
+}
+
+.top-access-item dd{
+  margin:0;
+  color:rgba(255,255,255,.9);
+  font-size:.98rem;
+  line-height:1.9;
+}
+
+.top-access-note{
+  margin-top:22px !important;
+  color:rgba(255,255,255,.84) !important;
+}
+
+.top-access-link-wrap{
+  display:flex;
+  justify-content:center;
+  margin-top:24px;
+}
+
+.top-access-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:12px 26px;
+  border-radius:999px;
+  border:1px solid rgba(217,193,126,.56);
+  background:rgba(20,20,20,.9);
+  color:#d9c17e;
+  text-decoration:none;
+  letter-spacing:.05em;
+  box-shadow:0 10px 26px rgba(0,0,0,.22);
+  transition:transform .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.top-access-link::after{
+  content:"›";
+  margin-left:10px;
+  font-size:1.15em;
+  line-height:1;
+}
+
+.top-access-link:hover{
+  background:rgba(28,26,20,.96);
+  border-color:rgba(234,216,147,.78);
+  transform:translateY(-2px);
+}
+
+@media (max-width:640px){
+  .top-access-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+    margin-top:22px;
+  }
+
+  .top-access-item{
+    padding:16px 18px;
+  }
+
+  .top-access-item dd{
+    font-size:.96rem;
+    line-height:1.85;
+  }
+
+  .top-access-link{
+    width:100%;
+    max-width:320px;
+  }
+}
+
+
+
+/* gene CTA wording refinement */
+.gene-cta-two-line{
+  display:inline-flex !important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  text-align:center;
+  line-height:1.35;
+}
+
+.gene-cta-two-line__main{
+  display:block;
+  font-weight:700;
+  line-height:1.35;
+  letter-spacing:.05em;
+}
+
+.gene-cta-two-line__sub{
+  display:block;
+  font-size:.78rem;
+  font-weight:500;
+  line-height:1.45;
+  letter-spacing:.03em;
+  opacity:.86;
+}
+
+.reserve-btn-sub{
+  line-height:1.38;
+  text-align:center;
+}
+
+@media (max-width:640px){
+  .gene-cta-two-line__sub{
+    font-size:.72rem;
+  }
+}
+
+
+/* top atopic focus lead card */
+.top-atopic-focus{
+  position:relative;
+  overflow:hidden;
+  border-color:rgba(217,193,126,.34) !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(217,193,126,.14), transparent 46%),
+    linear-gradient(180deg, rgba(20,18,13,.74), rgba(8,8,8,.78)) !important;
+}
+
+.top-atopic-focus::before{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(217,193,126,.08);
+  border-radius:18px;
+  pointer-events:none;
+}
+
+.top-atopic-focus .card-content{
+  position:relative;
+  z-index:1;
+}
+
+
+.top-atopic-focus h3{
+  margin-top:0;
+  text-align:center;
+  color:#f4ead0;
+}
+
+.top-atopic-focus__lead{
+  max-width:760px;
+  margin:0 auto 18px !important;
+  text-align:center;
+}
+
+.top-atopic-focus__points{
+  max-width:900px;
+  margin:18px auto 0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  list-style:none;
+}
+
+.top-atopic-focus__points li{
+  padding:14px 18px;
+  border:1px solid rgba(217,193,126,.24);
+  border-radius:14px;
+  background:rgba(255,255,255,.035);
+  color:rgba(255,255,255,.88);
+  font-size:.92rem;
+  line-height:1.7;
+  text-align:center;
+}
+
+.top-atopic-focus__actions{
+  margin-top:24px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+}
+
+.top-atopic-focus__btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  padding:10px 24px;
+  border-radius:999px;
+  border:1px solid rgba(217,193,126,.56);
+  background:rgba(20,20,20,.9);
+  color:#d9c17e;
+  text-decoration:none;
+  font-weight:600;
+  letter-spacing:.04em;
+  box-shadow:0 10px 26px rgba(0,0,0,.22);
+  transition:transform .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.top-atopic-focus__btn:visited{
+  color:#d9c17e;
+}
+
+.top-atopic-focus__btn:hover{
+  transform:translateY(-2px);
+  border-color:rgba(234,216,147,.78);
+  background:rgba(28,26,20,.96);
+}
+
+.top-atopic-focus__note{
+  margin:18px auto 0 !important;
+  max-width:760px;
+  color:rgba(255,255,255,.68) !important;
+  font-size:.86rem !important;
+  line-height:1.8 !important;
+  text-align:center;
+}
+
+@media (max-width:768px){
+  .top-atopic-focus{
+    padding:24px 18px !important;
+  }
+
+  .top-atopic-focus__lead,
+  .top-atopic-focus__note{
+    text-align:left;
+  }
+
+  .top-atopic-focus__points{
+    grid-template-columns:1fr;
+  }
+
+  .top-atopic-focus__points li{
+    text-align:left;
+  }
+
+  .top-atopic-focus__actions a{
+    width:100%;
+    max-width:320px;
+  }
+}
+
+
+
+/* PC fixed CTA / side navigation alignment */
+@media (min-width: 769px){
+  .reserve-btn-sub{
+    top:95px !important;
+    right:24px !important;
+  }
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+    right:24px !important;
+  }
+}
+
+
+/* reserve button color match */
+.reserve-btn-sub,
+.reserve-btn-sub:visited{
+  background:linear-gradient(180deg,#fff0a8 0%,#ead893 42%,#d9c17e 100%) !important;
+  border:1px solid rgba(255,238,170,.88) !important;
+  color:#111 !important;
+  font-weight:700 !important;
+  box-shadow:0 12px 30px rgba(217,193,126,.28), 0 0 22px rgba(217,193,126,.22) !important;
+}
+
+.reserve-btn-sub *{
+  color:#111 !important;
+}
+
+.reserve-btn-sub:hover{
+  background:linear-gradient(180deg,#fff4ba 0%,#eedf9e 45%,#dcc47f 100%) !important;
+  border-color:rgba(255,244,186,.98) !important;
+  color:#111 !important;
+  box-shadow:0 16px 36px rgba(217,193,126,.36), 0 0 28px rgba(217,193,126,.28) !important;
+}
+
+/* PC fixed CTA / side navigation alignment */
+@media (min-width: 769px){
+  .reserve-btn-sub{
+    top:95px !important;
+    right:24px !important;
+  }
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+    right:24px !important;
+  }
+}
+
+
+
+/* index GUIDE card readability refinement */
+.gene-guide-card{
+  position:relative;
+  overflow:hidden;
+  padding:36px 32px 34px !important;
+}
+
+.gene-guide-card > *{
+  position:relative;
+  z-index:1;
+}
+
+
+.gene-guide-card #gene-udl-top-title{
+  max-width:820px;
+  margin:0 auto !important;
+  color:#f4ead0 !important;
+  font-size:clamp(1.62rem, 3.35vw, 2.48rem) !important;
+  line-height:1.55 !important;
+  letter-spacing:.055em !important;
+  text-align:center;
+  font-weight:500;
+  text-wrap:balance;
+  word-break:keep-all;
+  overflow-wrap:anywhere;
+}
+
+.gene-guide-impact-title{
+  position:relative;
+}
+
+.gene-guide-title-main,
+.gene-guide-title-accent{
+  display:inline;
+}
+
+.gene-guide-title-accent{
+  position:relative;
+  display:inline-block;
+  margin:0 .08em;
+  padding:0 .08em .08em;
+  color:#d9c17e;
+  font-size:1.06em;
+  text-shadow:0 0 18px rgba(217,193,126,.18);
+  background:none;
+}
+
+.gene-guide-title-accent::after{
+  content:"";
+  position:absolute;
+  left:.08em;
+  right:.08em;
+  bottom:.03em;
+  height:1px;
+  background:linear-gradient(90deg, rgba(217,193,126,0), rgba(217,193,126,.72), rgba(217,193,126,0));
+  box-shadow:0 0 10px rgba(217,193,126,.18);
+  pointer-events:none;
+}
+
+.gene-guide-catch{
+  margin:22px auto 18px !important;
+  max-width:760px;
+  color:#f4ead0 !important;
+  font-size:clamp(1.05rem, 2.2vw, 1.32rem) !important;
+  line-height:2 !important;
+  letter-spacing:.05em !important;
+  text-align:center;
+  font-weight:600;
+  white-space:normal !important;
+}
+
+.gene-guide-copy{
+  max-width:820px;
+  margin:0 auto;
+}
+
+.gene-guide-copy p{
+  margin:0 0 12px !important;
+  color:rgba(255,255,255,.9) !important;
+  font-size:1rem !important;
+  line-height:2.05 !important;
+  letter-spacing:.04em !important;
+  white-space:normal !important;
+}
+
+.gene-guide-copy p:last-child{
+  margin-bottom:0 !important;
+}
+
+.gene-guide-lead{
+  margin:24px auto 0 !important;
+  max-width:760px;
+  color:#f3e6bf !important;
+  font-size:1rem !important;
+  line-height:1.9 !important;
+  letter-spacing:.05em !important;
+  text-align:center;
+  font-weight:600;
+  white-space:normal !important;
+}
+
+.gene-guide-options{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  margin-top:26px;
+}
+
+.gene-guide-option,
+.gene-guide-option:visited{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-width:0;
+  min-height:188px;
+  padding:20px 18px;
+  box-sizing:border-box;
+  border-radius:20px;
+  border:1px solid rgba(217,193,126,.48);
+  background:
+    linear-gradient(180deg, rgba(217,193,126,.10), rgba(255,255,255,.02)),
+    rgba(12,12,12,.92);
+  color:#d9c17e !important;
+  text-decoration:none !important;
+  box-shadow:0 12px 28px rgba(0,0,0,.24);
+  transition:transform .25s ease, border-color .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+.gene-guide-option:hover{
+  transform:translateY(-2px);
+  border-color:rgba(234,216,147,.76);
+  background:
+    linear-gradient(180deg, rgba(217,193,126,.14), rgba(255,255,255,.026)),
+    rgba(18,18,18,.96);
+  box-shadow:0 16px 34px rgba(0,0,0,.30), 0 0 18px rgba(217,193,126,.10);
+}
+
+.gene-guide-number{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:max-content;
+  min-width:48px;
+  min-height:28px;
+  padding:5px 10px;
+  border-radius:999px;
+  border:1px solid rgba(217,193,126,.34);
+  background:rgba(217,193,126,.08);
+  color:#d9c17e;
+  font-size:.78rem;
+  line-height:1;
+  letter-spacing:.08em;
+}
+
+.gene-guide-option strong{
+  display:block;
+  color:#f4ead0;
+  font-size:1.06rem;
+  line-height:1.65;
+  letter-spacing:.04em;
+  font-weight:600;
+}
+
+.gene-guide-option small{
+  display:block;
+  color:rgba(255,255,255,.78);
+  font-size:.9rem;
+  line-height:1.8;
+  letter-spacing:.03em;
+}
+
+.gene-guide-option--line,
+.gene-guide-option--line:visited{
+  border-color:rgba(217,193,126,.48) !important;
+  background:
+    linear-gradient(180deg, rgba(217,193,126,.10), rgba(255,255,255,.02)),
+    rgba(12,12,12,.92) !important;
+  color:#d9c17e !important;
+  box-shadow:0 12px 28px rgba(0,0,0,.24) !important;
+}
+
+.gene-guide-option--line .gene-guide-number{
+  border-color:rgba(217,193,126,.34) !important;
+  background:rgba(217,193,126,.08) !important;
+  color:#d9c17e !important;
+}
+
+.gene-guide-option--line strong{
+  color:#f4ead0 !important;
+}
+
+.gene-guide-option--line small{
+  color:rgba(255,255,255,.78) !important;
+  opacity:1;
+}
+
+.gene-guide-option--line:hover{
+  border-color:rgba(234,216,147,.76) !important;
+  background:
+    linear-gradient(180deg, rgba(217,193,126,.14), rgba(255,255,255,.026)),
+    rgba(18,18,18,.96) !important;
+  box-shadow:0 16px 34px rgba(0,0,0,.30), 0 0 18px rgba(217,193,126,.10) !important;
+}
+
+@media (max-width:860px){
+  .gene-guide-options{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .gene-guide-option{
+    min-height:0;
+  }
+}
+
+@media (max-width:640px){
+  .gene-guide-card{
+    padding:26px 20px 24px !important;
+  }
+
+  .gene-guide-card #gene-udl-top-title{
+    font-size:1.46rem !important;
+    line-height:1.7 !important;
+    text-align:left;
+  }
+
+  .gene-guide-title-main,
+  .gene-guide-title-accent{
+    display:inline;
+  }
+
+  .gene-guide-title-accent{
+    margin:0 .04em;
+    padding:0 .06em .07em;
+  }
+
+  .gene-guide-title-accent::after{
+    left:.06em;
+    right:.06em;
+  }
+
+  .gene-guide-catch{
+    margin-top:18px !important;
+    text-align:left;
+    line-height:1.9 !important;
+  }
+
+  .gene-guide-copy p{
+    line-height:1.95 !important;
+  }
+
+  .gene-guide-lead{
+    text-align:left;
+    line-height:1.85 !important;
+  }
+
+  .gene-guide-option{
+    padding:18px 16px;
+    border-radius:18px;
+  }
+}
+
+
+
+/* gene CVR improvement sections */
+.gene-cvr-section{
+  position:relative;
+  overflow:hidden;
+  border-color:rgba(217,193,126,.34) !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(217,193,126,.12), transparent 42%),
+    linear-gradient(180deg, rgba(16,14,10,.78), rgba(7,7,7,.84)) !important;
+}
+.gene-cvr-section::before{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(217,193,126,.08);
+  border-radius:18px;
+  pointer-events:none;
+}
+.gene-cvr-section .card-content,
+.gene-cvr-section > *{
+  position:relative;
+  z-index:1;
+}
+.gene-cvr-eyebrow{
+  margin:0 0 10px !important;
+  color:rgba(217,193,126,.9) !important;
+  font-size:.82rem !important;
+  line-height:1.5 !important;
+  letter-spacing:.16em !important;
+  text-align:center;
+  white-space:normal !important;
+}
+.gene-cvr-title{
+  margin:0 auto 18px !important;
+  max-width:820px;
+  color:#f4ead0 !important;
+  font-size:clamp(1.85rem, 4vw, 2.75rem) !important;
+  line-height:1.48 !important;
+  letter-spacing:.05em !important;
+  text-align:center;
+  font-weight:500;
+  white-space:normal !important;
+  text-wrap:balance;
+}
+.gene-cvr-title span{
+  color:#d9c17e;
+}
+.gene-cvr-lead{
+  max-width:820px !important;
+  margin:0 auto !important;
+  color:rgba(255,255,255,.88) !important;
+  font-size:1rem !important;
+  line-height:2.05 !important;
+  letter-spacing:.04em !important;
+  text-align:center;
+  white-space:normal !important;
+}
+.gene-cvr-problem-points{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  margin:26px auto 0;
+  padding:0;
+  max-width:880px;
+  list-style:none;
+}
+.gene-cvr-problem-points li{
+  min-height:86px;
+  padding:16px 18px;
+  border-radius:18px;
+  border:1px solid rgba(217,193,126,.24);
+  background:rgba(255,255,255,.03);
+  color:rgba(255,255,255,.88);
+  line-height:1.75;
+  letter-spacing:.03em;
+  text-align:center;
+}
+.gene-cvr-problem-points strong{
+  display:block;
+  margin-bottom:4px;
+  color:#f3e6bf;
+  font-size:1rem;
+  line-height:1.6;
+  font-weight:600;
+}
+.gene-cvr-reason-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  margin-top:26px;
+}
+.gene-cvr-reason-card{
+  min-width:0;
+  padding:22px 20px;
+  border-radius:20px;
+  border:1px solid rgba(217,193,126,.32);
+  background:
+    linear-gradient(180deg, rgba(217,193,126,.085), rgba(255,255,255,.018)),
+    rgba(12,12,12,.9);
+  box-shadow:0 12px 28px rgba(0,0,0,.22);
+}
+.gene-cvr-reason-number{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:42px;
+  min-height:28px;
+  padding:5px 10px;
+  margin-bottom:14px;
+  border-radius:999px;
+  border:1px solid rgba(217,193,126,.34);
+  background:rgba(217,193,126,.08);
+  color:#d9c17e;
+  font-size:.78rem;
+  line-height:1;
+  letter-spacing:.08em;
+}
+.gene-cvr-reason-card strong{
+  display:block;
+  color:#f4ead0;
+  font-size:1.06rem;
+  line-height:1.7;
+  letter-spacing:.04em;
+  font-weight:600;
+}
+.gene-cvr-reason-card p{
+  margin:10px 0 0 !important;
+  color:rgba(255,255,255,.8) !important;
+  font-size:.92rem !important;
+  line-height:1.85 !important;
+  letter-spacing:.03em !important;
+  white-space:normal !important;
+}
+.gene-cvr-safety-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  margin-top:28px;
+}
+.gene-cvr-safety-card{
+  min-width:0;
+  min-height:206px;
+  padding:22px 18px;
+  border-radius:20px;
+  border:1px solid rgba(217,193,126,.30);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(217,193,126,.10), transparent 50%),
+    rgba(10,10,10,.86);
+  text-align:center;
+  box-shadow:0 12px 28px rgba(0,0,0,.22);
+}
+.gene-cvr-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:62px;
+  height:62px;
+  margin:0 auto 16px;
+  border-radius:50%;
+  border:1px solid rgba(217,193,126,.42);
+  background:rgba(217,193,126,.065);
+  color:#d9c17e;
+}
+.gene-cvr-icon svg{
+  width:32px;
+  height:32px;
+  display:block;
+}
+.gene-cvr-safety-card strong{
+  display:block;
+  color:#f4ead0;
+  font-size:1rem;
+  line-height:1.65;
+  letter-spacing:.04em;
+  font-weight:600;
+}
+.gene-cvr-safety-card span{
+  display:block;
+  margin-top:8px;
+  color:rgba(255,255,255,.78);
+  font-size:.86rem;
+  line-height:1.75;
+  letter-spacing:.03em;
+}
+.gene-cvr-env-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  margin:26px auto 0;
+  max-width:860px;
+}
+.gene-cvr-env-item{
+  padding:20px 18px;
+  border-radius:18px;
+  border:1px solid rgba(217,193,126,.26);
+  background:rgba(255,255,255,.026);
+  text-align:center;
+}
+.gene-cvr-env-item strong{
+  display:block;
+  color:#f3e6bf;
+  font-size:1rem;
+  line-height:1.65;
+  letter-spacing:.06em;
+}
+.gene-cvr-env-item span{
+  display:block;
+  margin-top:7px;
+  color:rgba(255,255,255,.78);
+  font-size:.88rem;
+  line-height:1.75;
+}
+.gene-cvr-flow-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+  margin-top:28px;
+}
+.gene-cvr-flow-card{
+  position:relative;
+  min-width:0;
+  padding:22px 16px 20px;
+  border-radius:18px;
+  border:1px solid rgba(217,193,126,.30);
+  background:rgba(10,10,10,.88);
+  text-align:center;
+}
+.gene-cvr-flow-card:not(:last-child)::after{
+  content:"›";
+  position:absolute;
+  right:-12px;
+  top:50%;
+  transform:translateY(-50%);
+  color:rgba(217,193,126,.72);
+  font-size:1.55rem;
+  line-height:1;
+}
+.gene-cvr-step{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:76px;
+  min-height:32px;
+  margin-bottom:14px;
+  border-radius:999px;
+  border:1px solid rgba(217,193,126,.34);
+  color:#d9c17e;
+  background:rgba(217,193,126,.08);
+  font-size:.8rem;
+  letter-spacing:.08em;
+}
+.gene-cvr-flow-card strong{
+  display:block;
+  color:#f4ead0;
+  font-size:1rem;
+  line-height:1.65;
+  letter-spacing:.04em;
+  font-weight:600;
+}
+.gene-cvr-flow-card p{
+  margin:8px 0 0 !important;
+  color:rgba(255,255,255,.78) !important;
+  font-size:.86rem !important;
+  line-height:1.75 !important;
+  white-space:normal !important;
+}
+.gene-cvr-access-visual{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  margin:24px 0 24px;
+}
+.gene-cvr-station-card{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+  padding:16px 18px;
+  border-radius:18px;
+  border:1px solid rgba(217,193,126,.28);
+  background:rgba(255,255,255,.026);
+}
+.gene-cvr-station-icon{
+  flex:0 0 46px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  border:1px solid rgba(217,193,126,.34);
+  color:#d9c17e;
+  background:rgba(217,193,126,.07);
+}
+.gene-cvr-station-icon svg{
+  width:25px;
+  height:25px;
+}
+.gene-cvr-station-text{
+  display:block;
+  min-width:0;
+}
+.gene-cvr-station-text strong{
+  display:block;
+  color:#f4ead0;
+  font-size:.96rem;
+  line-height:1.5;
+  letter-spacing:.04em;
+  font-weight:600;
+}
+.gene-cvr-station-text span{
+  display:block;
+  margin-top:3px;
+  color:rgba(255,255,255,.76);
+  font-size:.84rem;
+  line-height:1.55;
+}
+@media (max-width:860px){
+  .gene-cvr-problem-points,
+  .gene-cvr-reason-grid,
+  .gene-cvr-safety-grid,
+  .gene-cvr-env-grid{
+    grid-template-columns:1fr;
+  }
+
+  .gene-cvr-flow-grid{
+    grid-template-columns:1fr;
+  }
+
+  .gene-cvr-flow-card:not(:last-child)::after{
+    content:"⌄";
+    right:50%;
+    top:auto;
+    bottom:-19px;
+    transform:translateX(50%);
+    font-size:1.2rem;
+  }
+
+  .gene-cvr-flow-card{
+    padding:20px 16px;
+  }
+
+  .gene-cvr-access-visual{
+    grid-template-columns:1fr;
+  }
+}
+@media (max-width:640px){
+  .gene-cvr-section{
+    padding:24px 18px !important;
+  }
+
+  .gene-cvr-title,
+  .gene-cvr-lead{
+    text-align:left;
+  }
+
+  .gene-cvr-problem-points li,
+  .gene-cvr-safety-card,
+  .gene-cvr-env-item{
+    text-align:left;
+  }
+
+  .gene-cvr-icon{
+    margin-left:0;
+  }
+}
+
 </style>
-  <link rel="stylesheet" href="assets/css/index-journey.css?v=20260718">
+<link rel="stylesheet" href="assets/css/gene-text-control.css">
+<link rel="stylesheet" href="assets/css/index-journey.css?v=20260721">
+
+<style id="gene-cvr-mobile-layout-fix">
+/* gene CVR mobile readability final fix */
+@media (max-width: 768px){
+  html,
+  body{
+    overflow-x:hidden !important;
+  }
+
+  #index-cards{
+    max-width:100% !important;
+    overflow-x:hidden !important;
+  }
+
+  #index-cards .gene-cvr-section,
+  #index-cards .top-atopic-focus{
+    width:100% !important;
+    max-width:100% !important;
+    box-sizing:border-box !important;
+    overflow:hidden !important;
+    padding:24px 18px !important;
+  }
+
+  #index-cards .gene-cvr-section::before,
+  #index-cards .top-atopic-focus::before{
+    inset:12px !important;
+    border-radius:16px !important;
+  }
+
+  #index-cards .gene-cvr-section .card-split,
+  #index-cards .gene-cvr-section .card-content,
+  #index-cards .top-atopic-focus .card-content{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    box-sizing:border-box !important;
+    overflow:hidden !important;
+  }
+
+  #index-cards .gene-cvr-title,
+  #index-cards .top-atopic-focus h3{
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    font-size:clamp(1.18rem, 5.2vw, 1.46rem) !important;
+    line-height:1.7 !important;
+    letter-spacing:.015em !important;
+    text-align:left !important;
+    white-space:normal !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+    line-break:strict !important;
+    text-wrap:wrap !important;
+  }
+
+  #index-cards .gene-cvr-title span{
+    display:inline !important;
+    white-space:normal !important;
+  }
+
+  #index-cards .gene-cvr-readable-copy,
+  #index-cards .gene-cvr-lead,
+  #index-cards .top-atopic-focus__lead,
+  #index-cards .top-atopic-focus .card-content p{
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    font-size:.94rem !important;
+    line-height:2.02 !important;
+    letter-spacing:.01em !important;
+    text-align:left !important;
+    white-space:normal !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+    line-break:strict !important;
+    text-wrap:wrap !important;
+  }
+
+  #index-cards .gene-cvr-readable-copy p{
+    margin:0 0 14px !important;
+    color:rgba(255,255,255,.88) !important;
+    font-size:.94rem !important;
+    line-height:2.02 !important;
+    letter-spacing:.01em !important;
+    white-space:normal !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+  }
+
+  #index-cards .gene-cvr-readable-copy p:last-child{
+    margin-bottom:0 !important;
+  }
+
+  #index-cards .gene-cvr-problem-points,
+  #index-cards .gene-cvr-reason-grid,
+  #index-cards .gene-cvr-safety-grid,
+  #index-cards .gene-cvr-env-grid,
+  #index-cards .gene-cvr-flow-grid,
+  #index-cards .gene-cvr-access-visual,
+  #index-cards .top-atopic-focus__points{
+    width:100% !important;
+    max-width:100% !important;
+    grid-template-columns:1fr !important;
+    gap:12px !important;
+    box-sizing:border-box !important;
+  }
+
+  #index-cards .gene-cvr-problem-points{
+    margin-top:24px !important;
+  }
+
+  #index-cards .gene-cvr-problem-points li,
+  #index-cards .gene-cvr-reason-card,
+  #index-cards .gene-cvr-safety-card,
+  #index-cards .gene-cvr-env-item,
+  #index-cards .gene-cvr-flow-card,
+  #index-cards .gene-cvr-station-card,
+  #index-cards .top-atopic-focus__points li{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    min-height:0 !important;
+    box-sizing:border-box !important;
+    text-align:left !important;
+    white-space:normal !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+    line-break:strict !important;
+  }
+
+  #index-cards .gene-cvr-problem-points li{
+    padding:16px 17px !important;
+    font-size:.92rem !important;
+    line-height:1.9 !important;
+  }
+
+  #index-cards .gene-cvr-problem-points li strong{
+    display:block !important;
+    margin-bottom:6px !important;
+    color:#f3e6bf !important;
+    font-size:1rem !important;
+    line-height:1.65 !important;
+    letter-spacing:.02em !important;
+  }
+
+  #index-cards .gene-cvr-problem-points li span{
+    display:block !important;
+    color:rgba(255,255,255,.84) !important;
+    font-size:.9rem !important;
+    line-height:1.85 !important;
+  }
+
+  #index-cards .gene-cvr-reason-card strong,
+  #index-cards .gene-cvr-safety-card strong,
+  #index-cards .gene-cvr-env-item strong,
+  #index-cards .gene-cvr-flow-card strong{
+    font-size:1rem !important;
+    line-height:1.7 !important;
+    letter-spacing:.02em !important;
+    white-space:normal !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+  }
+
+  #index-cards .gene-cvr-reason-card p,
+  #index-cards .gene-cvr-safety-card span,
+  #index-cards .gene-cvr-env-item span,
+  #index-cards .gene-cvr-flow-card p{
+    font-size:.9rem !important;
+    line-height:1.85 !important;
+    letter-spacing:.01em !important;
+    white-space:normal !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+  }
+
+  #index-cards .gene-cvr-icon{
+    margin-left:0 !important;
+    margin-right:0 !important;
+  }
+
+  #index-cards .gene-cvr-flow-card:not(:last-child)::after{
+    right:50% !important;
+    top:auto !important;
+    bottom:-19px !important;
+    transform:translateX(50%) !important;
+  }
+}
+
+@media (max-width: 390px){
+  #index-cards .gene-cvr-section,
+  #index-cards .top-atopic-focus{
+    padding:22px 16px !important;
+  }
+
+  #index-cards .gene-cvr-title,
+  #index-cards .top-atopic-focus h3{
+    font-size:1.16rem !important;
+    line-height:1.72 !important;
+  }
+
+  #index-cards .gene-cvr-readable-copy p,
+  #index-cards .gene-cvr-lead,
+  #index-cards .top-atopic-focus__lead,
+  #index-cards .top-atopic-focus .card-content p{
+    font-size:.9rem !important;
+    line-height:2 !important;
+  }
+
+  #index-cards .gene-cvr-problem-points li{
+    padding:15px 16px !important;
+  }
+}
+</style>
+
+<style id="top-cta-mobile-title-fix">
+@media (max-width:768px){
+  #index-cards .top-cta-card h3{
+    font-size:clamp(1.02rem,4.3vw,1.16rem) !important;
+    line-height:1.65 !important;
+    letter-spacing:.01em !important;
+    word-break:keep-all !important;
+    overflow-wrap:normal !important;
+  }
+
+  #index-cards .top-cta-title-line{
+    display:block;
+    white-space:nowrap;
+  }
+}
+
+@media (max-width:360px){
+  #index-cards .top-cta-card h3{
+    font-size:.98rem !important;
+  }
+}
+</style>
+
+<style id="gene-index-accordion-styles">
+#index-cards details.gene-index-accordion{
+  padding:0 !important;
+  overflow:hidden;
+}
+
+#index-cards details.gene-index-accordion > summary{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  width:100%;
+  min-height:82px;
+  box-sizing:border-box;
+  padding:24px 76px 24px 28px;
+  color:#f4ead0;
+  background:linear-gradient(180deg, rgba(217,193,126,.055), rgba(217,193,126,.018));
+  cursor:pointer;
+  list-style:none;
+  -webkit-tap-highlight-color:transparent;
+}
+
+#index-cards details.gene-index-accordion > summary::-webkit-details-marker{
+  display:none;
+}
+
+#index-cards details.gene-index-accordion > summary::before,
+#index-cards details.gene-index-accordion > summary::after{
+  content:"";
+  position:absolute;
+  right:30px;
+  top:50%;
+  width:20px;
+  height:1px;
+  background:#d9c17e;
+  transform:translateY(-50%);
+  transition:opacity .25s ease, transform .25s ease;
+}
+
+#index-cards details.gene-index-accordion > summary::after{
+  transform:translateY(-50%) rotate(90deg);
+}
+
+#index-cards details.gene-index-accordion[open] > summary::after{
+  opacity:0;
+  transform:translateY(-50%) rotate(0deg);
+}
+
+#index-cards details.gene-index-accordion[open] > summary{
+  border-bottom:1px solid rgba(217,193,126,.16);
+}
+
+#index-cards details.gene-index-accordion > summary:hover{
+  color:#d9c17e;
+  background:linear-gradient(180deg, rgba(217,193,126,.09), rgba(217,193,126,.025));
+}
+
+#index-cards details.gene-index-accordion > summary:focus-visible{
+  outline:2px solid rgba(217,193,126,.9);
+  outline-offset:-4px;
+  border-radius:10px;
+}
+
+#index-cards details.gene-index-accordion > summary h3{
+  width:100%;
+  margin:0 !important;
+  color:inherit !important;
+  font-size:clamp(1.12rem, 2.4vw, 1.42rem) !important;
+  font-weight:500;
+  line-height:1.6 !important;
+  letter-spacing:.055em !important;
+  text-align:left !important;
+  white-space:normal !important;
+  text-wrap:balance;
+}
+
+#index-cards details.gene-index-accordion > .card-split{
+  box-sizing:border-box;
+  padding:28px;
+}
+
+#index-cards details.gene-index-accordion[open] > .card-split{
+  animation:gene-accordion-reveal .35s ease-out both;
+}
+
+@keyframes gene-accordion-reveal{
+  from{opacity:0; transform:translateY(-5px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@media (max-width:640px){
+  #index-cards details.gene-index-accordion{
+    padding:0 !important;
+  }
+
+  #index-cards details.gene-index-accordion > summary{
+    min-height:72px;
+    padding:20px 60px 20px 20px;
+  }
+
+  #index-cards details.gene-index-accordion > summary::before,
+  #index-cards details.gene-index-accordion > summary::after{
+    right:22px;
+    width:18px;
+  }
+
+  #index-cards details.gene-index-accordion > summary h3{
+    font-size:clamp(1rem, 4.6vw, 1.18rem) !important;
+    line-height:1.65 !important;
+    letter-spacing:.025em !important;
+  }
+
+  #index-cards details.gene-index-accordion > .card-split{
+    padding:22px 18px 24px;
+  }
+}
+</style>
+
+<style id="reduced-motion-support">
+@media (prefers-reduced-motion: reduce){
+  *,
+  *::before,
+  *::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+    scroll-behavior:auto !important;
+  }
+
+  #opening-ring{
+    display:none !important;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -1014,7 +3459,7 @@ if (
 <div class="particles"></div>
 
 <div id="global-logo-bg" class="fade-start">
-  <img src="assets/img/logo.svg" alt="大阪 自律神経専門整体院 gene ロゴ">
+  <img src="assets/img/logo.svg" alt="大阪 自律神経専門整体院 gene ロゴ" width="800" height="533" decoding="async">
 </div>
 
 <div id="opening-ring">
@@ -1026,42 +3471,96 @@ if (
 <div id="hamburger-menu" class="hamburger-menu">
   <button class="menu-close-btn">×</button>
   <a href="/">ホーム</a>
-  <a href="menu.html">施術内容</a>
+  <a href="menu.html">施術内容・料金</a>
+  <a href="symptoms.html">症状別に見る</a>
   <a href="access.html">アクセス</a>
   <a href="faq.html">よくある質問</a>
   <a href="voice.html">院内・改善写真</a>
 </div>
 
+<nav class="gene-pc-side-nav" aria-label="PC用サイドナビゲーション">
+  <a href="/">ホーム</a>
+  <a href="menu.html">施術内容・料金</a>
+  <a href="symptoms.html">症状別に見る</a>
+  <a href="access.html">アクセス</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="voice.html">院内・改善写真</a>
+</nav>
+
+
 <div id="hero-logo" class="hidden">
   <h1 class="main-title">大阪 自律神経専門整体院 gene</h1>
   <p class="sub-catch">
-    原因のはっきりしない不調に悩む方へ。<br>
-    自律神経の乱れを、身体全体のバランスから整えます。
+    薬だけでは波があるアトピー、原因不明の不調、不眠・めまい・慢性疲労でお悩みの方へ。<br>
+    呼吸・姿勢・身体の緊張状態から、今の不調の背景を一緒に確認します。
   </p>
 </div>
 
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">
-  LINE<br>予約
-</a>
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">空き状況<br>を見る</a>
 
 <section class="top-hero-card">
   <div class="top-hero-inner">
     <div class="top-photo-wrap">
-      <img src="assets/img/gene-profile.webp" alt="大阪 自律神経専門整体院 gene 院長 高田裕基" class="top-main-photo">
+      <!-- 写真を交換する場合は、以下4スライド内の src と alt だけを変更してください。 -->
+      <div class="gene-hero-slideshow" data-gene-hero-slideshow role="region" aria-roledescription="カルーセル" aria-label="院長・院内・アクセス・改善例の写真">
+        <div class="gene-hero-stage" id="gene-hero-stage">
+          <figure class="gene-hero-slide gene-hero-slide--profile is-active" data-gene-hero-slide data-slide-id="director" data-slide-label="院長 高田裕基" data-slide-duration="2800" aria-hidden="false">
+            <img src="assets/img/gene-profile.webp?v=20260708" alt="大阪 自律神経専門整体院 gene 院長 高田裕基" class="top-main-photo" width="800" height="800" decoding="async" fetchpriority="high" onerror="this.onerror=null; this.alt='大阪 自律神経専門整体院 gene カウンセリング風景'; this.src='assets/img/gene-counseling.webp?v=20260708';">
+            <figcaption class="gene-hero-caption">院長　高田 裕基</figcaption>
+          </figure>
+
+          <figure class="gene-hero-slide gene-hero-slide--room" data-gene-hero-slide data-slide-id="interior" data-slide-label="落ち着いて相談できる院内" data-slide-duration="4500" aria-hidden="true">
+            <img src="assets/img/gene-room.webp" alt="大阪 自律神経専門整体院 gene の明るく落ち着いた院内" class="top-main-photo" width="1200" height="800" loading="lazy" decoding="async">
+            <figcaption class="gene-hero-caption">落ち着いて相談できる院内</figcaption>
+          </figure>
+
+          <figure class="gene-hero-slide gene-hero-slide--building" data-gene-hero-slide data-slide-id="exterior" data-slide-label="ラインビルド南船場の外観" data-slide-duration="4500" aria-hidden="true">
+            <img src="assets/img/gene-building.webp" alt="大阪 自律神経専門整体院 gene が入るラインビルド南船場の外観" class="top-main-photo" width="1200" height="801" loading="lazy" decoding="async">
+            <figcaption class="gene-hero-caption">ラインビルド南船場 703</figcaption>
+          </figure>
+
+          <a class="gene-hero-slide gene-hero-slide--case" data-gene-hero-slide data-slide-id="case1" data-slide-label="case1 初回から6か月目の経過" data-slide-duration="5500" href="case1.html" aria-label="case1 全身にアトピー症状が出ていた方の改善例を見る" aria-hidden="true" tabindex="-1">
+            <span class="gene-hero-case-grid" aria-hidden="true">
+              <span class="gene-hero-case-item">
+                <img src="cases/case1/osaka_seitai_atopy_case1_neck_before.webp" alt="" width="1200" height="900" loading="lazy" decoding="async">
+                <span class="gene-hero-case-label">初回</span>
+              </span>
+              <span class="gene-hero-case-item">
+                <img src="cases/case1/osaka_seitai_atopy_case1_neck_6months.webp" alt="" width="1200" height="900" loading="lazy" decoding="async">
+                <span class="gene-hero-case-label">6か月目</span>
+              </span>
+            </span>
+            <span class="gene-hero-caption">case1　首まわりの経過<small>写真は経過の一例です。得られる結果には個人差があります。</small></span>
+          </a>
+        </div>
+
+        <div class="gene-hero-controls" aria-label="写真の切り替え">
+          <button type="button" class="gene-hero-arrow gene-hero-prev" aria-label="前の写真" aria-controls="gene-hero-stage">‹</button>
+          <div class="gene-hero-dots">
+            <button type="button" class="gene-hero-dot" data-gene-hero-dot="0" aria-label="1枚目：院長" aria-pressed="true"></button>
+            <button type="button" class="gene-hero-dot" data-gene-hero-dot="1" aria-label="2枚目：院内" aria-pressed="false"></button>
+            <button type="button" class="gene-hero-dot" data-gene-hero-dot="2" aria-label="3枚目：外観" aria-pressed="false"></button>
+            <button type="button" class="gene-hero-dot" data-gene-hero-dot="3" aria-label="4枚目：case1の経過" aria-pressed="false"></button>
+          </div>
+          <button type="button" class="gene-hero-arrow gene-hero-next" aria-label="次の写真" aria-controls="gene-hero-stage">›</button>
+        </div>
+        <span class="gene-hero-sr-only" data-gene-hero-status aria-live="polite">1枚目：院長 高田裕基</span>
+      </div>
     </div>
     <div class="top-copy">
       <div class="top-name-wrap">
         <span class="top-role">大阪 自律神経専門整体院 gene</span>
         <span class="top-name">院長　高田 裕基</span>
       </div>
-      <h2>不安を抱えたまま毎日を過ごす方が、<br>安心へ向かえる場所でありたい。</h2>
-      <p class="top-lead">慢性的な不調は、見た目には分かりにくく、
+      <h2>原因がはっきりしない不調や、<br>薬だけでは波があるお悩みを安心して相談できる場所へ。</h2>
+      <p class="top-lead">アトピー・不眠・めまい・慢性疲労など、
+自律神経の乱れと関わる不調は、見た目には分かりにくく、
 周囲にも理解されにくいことがあります。
 
 だからこそ私は、
 症状だけを見るのではなく、
-身体全体の状態とその背景を丁寧に確認しながら、
-安心して通える施術を大切にしています。</p>
+呼吸・姿勢・身体の緊張・睡眠・ストレスの影響まで丁寧に確認しながら、
+安心して相談できる施術を大切にしています。</p>
       <div class="top-badges">
         <span>国家資格である柔道整復師</span>
         <span>自律神経調整分野に8年間従事</span>
@@ -1073,116 +3572,404 @@ if (
 
 <div id="index-cards">
 
-<section class="gene-check-invite info-card card-hidden" aria-labelledby="gene-check-invite-title">
-  <p class="gene-check-invite__eyebrow">CONDITION CHECK</p>
-  <h2 id="gene-check-invite-title">初めての方へ</h2>
-  <p>現在の不調が、<br>
-睡眠・ストレス・胃腸・呼吸など、<br>
-どの負担と重なりやすいかを<br>
-無料・登録なしで簡易的に確認できます。<br><br>
+<section class="info-card card-hidden gene-udl-section gene-udl-section--top gene-guide-card" aria-labelledby="gene-udl-top-title">
+  <h3 id="gene-udl-top-title" class="gene-guide-impact-title">
+    <span class="gene-guide-title-main">その不調、</span><span class="gene-guide-title-accent">どこから来ているのか</span><span class="gene-guide-title-main">確認してみませんか？</span>
+  </h3>
 
-来院時には82項目の詳細チェックを行い、<br>
-現在の状態をより詳しく確認できます。</p>
-  <div class="gene-check-invite__actions">
-    <a href="check.html?from=index.html" class="gene-check-btn" onclick="if(typeof gtag==='function'){gtag('event','quick_check_entry_click',{event_category:'gene_quick_check',source_page:location.pathname.split('/').pop()||'index.html'});}">自律神経チェックを行う</a>
+  <p class="gene-guide-catch">薬だけでは波がある。検査では異常がない。<br>でも、つらさは続いている。</p>
+
+  <div class="gene-guide-copy">
+    <p>アトピー・不眠・めまい・慢性疲労などの不調は、症状名だけで追いかけると、本当の背景が見えにくくなることがあります。</p>
+    <p>geneでは、今いちばん困っている症状だけでなく、呼吸・姿勢・身体の緊張・睡眠・ストレスの影響まで含めて、今の状態を一つずつ確認しながら見ていきます。</p>
+  </div>
+
+  <p class="gene-guide-lead">下の3つからお選びください。</p>
+
+  <div class="gene-guide-options" aria-label="今の状態に合わせた入口">
+    <a href="symptoms.html" class="gene-guide-option">
+      <span class="gene-guide-number">01</span>
+      <strong>症状から探す</strong>
+      <small>めまい・不眠・頭痛・動悸・アトピーなど、今いちばん気になっている症状から確認できます。</small>
+    </a>
+
+    <a href="check.html?from=index.html" class="gene-guide-option">
+      <span class="gene-guide-number">02</span>
+      <strong>15問の簡易チェックをする</strong>
+      <small>症状が一つに絞れない方は、HP内の簡易チェックで今の状態を確認できます。</small>
+    </a>
+
+    <a href="https://lin.ee/6bBKc67" class="gene-guide-option gene-guide-option--line" target="_blank" rel="noopener" onclick="if(typeof gtag==='function'){gtag('event','line_consult_click',{event_category:'contact',source_page:location.pathname.split('/').pop()||'index.html'});}">
+      <span class="gene-guide-number">03</span>
+      <strong>LINEで相談する</strong>
+      <small>どのページを見ればいいか分からない方も、今の状態をそのままご相談ください。</small>
+    </a>
   </div>
 </section>
 
 
-  <div class="info-card card-hidden">
-    <div class="card-split no-image">
-      <div class="card-content">
-        <h3>このようなお悩みの方へ</h3>
-        <p>めまい、耳鳴り、不眠、動悸、慢性的な疲労感、アトピー性皮膚炎、
-起立性調節障害、過敏性腸症候群、慢性便秘、息苦しさ、喉の違和感など、
-自律神経の乱れと関わるお悩みに対応しています。
+<section class="info-card card-hidden gene-cvr-section gene-cvr-problem-section" aria-labelledby="gene-cvr-problem-title">
+  <div class="card-split no-image">
+    <div class="card-content">
+      <h3 id="gene-cvr-problem-title" class="gene-cvr-title">
+        大阪で、<span>どこに行っても良くならなかった不調</span>でお悩みの方へ
+      </h3>
 
-「どこに相談すればいいかわからない」
-「何をしてもすっきりしない」
-という方も、まずは一度ご相談ください。</p>
-        <div class="top-symptom-links" aria-label="主な症状ページ">
-          <a href="atopic.html">アトピー</a>
-          <a href="tinnitus.html">耳鳴り</a>
-          <a href="dizziness.html">めまい</a>
-          <a href="insomnia.html">不眠</a>
-          <a href="headache.html">頭痛</a>
-          <a href="palpitations.html">動悸</a>
-          <a href="fatigue.html">慢性疲労</a>
-          <a href="panic.html">パニック症状</a>
-          <a href="anxiety-disorder.html">不安障害</a>
-          <a href="nausea.html">吐き気</a>
-          <a href="stomach-discomfort.html">胃の不快感</a>
-          <a href="pms.html">PMS</a>
-          <a href="coldness.html">冷え性</a>
-          <a href="autonomic.html">自律神経失調症</a>
-          <a href="plantar-fasciitis.html">足底筋膜炎</a>
-          <a href="tmj.html">顎関節症</a>
-          <a href="tenosynovitis.html">腱鞘炎</a>
-          <a href="orthostatic-dysregulation.html">起立性調節障害</a>
-          <a href="ibs.html">過敏性腸症候群</a>
-          <a href="chronic-constipation.html">慢性便秘</a>
-          <a href="shortness-of-breath.html">息苦しさ</a>
-          <a href="throat-discomfort.html">喉の違和感</a>
+      <div class="gene-cvr-readable-copy">
+        <p>薬だけでは波があるアトピー、原因が分からないめまい、不眠、慢性疲労。</p>
+        <p>検査では大きな異常がないと言われても、つらさが続いている方は少なくありません。</p>
+        <p>geneでは、症状だけを追いかけるのではなく、呼吸・姿勢・身体の緊張・睡眠・ストレスの影響まで含めて、今の不調がどこから来ているのかを身体全体から確認します。</p>
+      </div>
+
+      <ul class="gene-cvr-problem-points gene-cvr-problem-points--expanded">
+        <li>
+          <strong>原因が分からない</strong>
+          <span>検査では異常がないのに、つらさが続いている</span>
+        </li>
+        <li>
+          <strong>薬だけでは波がある</strong>
+          <span>その場しのぎではなく、身体の土台から見直したい</span>
+        </li>
+        <li>
+          <strong>アトピー・皮膚症状</strong>
+          <span>かゆみ・赤み・浸出液などで日常生活に影響がある</span>
+        </li>
+        <li>
+          <strong>不眠・眠りが浅い</strong>
+          <span>寝ても回復せず、朝から身体が重く感じる</span>
+        </li>
+        <li>
+          <strong>めまい・慢性疲労</strong>
+          <span>ふらつきやだるさが続き、仕事や生活に支障が出ている</span>
+        </li>
+        <li>
+          <strong>相談先に迷っている</strong>
+          <span>自律神経の乱れと関係しているのか確認したい</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<details class="info-card card-hidden gene-cvr-section gene-index-accordion" aria-labelledby="gene-cvr-reason-title" data-accordion-id="reasons">
+  <summary><h3 id="gene-cvr-reason-title" class="gene-cvr-title">当院が選ばれる理由</h3></summary>
+  <div class="card-split no-image">
+    <div class="card-content">
+      <div class="gene-cvr-reason-grid" aria-label="大阪 自律神経専門整体院 geneが選ばれる理由">
+        <div class="gene-cvr-reason-card">
+          <span class="gene-cvr-reason-number">01</span>
+          <strong>自律神経の乱れと関わる不調に特化</strong>
+          <p>めまい・不眠・慢性疲労・アトピーなど、原因が分かりにくい不調を身体全体から確認します。</p>
+        </div>
+        <div class="gene-cvr-reason-card">
+          <span class="gene-cvr-reason-number">02</span>
+          <strong>施術経験に基づいた丁寧な確認</strong>
+          <p>呼吸・姿勢・身体の緊張状態を見ながら、その方の状態に合わせて無理のない施術を行います。</p>
+        </div>
+        <div class="gene-cvr-reason-card">
+          <span class="gene-cvr-reason-number">03</span>
+          <strong>都市部で通いやすい静かな整体院</strong>
+          <p>大阪市中央区・南船場。長堀橋・心斎橋エリアで、仕事帰りや予定の前後にも通いやすい立地です。</p>
         </div>
       </div>
     </div>
   </div>
+</details>
 
-  <div class="info-card card-hidden">
-    <div class="card-split reverse">
-      <div class="card-content">
-        <h3>自律神経に特化した理由</h3>
-        <p>自律神経は、呼吸・循環・消化・体温調整・睡眠など、生命活動の基盤を担う調整機能です。
 
-強いストレスや生活リズムの乱れが続くと、
-交感神経と副交感神経の切り替えがうまくいかなくなり、局所的な症状として現れることがあります。
+<details class="info-card card-hidden gene-cvr-section gene-index-accordion" aria-labelledby="gene-cvr-safety-title" data-accordion-id="safety">
+  <summary><h3 id="gene-cvr-safety-title" class="gene-cvr-title">geneの6つの安心</h3></summary>
+  <div class="card-split no-image">
+    <div class="card-content">
+      <p class="gene-cvr-lead">
+初めての方でも安心してご相談いただけるように、施術内容だけでなく、
+カウンセリング・空間・予約導線まで、落ち着いて過ごせる流れを整えています。
+      </p>
 
-皮膚症状、不眠、めまい、動悸、慢性的な疲労。
-これらは単独の問題ではなく、
-身体全体の調整機能の乱れとして捉える必要があります。
+      <div class="gene-cvr-safety-grid" aria-label="geneの6つの安心">
+        <div class="gene-cvr-safety-card">
+          <div class="gene-cvr-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3C8.8 5.1 6.2 8.4 6.2 12.2C6.2 16.1 8.8 19 12 21C15.2 19 17.8 16.1 17.8 12.2C17.8 8.4 15.2 5.1 12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.2 12.4L11.1 14.3L15 10.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <strong>自律神経の不調に特化</strong>
+          <span>原因が分かりにくい不調を、身体全体のつながりから確認します。</span>
+        </div>
 
-部分的な対処ではなく、
-神経系・呼吸・筋緊張・循環の連動を整える。
-その視点から施術を組み立てています。</p>
-      </div>
-      <div class="card-media">
-        <img src="assets/img/gene-neck-treatment.webp" alt="大阪 自律神経専門整体院 gene 自律神経整体 施術">
+        <div class="gene-cvr-safety-card">
+          <div class="gene-cvr-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 6.5H19M5 12H15M5 17.5H12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M17 15L19 17L22 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <strong>丁寧なカウンセリング</strong>
+          <span>症状だけでなく、睡眠・ストレス・生活習慣まで確認します。</span>
+        </div>
+
+        <div class="gene-cvr-safety-card">
+          <div class="gene-cvr-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3V21M4 8C6.8 8 8.8 9.6 10.2 12M20 8C17.2 8 15.2 9.6 13.8 12M6 18C8.5 18 10.3 16.6 12 14.5C13.7 16.6 15.5 18 18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <strong>身体全体から確認</strong>
+          <span>呼吸・姿勢・緊張状態を見ながら、不調の背景を整理します。</span>
+        </div>
+
+        <div class="gene-cvr-safety-card">
+          <div class="gene-cvr-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 13C7 8 10 8 12 12C14 16 17 16 20 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M6 17H18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <strong>強い刺激に頼らない施術</strong>
+          <span>無理に鳴らす・強く押すのではなく、状態に合わせて調整します。</span>
+        </div>
+
+        <div class="gene-cvr-safety-card">
+          <div class="gene-cvr-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 3V7M16 3V7M4 10H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <strong>完全予約制</strong>
+          <span>他の方を気にせず、落ち着いた空間でご相談いただけます。</span>
+        </div>
+
+        <div class="gene-cvr-safety-card">
+          <div class="gene-cvr-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 6.5C5 4.6 6.6 3 8.5 3H15.5C17.4 3 19 4.6 19 6.5V13.5C19 15.4 17.4 17 15.5 17H10L6 21V17H8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 8.5H16M8 12H13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <strong>LINEで相談・予約</strong>
+          <span>ご相談、空き状況の確認、ご予約をLINEから行えます。</span>
+        </div>
       </div>
     </div>
   </div>
+</details>
 
-  <div class="info-card card-hidden">
-    <div class="card-split no-image">
-      <div class="card-content">
-        <h3>施術の考え方</h3>
-        <p>当院では、強い刺激や矯正を主とする方法は行っていません。
 
-自律神経のバランスは、過度な刺激によって一時的に変化しても、身体が防御反応を起こせば元に戻ってしまうことがあります。
-
-重要なのは、
-「今の身体にとって適切な刺激量」を見極めることです。
-
-筋緊張の状態、呼吸の深さ、皮膚の緊張度、脈の反応などを確認しながら、
-神経系に過負荷をかけない範囲で調整を行います。
-
-その結果として、
-徐々に身体が本来の調整機能を取り戻していくことを目指します。</p>
+<details class="info-card card-hidden gene-cvr-section gene-index-accordion" aria-labelledby="gene-cvr-environment-title" data-accordion-id="environment">
+  <summary><h3 id="gene-cvr-environment-title" class="gene-cvr-title">自律神経が落ち着きやすい環境づくり</h3></summary>
+  <div class="card-split no-image">
+    <div class="card-content">
+      <p class="gene-cvr-lead">
+geneでは、施術そのものだけでなく、室内の温度・照明・音の刺激にも配慮しています。
+強すぎる明るさや大きな音を避け、呼吸が自然に深まりやすい静かな空間で、
+身体の緊張がほどけやすい状態を整えます。
+      </p>
+      <div class="gene-cvr-env-grid">
+        <div class="gene-cvr-env-item"><strong>温度</strong><span>身体が緊張しにくい室温に配慮</span></div>
+        <div class="gene-cvr-env-item"><strong>明るさ</strong><span>強すぎる光を避けた落ち着いた照明</span></div>
+        <div class="gene-cvr-env-item"><strong>音楽</strong><span>呼吸が整いやすい静かな音環境</span></div>
       </div>
     </div>
   </div>
+</details>
+
+
+
+<section class="info-card card-hidden top-atopic-focus" aria-labelledby="top-atopic-focus-title">
+  <div class="card-split no-image">
+    <div class="card-content">
+      <h3 id="top-atopic-focus-title">薬だけでは波があるアトピー・皮膚症状でお悩みの方へ</h3>
+      <p class="top-atopic-focus__lead">
+薬だけでは波がある、できれば薬に頼り続けたくない。
+そのように感じている方へ。<br>
+肌だけの問題として見るのではなく、
+睡眠・ストレス・呼吸・胃腸・身体の緊張、自律神経の偏りまで確認します。
+      </p>
+      <ul class="top-atopic-focus__points">
+        <li>薬を続ける不安がある<br>薬以外の方法も考えたい</li>
+        <li>かゆみ・赤み・浸出液で<br>睡眠や日常生活に影響がある</li>
+        <li>肌を気にせず<br>外出やおしゃれをしたい</li>
+      </ul>
+      <div class="top-atopic-focus__actions">
+        <a href="atopic.html" class="top-atopic-focus__btn">アトピーのページを見る</a>
+        <a href="voice.html#case1" class="top-atopic-focus__btn">経過写真を見る</a>
+        <a href="https://lin.ee/6bBKc67" class="top-cta-link gene-cta-two-line" target="_blank" rel="noopener"><span class="gene-cta-two-line__main">LINEで相談する</span><span class="gene-cta-two-line__sub">現在の状態をお聞かせください</span></a>
+      </div>
+      <p class="top-atopic-focus__note">※医療機関での治療やお薬を否定するものではありません。
+        お薬の変更・中止は医師の指示に従ってください。</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="gene-check-invite info-card card-hidden" aria-labelledby="gene-check-invite-title">
+  <h2 class="gene-lifestyle-title" id="gene-lifestyle-title">
+  健康は<span>一度整えて終わり</span>ではありません
+</h2>
+
+<p class="gene-lifestyle-lead">
+
+  <span class="pc-only">
+美容や体型管理と同じように、身体の調子も<br>
+睡眠・食事・運動・ストレス管理などで日々変化します。<br>
+geneでは、不調が出てから整えるだけでなく、<br>
+良い状態を保ちやすい身体づくりも大切にしています。
+</span>
+
+  <span class="sp-only">
+    美容や体型管理と同じように、<br>
+    身体の調子も日々変化します。<br><br>
+
+    睡眠・食事・運動・ストレス管理など、<br>
+    毎日の積み重ねが土台になります。<br><br>
+
+    geneでは、不調が出てから整えるだけでなく、<br>
+    良い状態を保ちやすい身体づくりも<br>
+    大切にしています。
+  </span>
+
+</p>
+
+  <div class="gene-house-diagram">
+    <div class="gene-house-roof" aria-hidden="true"></div>
+
+    <div class="gene-house-head">
+      <strong>健康な身体</strong>
+      <span>自分で自分を整える力を発揮しやすい状態</span>
+    </div>
+
+    <div class="gene-treatment-bar">
+      <strong>整体</strong>
+      <span>身体を整えるきっかけ・補助</span>
+    </div>
+
+    <div class="gene-house-arrow" aria-hidden="true">▼</div>
+
+    <div class="gene-habit-grid">
+      <div class="gene-habit-card">
+        <div class="gene-habit-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.5 3C12 4 10 7 10 10.5C10 15 13.5 18.5 18 18.5C19 18.5 20 18.3 21 17.8C19.6 20.3 17 22 14 22C8.5 22 4 17.5 4 12C4 7.3 7.2 3.4 11.5 2.2C12.8 1.9 14.2 1.9 15.5 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+            <circle cx="18.5" cy="6" r="1" fill="currentColor"></circle>
+            <circle cx="21" cy="9" r="0.8" fill="currentColor"></circle>
+          </svg>
+        </div>
+        <strong>睡眠</strong>
+        <span>身体を休め<br>自律神経を整える土台</span>
+      </div>
+
+      <div class="gene-habit-card">
+        <div class="gene-habit-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="6.5" stroke="currentColor" stroke-width="1.8"></circle>
+            <line x1="4" y1="5" x2="4" y2="19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></line>
+            <line x1="7" y1="5" x2="7" y2="19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></line>
+            <line x1="20" y1="5" x2="20" y2="19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></line>
+          </svg>
+        </div>
+        <strong>食事</strong>
+        <span>身体をつくり<br>回復を支える源</span>
+      </div>
+
+      <div class="gene-habit-card">
+        <div class="gene-habit-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 9V15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+            <path d="M6 7V17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+            <path d="M18 7V17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+            <path d="M21 9V15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+            <path d="M6 12H18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+          </svg>
+        </div>
+        <strong>運動</strong>
+        <span>血流や代謝を促し<br>しなやかな身体へ</span>
+      </div>
+
+      <div class="gene-habit-card">
+        <div class="gene-habit-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 21C11.5 20.5 10.7 19.8 9.6 18.9C5.3 15.4 3 12.9 3 9.7C3 7.1 5 5 7.6 5C9.1 5 10.5 5.7 11.4 6.9L12 7.7L12.6 6.9C13.5 5.7 14.9 5 16.4 5C19 5 21 7.1 21 9.7C21 12.9 18.7 15.4 14.4 18.9C13.3 19.8 12.5 20.5 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+            <path d="M8.5 12L10.2 10L12 14L13.7 11L15.5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <strong>ストレス<br>管理</strong>
+        <span>心身の緊張をゆるめる<br>大切な習慣</span>
+      </div>
+    </div>
+
+    <div class="gene-foundation-bar">
+      <strong>生活習慣</strong>
+      <span>毎日の積み重ねが、健康の土台になります</span>
+    </div>
+  </div>
+</section>
+
+  <details class="info-card card-hidden top-symptom-seo-card gene-index-accordion" aria-labelledby="top-symptom-index-title" data-accordion-id="symptoms">
+  <summary><h3 id="top-symptom-index-title">症状別ページ一覧</h3></summary>
+  <div class="card-split no-image">
+    <div class="card-content">
+      <h4>大阪・心斎橋で自律神経の乱れ・原因不明の不調にお悩みの方へ</h4>
+      <p>
+薬だけでは波があるアトピー、めまい、耳鳴り、不眠、動悸、慢性的な疲労感など、
+自律神経の乱れと関わる不調は、症状だけでなく身体全体の状態を確認することが大切です。
+
+大阪市中央区・南船場、長堀橋・心斎橋エリアで、
+原因のはっきりしない不調や慢性的なお悩みでお困りの方は、
+下記の症状別ページもご覧ください。
+      </p>
+
+      <nav class="top-symptom-nav" aria-label="自律神経に関わる症状別ページ">
+        <div class="top-symptom-group">
+          <h4>よく見られる自律神経の不調</h4>
+          <ul class="top-symptom-links">
+            <li><a href="dizziness.html">めまいでお悩みの方へ</a></li>
+            <li><a href="tinnitus.html">耳鳴りと自律神経の乱れ</a></li>
+            <li><a href="insomnia.html">不眠・眠りの不調</a></li>
+            <li><a href="headache.html">頭痛と自律神経の関係</a></li>
+            <li><a href="palpitations.html">動悸・胸のざわつき</a></li>
+            <li><a href="fatigue.html">慢性的な疲労感</a></li>
+            <li><a href="autonomic.html">自律神経失調症</a></li>
+          </ul>
+        </div>
+
+        <div class="top-symptom-group">
+          <h4>不安・ストレスと関わる不調</h4>
+          <ul class="top-symptom-links">
+            <li><a href="panic.html">パニック症状でお悩みの方へ</a></li>
+            <li><a href="anxiety-disorder.html">不安障害と身体の緊張</a></li>
+            <li><a href="shortness-of-breath.html">息苦しさ・呼吸のしづらさ</a></li>
+            <li><a href="throat-discomfort.html">喉の違和感・つかえ感</a></li>
+          </ul>
+        </div>
+
+        <div class="top-symptom-group">
+          <h4>胃腸・体質に関わる不調</h4>
+          <ul class="top-symptom-links">
+            <li><a href="atopic.html">アトピー・皮膚症状</a></li>
+            <li><a href="nausea.html">吐き気・気持ち悪さ</a></li>
+            <li><a href="stomach-discomfort.html">胃の不快感・胃もたれ</a></li>
+            <li><a href="ibs.html">過敏性腸症候群</a></li>
+            <li><a href="chronic-constipation.html">慢性便秘</a></li>
+            <li><a href="coldness.html">冷え性・巡りの悪さ</a></li>
+          </ul>
+        </div>
+
+        <div class="top-symptom-group">
+          <h4>姿勢・身体の使い方と関わる不調</h4>
+          <ul class="top-symptom-links">
+            <li><a href="tmj.html">顎関節症・噛みしめ</a></li>
+            <li><a href="tenosynovitis.html">腱鞘炎・手首の違和感</a></li>
+            <li><a href="plantar-fasciitis.html">足底筋膜炎・足裏の痛み</a></li>
+            <li><a href="orthostatic-dysregulation.html">起立性調節障害</a></li>
+            <li><a href="pms.html">PMS・生理前の不調</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="top-symptom-all-wrap">
+        <a href="symptoms.html" class="top-symptom-all-link">症状別ページをすべて見る</a>
+      </div>
+    </div>
+  </div>
+</details>
+
 
   
-  <div class="info-card card-hidden">
+  <details class="info-card card-hidden gene-index-accordion" aria-labelledby="top-policy-title" data-accordion-id="policy">
+    <summary><h3 id="top-policy-title">施術を受ける前にご確認ください</h3></summary>
     <div class="card-split no-image">
       <div class="card-content">
-        <h3>施術を受ける前にご確認ください</h3>
         <p>
-当院では、不調のある部分だけではなく、
-現在のお身体の状態を丁寧に確認しながら、
+当院では、不調のある部分だけではなく、現在のお身体の状態を丁寧に確認しながら、
 身体全体のバランスを整えていきます。
 
-そのため、以下のようなお考えの場合は、
-ご期待に添えないことがあります。
+そのため、以下のようなお考えの場合は、ご期待に添えないことがあります。
         </p>
 
         <h4>このようなお考えの方</h4>
@@ -1210,30 +3997,84 @@ if (
         </p>
       </div>
     </div>
-  </div>
+  </details>
 
 <section class="gene-check-invite info-card card-hidden" aria-labelledby="gene-check-invite-after-policy-title">
   <p class="gene-check-invite__eyebrow">CONDITION CHECK</p>
   <h2 id="gene-check-invite-after-policy-title">現在の状態を確認したい方へ</h2>
   <p>
 現在の不調が、睡眠・ストレス・胃腸・呼吸など、
-どの負担と重なりやすいかを無料・登録なしで簡易的に確認できます。
+どの負担と重なりやすいかを無料・登録なしで確認できます。
 
-来院時には82項目の詳細チェックを行い、
-現在の状態をより詳しく確認できます。
+HP内では15問の簡易チェックで現在の傾向を確認し、
+来院時には82項目(3分程度)の詳細チェックで、
+現在の状態をより詳しく確認していきます。
   </p>
   <div class="gene-check-invite__actions">
-    <a href="check.html?from=index.html" class="gene-check-btn" onclick="if(typeof gtag==='function'){gtag('event','quick_check_entry_click',{event_category:'gene_quick_check',source_page:location.pathname.split('/').pop()||'index.html'});}">自律神経チェックを行う</a>
+    <a href="check.html?from=index.html" class="gene-check-btn" onclick="if(typeof gtag==='function'){gtag('event','quick_check_entry_click',{event_category:'gene_quick_check',source_page:location.pathname.split('/').pop()||'index.html'});}">15問の簡易チェックを行う</a>
   </div>
 </section>
 
-  <div class="info-card card-hidden">
+
+<section class="info-card card-hidden top-case-card" aria-labelledby="top-case-title">
+  <div class="card-split no-image">
+    <div class="card-content">
+      <h3 id="top-case-title">アトピー・皮膚症状の改善例</h3>
+      <p class="top-case-lead">
+アトピー・皮膚症状でお悩みの方へ。
+geneでは、身体の状態・生活習慣・食事内容なども確認しながら、
+整体と食事指導を組み合わせてサポートしています。
+
+実際の経過写真を、改善例ごとにご覧いただけます。
+      </p>
+
+      <div class="top-case-links" aria-label="アトピー・皮膚症状の改善例ページ">
+        <a href="case1.html" class="top-case-link">
+          <span class="top-case-number">改善例1</span>
+          <span class="top-case-body">
+            <strong>全身にアトピー症状が出ていた方の改善例</strong>
+            <small>顔・首・体正面・足首の変化を時系列で確認できます</small>
+          </span>
+          <span class="top-case-action">写真を見る</span>
+        </a>
+
+        <a href="case2.html" class="top-case-link">
+          <span class="top-case-number">改善例2</span>
+          <span class="top-case-body">
+            <strong>前腕・体幹・脚まわりにアトピー症状が出ていた方の改善例</strong>
+            <small>前腕・体正面・体背面・脚・足首の変化を確認できます</small>
+          </span>
+          <span class="top-case-action">写真を見る</span>
+        </a>
+
+        <a href="case3.html" class="top-case-link">
+          <span class="top-case-number">改善例3</span>
+          <span class="top-case-body">
+            <strong>腕・足首まわりのアトピー症状の改善例</strong>
+            <small>前腕前面・前腕背面・右足首・左足首の変化を確認できます</small>
+          </span>
+          <span class="top-case-action">写真を見る</span>
+        </a>
+      </div>
+
+      <p class="top-case-related">
+アトピー・皮膚症状について詳しく知りたい方は、<a href="atopic.html">アトピー・皮膚症状ページ</a>もご覧ください。
+      </p>
+
+      <p class="top-case-note">
+※経過には個人差があります。掲載している写真は、施術・食事指導・生活習慣の見直しを含めた取り組みの一例であり、同様の結果を保証するものではありません。
+      </p>
+    </div>
+  </div>
+</section>
+
+  <details class="info-card card-hidden gene-index-accordion" aria-labelledby="top-greeting-title" data-accordion-id="greeting">
+    <summary><h3 id="top-greeting-title">ごあいさつ</h3></summary>
     <div class="card-split">
       <div class="card-media">
-        <img src="assets/img/gene-counseling.webp" alt="大阪 自律神経専門整体院 gene カウンセリング風景">
+        <img src="assets/img/gene-counseling.webp" alt="大阪 自律神経専門整体院 gene カウンセリング風景" width="800" height="1000" loading="lazy" decoding="async">
       </div>
       <div class="card-content">
-        <h3>ごあいさつ</h3>
         <p>はじめまして。
 大阪 自律神経専門整体院 gene（ジーン）の高田裕基と申します。
 
@@ -1255,22 +4096,28 @@ if (
 
 だからこそ当院では、
 
-「<span style="color:#d9c17e; font-size:1.15em;">本質＝gene</span>」 を理解し、
-「<span style="color:#d9c17e; font-size:1.15em;">遺伝子＝gene</span>」 レベルで体質を整え、
-「<span style="color:#d9c17e; font-size:1.15em;">根本＝gene</span>」 から再発しない身体へ導く
+「<span style="color:#d9c17e;">gene＝遺伝子</span>」という言葉に、
+表面的な症状だけではなく、
+その人の体質や背景まで見ていきたい
+という想いを込めています。
+</p>
 
-という考えを軸に施術を行っています。</p>
+<p>不調として現れている部分だけではなく、
+生活習慣、身体の使い方、緊張の抜けにくさなど、
+その人の奥にある状態を丁寧に確認しながら、
+再発しにくい身体づくりを目指して施術を行っています。</p>
       </div>
     </div>
-  </div>
+  </details>
 
-  <div class="info-card card-hidden">
+  <details class="info-card card-hidden gene-index-accordion" aria-labelledby="top-first-visit-title" data-accordion-id="first_visit">
+    <summary><h3 id="top-first-visit-title">初めての方へ</h3></summary>
     <div class="card-split no-image">
       <div class="card-content">
-        <h3>初めての方へ</h3>
         <p>初めての来院は不安があって当然です。
 
 「病院では異常がないと言われた」
+「薬だけでは波があり、このままでいいのか不安」
 「どこに相談すればいいか分からない」
 
 そのような方こそ、一度ご相談ください。
@@ -1282,14 +4129,14 @@ if (
 無理な施術や通院の強制は一切ありませんのでご安心ください。</p>
       </div>
     </div>
-  </div>
+  </details>
 
 
 
-  <div class="info-card card-hidden faq-preview-card">
+  <details class="info-card card-hidden faq-preview-card gene-index-accordion" aria-labelledby="top-faq-preview-title" data-accordion-id="faq">
+    <summary><h3 id="top-faq-preview-title">よくあるご質問</h3></summary>
     <div class="card-split no-image">
       <div class="card-content">
-        <h3>よくあるご質問</h3>
         <p>初めての方が不安に感じやすい内容を、先にまとめています。</p>
 
         <div class="faq-preview-list">
@@ -1312,12 +4159,12 @@ if (
         <a href="faq.html" class="faq-preview-button">よくある質問をもっと見る</a>
       </div>
     </div>
-  </div>
+  </details>
 
-  <div class="info-card card-hidden">
+  <details class="info-card card-hidden gene-index-accordion" aria-labelledby="top-values-title" data-accordion-id="values">
+    <summary><h3 id="top-values-title">大切にしていること</h3></summary>
     <div class="card-split reverse">
       <div class="card-content">
-        <h3>大切にしていること</h3>
         <p>専門性を追求する一方で、
 私が最も大切にしているのは“安心感”です。
 
@@ -1331,20 +4178,20 @@ if (
 現実的な見通しをお伝えします。</p>
       </div>
       <div class="card-media">
-        <img src="assets/img/gene-prone-treatment.webp" alt="大阪 自律神経専門整体院 gene 整体 施術風景">
+        <img src="assets/img/gene-prone-treatment.webp" alt="大阪 自律神経専門整体院 gene 整体 施術風景" width="1200" height="800" loading="lazy" decoding="async">
       </div>
     </div>
-  </div>
+  </details>
 
-  <div class="info-card card-hidden">
+  <details class="info-card card-hidden gene-index-accordion" aria-labelledby="top-final-message-title" data-accordion-id="final_message">
+    <summary><h3 id="top-final-message-title">最後に</h3></summary>
     <div class="card-split">
       <div class="card-media">
-        <a href="quiet-room.html" class="secret-photo-link" id="secret-page-link" aria-label="隠しページへ">
-          <img src="assets/img/gene-profile.webp" alt="大阪 自律神経専門整体院 gene 院長 高田裕基">
+        <a href="nobodys-home.html" class="secret-photo-link" id="secret-page-link" aria-label="隠しページへ">
+          <img src="assets/img/gene-profile.webp?v=20260708" alt="大阪 自律神経専門整体院 gene 院長 高田裕基" width="800" height="800" loading="lazy" decoding="async" onerror="this.onerror=null; this.alt='大阪 自律神経専門整体院 gene カウンセリング風景'; this.src='assets/img/gene-counseling.webp?v=20260708';">
         </a>
       </div>
       <div class="card-content">
-        <h3>最後に</h3>
         <p>自律神経は目に見えない調整機能ですが、
 身体の反応には必ず現れます。
 
@@ -1356,19 +4203,113 @@ if (
 
 無理な施術や通院の強制は一切ありません。
 
-今の状態を整理するところから、
+今の状態を確認するところから、
 一緒に進めていければと思います。</p>
+      </div>
+    </div>
+  </details>
+
+
+
+  <section class="info-card card-hidden gene-cvr-section" aria-labelledby="gene-cvr-flow-title">
+    <div class="card-split no-image">
+      <div class="card-content">
+        <h3 id="gene-cvr-flow-title" class="gene-cvr-title">ご予約の流れ</h3>
+        <p class="gene-cvr-lead">
+初めての方でも迷わないように、LINEでのご相談から来院後の流れまでをシンプルにまとめています。
+症状がまとまっていない状態でも、そのままお送りいただいて大丈夫です。
+        </p>
+        <div class="gene-cvr-flow-grid" aria-label="ご予約から施術までの流れ">
+          <div class="gene-cvr-flow-card">
+            <span class="gene-cvr-step">STEP 1</span>
+            <strong>LINEから相談・予約</strong>
+            <p>症状やご希望日時をLINEでお送りください。</p>
+          </div>
+          <div class="gene-cvr-flow-card">
+            <span class="gene-cvr-step">STEP 2</span>
+            <strong>空き状況の確認</strong>
+            <p>ご希望に合わせて、来院日時をご案内します。</p>
+          </div>
+          <div class="gene-cvr-flow-card">
+            <span class="gene-cvr-step">STEP 3</span>
+            <strong>ご来院・カウンセリング</strong>
+            <p>現在の不調、生活習慣、睡眠、ストレスなどを確認します。</p>
+          </div>
+          <div class="gene-cvr-flow-card">
+            <span class="gene-cvr-step">STEP 4</span>
+            <strong>状態に合わせた施術</strong>
+            <p>呼吸・姿勢・緊張状態を見ながら、無理のない施術を行います。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="info-card card-hidden top-access-card" aria-labelledby="top-access-title">
+    <div class="card-split no-image">
+      <div class="card-content">
+        <h3 id="top-access-title">アクセス・営業時間</h3>
+        <p>大阪市中央区・南船場にある自律神経専門整体院です。
+長堀橋駅・松屋町駅・心斎橋駅から通いやすく、お仕事帰りや予定の前後にもご来院いただきやすい場所です。</p>
+
+        <div class="gene-cvr-access-visual" aria-label="最寄駅からの目安">
+          <div class="gene-cvr-station-card">
+            <span class="gene-cvr-station-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="6" y="3" width="12" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8H15.5M9 20L11 17M15 20L13 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9.5" cy="13" r="1" fill="currentColor"/><circle cx="14.5" cy="13" r="1" fill="currentColor"/></svg>
+            </span>
+            <span class="gene-cvr-station-text"><strong>長堀橋駅</strong><span>徒歩約5分</span></span>
+          </div>
+          <div class="gene-cvr-station-card">
+            <span class="gene-cvr-station-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="6" y="3" width="12" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8H15.5M9 20L11 17M15 20L13 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9.5" cy="13" r="1" fill="currentColor"/><circle cx="14.5" cy="13" r="1" fill="currentColor"/></svg>
+            </span>
+            <span class="gene-cvr-station-text"><strong>松屋町駅</strong><span>徒歩約6分</span></span>
+          </div>
+          <div class="gene-cvr-station-card">
+            <span class="gene-cvr-station-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="6" y="3" width="12" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8H15.5M9 20L11 17M15 20L13 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9.5" cy="13" r="1" fill="currentColor"/><circle cx="14.5" cy="13" r="1" fill="currentColor"/></svg>
+            </span>
+            <span class="gene-cvr-station-text"><strong>心斎橋駅</strong><span>徒歩約14分</span></span>
+          </div>
+        </div>
+
+        <dl class="top-access-grid" aria-label="大阪 自律神経専門整体院 geneの基本情報">
+          <div class="top-access-item">
+            <dt>住所</dt>
+            <dd>大阪市中央区南船場1-10-12<br>ラインビルド南船場703</dd>
+          </div>
+
+          <div class="top-access-item">
+            <dt>最寄りエリア</dt>
+            <dd>長堀橋・心斎橋・南船場エリア</dd>
+          </div>
+
+          <div class="top-access-item">
+            <dt>営業時間</dt>
+            <dd>11:00〜21:00<br>不定休</dd>
+          </div>
+
+          <div class="top-access-item">
+            <dt>最終受付</dt>
+            <dd>初診 20:00<br>二回目以降 20:30</dd>
+          </div>
+        </dl>
+
+        <p class="top-access-note">ご相談・ご予約はLINEから承っています。
+          場所が分からない場合も、LINEからお気軽にご連絡ください。</p>
+
+        <div class="top-access-link-wrap">
+          <a href="access.html" class="top-access-link">アクセスページを見る</a>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="info-card card-hidden top-cta-card">
-    <h3>ご相談・ご予約はこちら</h3>
-    <p>初めての方も、現在のお悩みを整理するところから
-丁寧に対応しています。
-
-ご相談・ご予約はLINEから承っています。</p>
-    <a href="https://lin.ee/6bBKc67" class="top-cta-link" target="_blank" rel="noopener">LINEで予約する</a>
+    <h3><span class="top-cta-title-line">原因不明の不調・</span><span class="top-cta-title-line">アトピー・不眠でお悩みの方へ</span></h3>
+    <p>現在の状態を確認するところから丁寧に対応しています。<br><br>ご相談・ご予約はLINEから承っています。</p>
+    <a href="https://lin.ee/6bBKc67" class="top-cta-link gene-cta-two-line" target="_blank" rel="noopener"><span class="gene-cta-two-line__main">空き状況を見る</span><span class="gene-cta-two-line__sub">LINEで確認できます</span></a>
   </div>
 
 </div>
@@ -1445,7 +4386,7 @@ if (
   </button>
   <a href="menu.html">
     <span class="nav-icon">◇</span>
-    <span class="nav-text">施術内容</span>
+    <span class="nav-text">施術料金</span>
   </a>
   <a href="access.html">
     <span class="nav-icon">⌖</span>
@@ -1453,7 +4394,7 @@ if (
   </a>
   <a href="https://lin.ee/6bBKc67" class="line-nav" target="_blank" rel="noopener">
     <span class="nav-icon">↗</span>
-    <span class="nav-text">LINE予約</span>
+    <span class="nav-text">空き状況</span>
   </a>
 </nav>
 
@@ -1473,81 +4414,91 @@ if (
 
 <script>
 window.addEventListener("load", () => {
-
   const openingRing = document.getElementById("opening-ring");
   const heroLogo = document.getElementById("hero-logo");
   const indexCards = document.getElementById("index-cards");
   const topHeroCard = document.querySelector(".top-hero-card");
+  const pcSideNav = document.querySelector(".gene-pc-side-nav");
+  const rsvBtn = document.querySelector(".reserve-btn-sub");
+  const bgLogo = document.getElementById("global-logo-bg");
+  const cards = document.querySelectorAll(".card-hidden");
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const menuPanel = document.getElementById("hamburger-menu");
+  const mobileBottomNav = document.querySelector(".gene-mobile-bottom-nav");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const trackedAccordionOpens = new Set();
 
-  const hasShownRing = sessionStorage.getItem("openingRingShown");
+  document.querySelectorAll("#index-cards details.gene-index-accordion").forEach(accordion => {
+    accordion.addEventListener("toggle", () => {
+      if (!accordion.open) return;
 
-  if (hasShownRing) {
-    if (openingRing) {
-      openingRing.style.display = "none";
-    }
-    if (heroLogo) {
-      heroLogo.classList.add("show");
-    }
-    if (topHeroCard) {
-      topHeroCard.classList.add("show");
+      const accordionId = accordion.dataset.accordionId;
+      if (!accordionId || trackedAccordionOpens.has(accordionId)) return;
+      trackedAccordionOpens.add(accordionId);
+
+      const summary = accordion.querySelector(":scope > summary");
+      const summaryHeading = summary ? summary.querySelector("h2, h3") : null;
+      const accordionTitle = summaryHeading
+        ? summaryHeading.textContent.replace(/\s+/g, " ").trim()
+        : accordionId;
+
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "index_accordion_open", {
+          accordion_id: accordionId,
+          accordion_title: accordionTitle,
+          source_page: location.pathname.split("/").pop() || "index.html"
+        });
+      }
+    });
+  });
+
+  let hasShownRing = false;
+  try {
+    hasShownRing = sessionStorage.getItem("openingRingShown") === "true";
+  } catch (error) {
+    hasShownRing = false;
+  }
+
+  const revealPage = () => {
+    if (heroLogo) heroLogo.classList.add("show");
+    if (topHeroCard) topHeroCard.classList.add("show");
+    if (typeof window.geneStartHeroSlideshow === "function") {
+      window.geneStartHeroSlideshow();
     }
     if (indexCards) {
       indexCards.querySelectorAll(".info-card").forEach(card => {
         card.classList.add("show");
       });
     }
-  } else {
-    sessionStorage.setItem("openingRingShown", "true");
-
-    if (openingRing) {
-      openingRing.classList.add("show");
-    }
-
-    setTimeout(() => {
-      if (openingRing) {
-        openingRing.classList.add("fadeout");
-      }
-      if (heroLogo) {
-        heroLogo.classList.add("show");
-      }
-      if (topHeroCard) {
-        topHeroCard.classList.add("show");
-      }
-      if (indexCards) {
-        indexCards.querySelectorAll(".info-card").forEach(card => {
-          card.classList.add("show");
-        });
-      }
-    }, 2400);
-  }
-
-  const ring = document.getElementById("opening-ring");
-  const hero = document.getElementById("hero-logo");
-  const rsvBtn = document.querySelector(".reserve-btn-sub");
-  const bgLogo = document.getElementById("global-logo-bg");
-  const cards = document.querySelectorAll(".card-hidden");
-  const hamburgerBtn = document.getElementById("hamburger-btn");
-  const menuPanel = document.getElementById("hamburger-menu");
-
-  if (ring) {
-    ring.classList.add("show");
-    setTimeout(() => ring.classList.add("fadeout"), 1400);
-    setTimeout(() => ring.style.display = "none", 2400);
-  }
-
-  setTimeout(() => {
+    cards.forEach(card => card.classList.add("show"));
+    if (pcSideNav) pcSideNav.classList.add("show");
     if (hamburgerBtn) hamburgerBtn.classList.add("show");
     if (rsvBtn) rsvBtn.classList.add("show");
     if (bgLogo) bgLogo.classList.add("fade-in");
-    const mobileBottomNav = document.querySelector(".gene-mobile-bottom-nav");
     if (mobileBottomNav) mobileBottomNav.classList.add("show");
-  }, 2400);
+  };
 
-  setTimeout(() => {
-    if (hero) hero.classList.add("show");
-    if (topHeroCard) topHeroCard.classList.add("show");
-    cards.forEach(c => c.classList.add("show"));
-  }, 2600);
+  if (reducedMotion || hasShownRing) {
+    if (openingRing) openingRing.style.display = "none";
+    revealPage();
+  } else {
+    try {
+      sessionStorage.setItem("openingRingShown", "true");
+    } catch (error) {
+      // Storage may be unavailable in privacy-restricted browsers.
+    }
+
+    if (openingRing) openingRing.classList.add("show");
+    setTimeout(() => {
+      revealPage();
+    }, 1150);
+    setTimeout(() => {
+      if (openingRing) openingRing.classList.add("fadeout");
+    }, 900);
+    setTimeout(() => {
+      if (openingRing) openingRing.style.display = "none";
+    }, 1500);
+  }
 
   if (hamburgerBtn && menuPanel) {
     hamburgerBtn.addEventListener("click", () => {
@@ -1592,10 +4543,189 @@ window.addEventListener("load", () => {
   });
 
   toTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
   });
 
 });
+</script>
+
+
+<script>
+(function(){
+  function setupGeneHeroSlideshow(){
+    const root = document.querySelector("[data-gene-hero-slideshow]");
+    if (!root || root.dataset.heroReady === "true") return;
+
+    const stage = root.querySelector(".gene-hero-stage");
+    const slides = Array.from(root.querySelectorAll("[data-gene-hero-slide]"));
+    const dots = Array.from(root.querySelectorAll("[data-gene-hero-dot]"));
+    const prev = root.querySelector(".gene-hero-prev");
+    const next = root.querySelector(".gene-hero-next");
+    const status = root.querySelector("[data-gene-hero-status]");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!stage || slides.length < 2) return;
+
+    root.dataset.heroReady = "true";
+    let activeIndex = 0;
+    let autoStepCount = 0;
+    let autoTimer = null;
+    let hasStarted = false;
+    let manualControlUsed = false;
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    function stopAuto(){
+      if (autoTimer) {
+        window.clearTimeout(autoTimer);
+        autoTimer = null;
+      }
+    }
+
+    function trackManualChange(method){
+      const slide = slides[activeIndex];
+      if (typeof window.gtag !== "function" || !slide) return;
+
+      window.gtag("event", "index_hero_slide_change", {
+        slide_id: slide.dataset.slideId || String(activeIndex + 1),
+        slide_label: slide.dataset.slideLabel || "",
+        slide_position: activeIndex + 1,
+        change_method: method,
+        source_page: location.pathname.split("/").pop() || "index.html"
+      });
+    }
+
+    function showSlide(index, method){
+      const nextIndex = (index + slides.length) % slides.length;
+      activeIndex = nextIndex;
+
+      slides.forEach(function(slide, slideIndex){
+        const isActive = slideIndex === activeIndex;
+        slide.classList.toggle("is-active", isActive);
+        slide.setAttribute("aria-hidden", isActive ? "false" : "true");
+        if (slide.matches("a")) {
+          slide.setAttribute("tabindex", isActive ? "0" : "-1");
+        }
+      });
+
+      dots.forEach(function(dot, dotIndex){
+        dot.setAttribute("aria-pressed", dotIndex === activeIndex ? "true" : "false");
+      });
+
+      if (status) {
+        const label = slides[activeIndex].dataset.slideLabel || "写真";
+        status.textContent = (activeIndex + 1) + "枚目：" + label;
+      }
+
+      if (method && method !== "auto") {
+        manualControlUsed = true;
+        stopAuto();
+        trackManualChange(method);
+      }
+    }
+
+    function scheduleNext(){
+      stopAuto();
+      if (reducedMotion || manualControlUsed || autoStepCount >= slides.length) return;
+
+      const configuredDuration = Number(slides[activeIndex].dataset.slideDuration);
+      const displayDuration = Number.isFinite(configuredDuration) && configuredDuration > 0
+        ? configuredDuration
+        : 7000;
+
+      autoTimer = window.setTimeout(function(){
+        showSlide(activeIndex + 1, "auto");
+        autoStepCount += 1;
+        scheduleNext();
+      }, displayDuration);
+    }
+
+    function start(){
+      if (hasStarted) return;
+      hasStarted = true;
+      showSlide(0);
+      scheduleNext();
+    }
+
+    window.geneStartHeroSlideshow = start;
+
+    if (prev) {
+      prev.addEventListener("click", function(){
+        showSlide(activeIndex - 1, "previous_button");
+      });
+    }
+
+    if (next) {
+      next.addEventListener("click", function(){
+        showSlide(activeIndex + 1, "next_button");
+      });
+    }
+
+    dots.forEach(function(dot){
+      dot.addEventListener("click", function(){
+        showSlide(Number(dot.dataset.geneHeroDot || 0), "dot");
+      });
+    });
+
+    root.addEventListener("keydown", function(event){
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        showSlide(activeIndex - 1, "keyboard");
+      }
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        showSlide(activeIndex + 1, "keyboard");
+      }
+    });
+
+    stage.addEventListener("touchstart", function(event){
+      const touch = event.changedTouches[0];
+      if (!touch) return;
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+    }, { passive:true });
+
+    stage.addEventListener("touchend", function(event){
+      const touch = event.changedTouches[0];
+      if (!touch) return;
+
+      const deltaX = touch.clientX - touchStartX;
+      const deltaY = touch.clientY - touchStartY;
+      if (Math.abs(deltaX) < 48 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+
+      showSlide(activeIndex + (deltaX < 0 ? 1 : -1), "swipe");
+    }, { passive:true });
+
+    const caseLink = root.querySelector(".gene-hero-slide--case");
+    if (caseLink) {
+      caseLink.addEventListener("click", function(){
+        if (typeof window.gtag !== "function") return;
+        window.gtag("event", "index_hero_case_click", {
+          case_id: "case1",
+          source_page: location.pathname.split("/").pop() || "index.html",
+          destination_page: "case1.html"
+        });
+      });
+    }
+
+    document.addEventListener("visibilitychange", function(){
+      if (document.hidden) {
+        stopAuto();
+      } else if (hasStarted) {
+        scheduleNext();
+      }
+    });
+
+    const topHeroCard = document.querySelector(".top-hero-card");
+    if (topHeroCard && topHeroCard.classList.contains("show")) start();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupGeneHeroSlideshow);
+  } else {
+    setupGeneHeroSlideshow();
+  }
+})();
 </script>
 
 
@@ -1751,36 +4881,56 @@ window.addEventListener("load", () => {
 
 <script>
 (function(){
+  const secretPageUrl = "nobodys-home.html";
+
   function setupSecretPageLink(){
     const link = document.getElementById("secret-page-link");
     if (!link) return;
     if (link.dataset.secretReady === "true") return;
     link.dataset.secretReady = "true";
+    link.setAttribute("href", secretPageUrl);
 
     link.addEventListener("click", function(event){
-      const href = link.getAttribute("href") || "quiet-room.html";
-
-      if (typeof gtag !== "function") {
-        return;
-      }
-
       event.preventDefault();
 
+      const href = link.getAttribute("href") || secretPageUrl;
       let moved = false;
+
       const go = function(){
         if (moved) return;
         moved = true;
         window.location.href = href;
       };
 
-      gtag("event", "secret_page_click", {
-        event_category: "secret_page",
-        event_label: "index_last_photo",
+      const params = {
+        event_category: "hidden_page",
+        event_label: "nobodys_home_last_photo",
+        source_page: location.pathname.split("/").pop() || "index.html",
+        destination_page: "nobodys-home.html",
         link_url: href,
-        event_callback: go
-      });
+        transport_type: "beacon",
+        event_callback: go,
+        event_timeout: 700
+      };
 
-      setTimeout(go, 700);
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "nobodys_home_click", params);
+        setTimeout(go, 700);
+        return;
+      }
+
+      if (window.dataLayer && typeof window.dataLayer.push === "function") {
+        window.dataLayer.push({
+          event: "nobodys_home_click",
+          event_category: params.event_category,
+          event_label: params.event_label,
+          source_page: params.source_page,
+          destination_page: params.destination_page,
+          link_url: params.link_url
+        });
+      }
+
+      go();
     });
   }
 
@@ -1792,6 +4942,80 @@ window.addEventListener("load", () => {
 })();
 </script>
 
-  <script src="assets/js/index-journey.js?v=20260718"></script>
+
+<script>
+(function () {
+  var currentPath = window.location.pathname.replace(/\/+$/, "");
+  var isTopPage = currentPath === "" || currentPath === "/" || currentPath === "/index.html";
+
+  if (!isTopPage) {
+    return;
+  }
+
+  var params = new URLSearchParams(window.location.search);
+
+  if (params.get("internal") === "true") {
+    localStorage.setItem("internalUser", "true");
+  }
+
+  if (params.get("internal") === "false") {
+    localStorage.removeItem("internalUser");
+  }
+
+
+  function isLocalPreview() {
+    var host = window.location.hostname;
+
+    return (
+      window.location.protocol === "file:" ||
+      host === "localhost" ||
+      host === "127.0.0.1" ||
+      host === "::1" ||
+      /^192\.168\./.test(host) ||
+      /^10\./.test(host) ||
+      /^172\.(1[6-9]|2[0-9]|3[0-1])\./.test(host)
+    );
+  }
+
+  if (isLocalPreview()) {
+    return;
+  }
+
+  var isInternal = localStorage.getItem("internalUser") === "true";
+
+  if (isInternal) {
+    return;
+  }
+
+  var storageKey = "top_page_notify_last_sent";
+  var now = Date.now();
+  var lastSent = Number(localStorage.getItem(storageKey) || 0);
+  var oneHour = 60 * 60 * 1000;
+
+  if (now - lastSent < oneHour) {
+    return;
+  }
+
+  localStorage.setItem(storageKey, String(now));
+
+  fetch(
+    "https://script.google.com/macros/s/AKfycbyzDrbDgk6Hqkl8n-0PToOPC5oisxZscgAZupO_Gqjm3YLYhvQanuuvtp7leo2RmwLk/exec",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        page: "index.html",
+        url: window.location.href,
+        referrer: document.referrer || "直接アクセス / 不明",
+        userAgent: navigator.userAgent,
+        internal: false
+      })
+    }
+  );
+})();
+</script>
+
+<script src="assets/js/index-journey.js?v=20260721"></script>
+<script src="assets/js/line-click-tracking.js"></script>
+
 </body>
 </html>
